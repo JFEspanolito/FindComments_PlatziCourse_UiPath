@@ -1,7 +1,7 @@
 {
   "name": "FindComments_PlatziCourse",
   "description": "Obtener los comentarios en un curso en Platzi.",
-  "main": "Main.xaml",
+  "main": "Main2.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.8.5]",
     "UiPath.Mail.Activities": "[1.8.5]",
