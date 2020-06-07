@@ -17,19 +17,29 @@ Si quieres cambiarlo y no sabes como hacerlo, puedes ver el [Curso de Automatiza
 
 ## Tutorial para Ejecución
 Al ejecutar el robot (es Asistido) solicita la url del curso que desea validar.
+
 ![Solicitud de URL][0]
+
 Luego de leer todos los comentarios de todas las clases del curso indicado, nos pregunta si deseamos (opcional) hacer el seguimiento puntual de cada comentario.
+
 ![Seguimiento Puntual 1][1]
+
 Si afirmamos, se abrirá el navegador web con la url del primer comentario a revisar y veremos una ventana como la siguiente:
 En esta podemos dejar una nota interna (para nosotros) en el reporte que el robot generará.
+
 ![Seguimiento Puntual 2][2]
 ![Seguimiento Puntual 3][3]
+
 *Así mismo en cualquier momento podemos romper el ciclo de revisión de comentarios escribiendo “{exit}” en la ventana de comentarios internos.*
+
 ![Seguimiento Puntual 4][4]
+
 Posteriormente nos preguntará si deseamos responder al alumno, el texto que escribamos en este cuadro de texto, se escribirá en el comentario del alumno como respuesta. 
 Adicional si respondemos el comentario del alumno, el robot marcará el corazón (para identificar que fue respondido).
+
 ![Seguimiento Puntual 5][5]
 ![Seguimiento Puntual 6][6]
+
 Al finalizar el ciclo de seguimiento, se generá un reporte con 2 hojas:
 - La primer hoja donde se meustran los comentarios que se clasifican como “nuevos” por tener 0 o 1 corazón (que es el valor que les aparece al ser creado).
 - La segunda hoja es para todos los que tienen más de un corazón.
