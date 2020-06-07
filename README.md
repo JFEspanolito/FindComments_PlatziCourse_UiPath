@@ -69,7 +69,7 @@ El documento generado se guarda en la carpeta Archivos dentro de la carpeta del 
 
 [//]: #
 [0]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img0.png> "Diagrama del Proyecto"
-[0.1]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img0.1.png> "Diagrama del Proyecto"
+[0.1]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img0.2.png> "Diagrama del Proyecto"
 [1]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img1.png> "Solicitud de URL"
 [1.1]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img1.1.png> "Solicitud de URL"
 [1.2]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img1.2.png> "Solicitud de URL"
