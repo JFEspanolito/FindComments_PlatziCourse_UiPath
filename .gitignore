@@ -2,3 +2,4 @@
 
 #.Local - Carpeta que contiene las dependencias del proyecto, esto se genera cuando abre el proyecto, no es necesario cargarlo en git. (También es una carpeta oculta).
 .local/
+.objects
