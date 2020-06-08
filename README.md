@@ -58,6 +58,8 @@ Al finalizar el ciclo de seguimiento, se generá un reporte con 2 hojas:
 - La segunda hoja es para todos los que tienen más de un corazón.
 
 Ambas hojas contiendrán 
+- Nombre del Estudiante.
+- Comentario del Estudiante.
 - URL del comentario.
 - Número de corazones.
 - Texto del seguimiento que escribimos durante la revisión puntual.
