@@ -58,6 +58,8 @@ Al finalizar el ciclo de seguimiento, se generá un reporte con 2 hojas:
 - La segunda hoja es para todos los que tienen más de un corazón.
 
 Ambas hojas contiendrán 
+- Nombre del Estudiante.
+- Comentario del Estudiante.
 - URL del comentario.
 - Número de corazones.
 - Texto del seguimiento que escribimos durante la revisión puntual.
@@ -79,6 +81,5 @@ El documento generado se guarda en la carpeta Archivos dentro de la carpeta del 
 [5]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img5.png> "Seguimiento Puntual 4"
 [6]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img6.png> "Seguimiento Puntual 5"
 [7]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img7.png> "Seguimiento Puntual 6"
-[8]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img8.png> "Solicitud de URL"
-[9]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img9.png> "Solicitud de URL"
-[9]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img10.png> "Solicitud de URL"
+[8]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img8.1.png> "Solicitud de URL"
+[9]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img9.1.png> "Solicitud de URL"
