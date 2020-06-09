@@ -37,7 +37,10 @@ Luego de leer todos los comentarios de todas las clases del curso indicado, nos 
 
 ![Seguimiento Puntual 1][2]
 
-Si afirmamos, se abrirá el navegador web con la url del primer comentario a revisar y veremos una ventana como la siguiente:
+Dependiendo de la opción elegida el robot realizará cierta acción.
+1) Respuesta automática, realizará una lectura del acumulado de información (excel y comentarios encontrados), posteriormente navegará a la url de cada comentario que tenga información en la columna "Repuesta" y escribirá dicho valor como una respuesta al alumno.
+
+2) Realizará la navegación a la url del primer comentario a revisar y veremos una ventana como la siguiente:
 En esta podemos dejar una nota interna (para nosotros) en el reporte que el robot generará.
 
 ![Seguimiento Puntual 2][3]
@@ -53,6 +56,10 @@ Adicional si respondemos el comentario del alumno, el robot marcará el corazón
 ![Seguimiento Puntual 5][6]
 ![Seguimiento Puntual 6][7]
 
+Posteriormente realizará una revisión para evaluar si el comentario está o no marcado con un corazón, en el caso de no estar marcado preguntará si deseas marcarlo.
+
+![Seguimiento Puntual 7]8]
+
 Al finalizar el ciclo de seguimiento, se generá un reporte con 2 hojas:
 - La primer hoja donde se meustran los comentarios que se clasifican como “nuevos” por tener 0 o 1 corazón (que es el valor que les aparece al ser creado).
 - La segunda hoja es para todos los que tienen más de un corazón.
@@ -64,8 +71,8 @@ Ambas hojas contiendrán
 - Número de corazones.
 - Texto del seguimiento que escribimos durante la revisión puntual.
 
-![Seguimiento Puntual 7][8]
 ![Seguimiento Puntual 8][9]
+![Seguimiento Puntual 9][10]
 
 El documento generado se guarda en la carpeta Archivos dentro de la carpeta del proyecto.
 
@@ -81,5 +88,6 @@ El documento generado se guarda en la carpeta Archivos dentro de la carpeta del 
 [5]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img5.png> "Seguimiento Puntual 4"
 [6]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img6.png> "Seguimiento Puntual 5"
 [7]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img7.png> "Seguimiento Puntual 6"
-[8]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img8.1.png> "Solicitud de URL"
-[9]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img9.1.png> "Solicitud de URL"
+[8]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img8.png> "Solicitud de URL"
+[9]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img8.1.png> "Solicitud de URL"
+[10]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img9.1.png> "Solicitud de URL"
