@@ -3,6 +3,7 @@
   "description": "Obtener los comentarios en un curso en Platzi.",
   "main": "Main2.xaml",
   "dependencies": {
+    "BalaReva.Excel.Activities": "[2019.4.0]",
     "UiPath.Excel.Activities": "[2.8.5]",
     "UiPath.Mail.Activities": "[1.8.5]",
     "UiPath.System.Activities": "[20.4.0]",

@@ -14,6 +14,9 @@ Al finalizar la revisión de seguimiento (o si se omite) genera un reporte en Ex
 - [Cuenta en Platzi](https://platzi.com)
 - Url del Curso
 - [Firefox](https://www.mozilla.org/es-MX/firefox/download/thanks/)
+- [Balareva Excel Activities (Dependencia)](https://connect.uipath.com/marketplace/components/balareva-xl-activities)
+
+![Diagrama del Proyecto][0.1]
 
 Si deseas cambiar el navegador, es posible solo recuerda validar los selectores de interacción con el navegador.
 Si quieres cambiarlo y no sabes como hacerlo, puedes ver el [Curso de Automatización de Procesos RPA con UiPath](https://platzi.com/cursos/uipath/) 
@@ -21,7 +24,7 @@ Si quieres cambiarlo y no sabes como hacerlo, puedes ver el [Curso de Automatiza
 ## Tutorial de uso
 Para ejecutar el robot, debemos ir al [UiPath Studio](https://platform.uipath.com) abrir el proyecto descargado de este repositorio y dar clic en **Run** ubicado en la parte superior del Studio.
 
-![Diagrama del Proyecto][0.1]
+![Diagrama del Proyecto][0.2]
 
 Al ejecutar el robot (es Asistido) solicita la url del curso que desea validar.
 
@@ -33,6 +36,11 @@ Si no proporcionas una URL, buscará el archivo de excel previamente creado en a
 ![Solicitud de URL 1.2][1.2]
 
 Si proporcionas una URL, el robot abrirá el navegador web para el curso proporcionado, buscará la url de cada clase del curso y luego navegará en cada clase para leer los comentarios.
+
+*Actualización 17/06/2020* Ahora el robot pregunta si deseas obtener las respuestas existentes de cada comentario, este paso es opcional y automático.
+
+![Solicitud de URL 1.3][1.3]
+
 Luego de leer todos los comentarios de todas las clases del curso indicado, nos pregunta si deseamos (opcional) hacer el seguimiento puntual de cada comentario.
 
 ![Seguimiento Puntual 1][2]
@@ -78,10 +86,12 @@ El documento generado se guarda en la carpeta Archivos dentro de la carpeta del 
 
 [//]: #
 [0]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img0.png> "Diagrama del Proyecto"
-[0.1]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img0.2.png> "Diagrama del Proyecto"
+[0.1]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img0.1.png> "Pre-requisito"
+[0.2]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img0.2.png> "Ejecutar Proyecto"
 [1]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img1.png> "Solicitud de URL"
 [1.1]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img1.1.png> "Solicitud de URL"
 [1.2]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img1.2.png> "Solicitud de URL"
+[1.3]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img1.3.png> "Obtener Respuestas del Comentario"
 [2]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img2.png> "Seguimiento Puntual 1"
 [3]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img3.png> "Seguimiento Puntual 2"
 [4]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img4.png> "Seguimiento Puntual 3"
