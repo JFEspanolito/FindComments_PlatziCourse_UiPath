@@ -193,7 +193,7 @@
                               </ui:CursorPosition>
                             </ui:Click.CursorPosition>
                             <ui:Click.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e1ae3a4b-67bc-4709-8a36-be7a76c52613" InformativeScreenshot="ea0c15b56dd251930dde38852288c38f" Selector="&lt;html app='firefox.exe' url='*platzi*' /&gt;&lt;webctrl aaname='Escribe tu comentario' parentid='discussion-detail' tag='SPAN' /&gt;">
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e1ae3a4b-67bc-4709-8a36-be7a76c52613" InformativeScreenshot="ea0c15b56dd251930dde38852288c38f" Selector="&lt;html app='firefox.exe' url='http*://platzi.com*' /&gt;&lt;webctrl aaname='Escribe tu comentario' parentid='discussion-detail' tag='SPAN' /&gt;">
                                 <ui:Target.TimeoutMS>
                                   <InArgument x:TypeArguments="x:Int32" />
                                 </ui:Target.TimeoutMS>
@@ -211,7 +211,7 @@
                           </ui:Click>
                           <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Escribir el comentario" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[ComentarioParaElAlumno]">
                             <ui:TypeInto.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b3471d53-5d14-4aea-99b3-1a35021f6f1a" InformativeScreenshot="98488897b8a39519d223cb4afe7970cf" Selector="&lt;html app='firefox.exe' url='*platzi*' /&gt;&lt;webctrl id='textarea-*' tag='TEXTAREA' /&gt;">
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b3471d53-5d14-4aea-99b3-1a35021f6f1a" InformativeScreenshot="98488897b8a39519d223cb4afe7970cf" Selector="&lt;html app='firefox.exe' url='http*://platzi.com*' /&gt;&lt;webctrl id='textarea-*' tag='TEXTAREA' /&gt;">
                                 <ui:Target.TimeoutMS>
                                   <InArgument x:TypeArguments="x:Int32" />
                                 </ui:Target.TimeoutMS>
@@ -276,7 +276,7 @@
                         <OutArgument x:TypeArguments="x:String">[corazonVerde]</OutArgument>
                       </ui:GetAttribute.Result>
                       <ui:GetAttribute.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="556b4273-9c5e-481e-bbd9-b01da7ac9660" InformativeScreenshot="fee02934650147969db0bc6337a204d6" Selector="&lt;html app='firefox.exe' url='*platzi*' /&gt;&lt;webctrl idx='1' isleaf='1' parentid='discussion-detail' tag='SPAN' /&gt;">
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="556b4273-9c5e-481e-bbd9-b01da7ac9660" InformativeScreenshot="fee02934650147969db0bc6337a204d6" Selector="&lt;html app='firefox.exe' url='http*://platzi.com*' /&gt;&lt;webctrl idx='1' isleaf='1' parentid='discussion-detail' tag='SPAN' /&gt;">
                           <ui:Target.TimeoutMS>
                             <InArgument x:TypeArguments="x:Int32" />
                           </ui:Target.TimeoutMS>

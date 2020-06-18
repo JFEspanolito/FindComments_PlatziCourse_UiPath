@@ -243,7 +243,7 @@
                             </ui:CursorPosition>
                           </ui:Click.CursorPosition>
                           <ui:Click.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7f1f5079-ef3f-44a2-8c79-edcd66adbbcd" InformativeScreenshot="ebb46082610cd6e789009c492ef634ee" Selector="&lt;html app='firefox.exe' url='*platzi*' /&gt;&lt;webctrl aaname='Preguntas ' parentid='video-content' tag='LABEL' /&gt;">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7f1f5079-ef3f-44a2-8c79-edcd66adbbcd" InformativeScreenshot="ebb46082610cd6e789009c492ef634ee" Selector="&lt;html app='firefox.exe' url='http*://platzi.com*' /&gt;&lt;webctrl aaname='Preguntas ' parentid='video-content' tag='LABEL' /&gt;">
                               <ui:Target.TimeoutMS>
                                 <InArgument x:TypeArguments="x:Int32" />
                               </ui:Target.TimeoutMS>
@@ -281,7 +281,7 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:UiElementExists DisplayName="¿Existe Video Youtube?" Exists="[hayVideo]" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
                           <ui:UiElementExists.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e73f09a6-270f-4105-ad7b-2485575f02a4" InformativeScreenshot="10ace9f9c3b7e722f5dd3f41d70168e2" Selector="&lt;html app='firefox.exe' url='*platzi*' /&gt;&lt;webctrl src='*' tag='IFRAME' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='1' isleaf='1' parentid='player_uid_*_*' tag='DIV' /&gt;" TimeoutMS="2000">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e73f09a6-270f-4105-ad7b-2485575f02a4" InformativeScreenshot="10ace9f9c3b7e722f5dd3f41d70168e2" Selector="&lt;html app='firefox.exe' url='http*://platzi.com*' /&gt;&lt;webctrl src='*' tag='IFRAME' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='1' isleaf='1' parentid='player_uid_*_*' tag='DIV' /&gt;" TimeoutMS="2000">
                               <ui:Target.WaitForReady>
                                 <InArgument x:TypeArguments="ui:WaitForReady" />
                               </ui:Target.WaitForReady>
@@ -342,7 +342,7 @@
                                   </ui:CursorPosition>
                                 </ui:Click.CursorPosition>
                                 <ui:Click.Target>
-                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7f1f5079-ef3f-44a2-8c79-edcd66adbbcd" InformativeScreenshot="ebb46082610cd6e789009c492ef634ee" Selector="&lt;html app='firefox.exe' url='*platzi*' /&gt;&lt;webctrl aaname='Preguntas ' parentid='video-content' tag='LABEL' /&gt;">
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7f1f5079-ef3f-44a2-8c79-edcd66adbbcd" InformativeScreenshot="ebb46082610cd6e789009c492ef634ee" Selector="&lt;html app='firefox.exe' url='http*://platzi.com*' /&gt;&lt;webctrl aaname='Preguntas ' parentid='video-content' tag='LABEL' /&gt;">
                                     <ui:Target.TimeoutMS>
                                       <InArgument x:TypeArguments="x:Int32" />
                                     </ui:Target.TimeoutMS>
