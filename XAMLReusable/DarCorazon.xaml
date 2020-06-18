@@ -61,7 +61,7 @@
         <OutArgument x:TypeArguments="x:String">[corazonVerde]</OutArgument>
       </ui:GetAttribute.Result>
       <ui:GetAttribute.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="556b4273-9c5e-481e-bbd9-b01da7ac9660" InformativeScreenshot="fee02934650147969db0bc6337a204d6" Selector="&lt;html app='firefox.exe' url='http*://platzi.com*' /&gt;&lt;webctrl idx='1' isleaf='1' parentid='discussion-detail' tag='SPAN' /&gt;">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="556b4273-9c5e-481e-bbd9-b01da7ac9660" InformativeScreenshot="fee02934650147969db0bc6337a204d6" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/clases*' /&gt;&lt;webctrl idx='1' isleaf='1' parentid='discussion-detail' tag='SPAN' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -98,7 +98,7 @@
               </ui:CursorPosition>
             </ui:Click.CursorPosition>
             <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f0d602ef-7a03-4282-ba42-f1befa17dffe" InformativeScreenshot="2c4abdd582c1539555ee416a17ef183c" Selector="&lt;html app='firefox.exe' url='http*://platzi.com*' /&gt;&lt;webctrl idx='1' isleaf='1' parentid='discussion-detail' tag='SPAN' /&gt;">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f0d602ef-7a03-4282-ba42-f1befa17dffe" InformativeScreenshot="2c4abdd582c1539555ee416a17ef183c" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/clases*' /&gt;&lt;webctrl idx='1' isleaf='1' parentid='discussion-detail' tag='SPAN' /&gt;">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>

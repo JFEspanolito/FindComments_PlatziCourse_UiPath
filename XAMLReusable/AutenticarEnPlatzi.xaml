@@ -58,7 +58,7 @@
         </sap:WorkflowViewStateService.ViewState>
         <ui:UiElementExists DisplayName="Element Exists Pantalla de Login" Exists="[requireLogin]" sap:VirtualizedContainerService.HintSize="521,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
           <ui:UiElementExists.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9f91ebc5-d3a1-4a82-bc9b-a300bab6eb75" InformativeScreenshot="626f8600796cc8b9b27874770b953a7a" Selector="&lt;html app='firefox.exe' url='http*://platzi.com*' /&gt;&lt;webctrl aaname='Iniciar sesión' tag='SPAN' /&gt;" TimeoutMS="3000">
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9f91ebc5-d3a1-4a82-bc9b-a300bab6eb75" InformativeScreenshot="626f8600796cc8b9b27874770b953a7a" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/clases*' /&gt;&lt;webctrl aaname='Iniciar sesión' tag='SPAN' /&gt;" TimeoutMS="3000">
               <ui:Target.WaitForReady>
                 <InArgument x:TypeArguments="ui:WaitForReady" />
               </ui:Target.WaitForReady>
@@ -98,7 +98,7 @@
                   </ui:CursorPosition>
                 </ui:Click.CursorPosition>
                 <ui:Click.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="32b7dad6-b465-45cf-8033-180fa70e2258" InformativeScreenshot="453eb4206fd5dcd9c02d9a2306caa7cc" Selector="&lt;html app='firefox.exe' url='http*://platzi.com*' /&gt;&lt;webctrl aaname='Iniciar sesión' tag='SPAN' /&gt;">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="32b7dad6-b465-45cf-8033-180fa70e2258" InformativeScreenshot="453eb4206fd5dcd9c02d9a2306caa7cc" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/clases*' /&gt;&lt;webctrl aaname='Iniciar sesión' tag='SPAN' /&gt;">
                     <ui:Target.TimeoutMS>
                       <InArgument x:TypeArguments="x:Int32" />
                     </ui:Target.TimeoutMS>

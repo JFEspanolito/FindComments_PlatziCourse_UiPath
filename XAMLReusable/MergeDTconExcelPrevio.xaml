@@ -2,11 +2,12 @@
   <x:Members>
     <x:Property Name="in_out_dtComentariosAcumulados" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="in_RemoverDuplicados" Type="InArgument(x:Boolean)" />
+    <x:Property Name="varPathArchivo" Type="InArgument(x:String)" />
   </x:Members>
   <this:MergeDTconExcelPrevio.in_RemoverDuplicados>
     <InArgument x:TypeArguments="x:Boolean" />
   </this:MergeDTconExcelPrevio.in_RemoverDuplicados>
-  <sap:VirtualizedContainerService.HintSize>1125,2215</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1125,2280</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="19">
@@ -60,7 +61,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Merge de información" sap:VirtualizedContainerService.HintSize="1135,2150" sap2010:WorkflowViewState.IdRef="Sequence_21">
+  <Sequence DisplayName="Merge de información" sap:VirtualizedContainerService.HintSize="1135,2175" sap2010:WorkflowViewState.IdRef="Sequence_21">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="existeArchivo" />
     </Sequence.Variables>
@@ -70,7 +71,7 @@
         <x:Boolean x:Key="IsPinned">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:PathExists DisplayName="¿Existe archivo anterior?" Exists="[existeArchivo]" sap:VirtualizedContainerService.HintSize="1093,89" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="Archivos/Comentarios.xlsx" PathType="File">
+    <ui:PathExists DisplayName="¿Existe archivo anterior?" Exists="[existeArchivo]" sap:VirtualizedContainerService.HintSize="1093,89" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[varPathArchivo]" PathType="File">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -109,7 +110,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <If Condition="[existeArchivo]" DisplayName="Si existe, depurar" sap:VirtualizedContainerService.HintSize="1093,1589" sap2010:WorkflowViewState.IdRef="If_6">
+    <If Condition="[existeArchivo]" DisplayName="Si existe, depurar" sap:VirtualizedContainerService.HintSize="1093,1614" sap2010:WorkflowViewState.IdRef="If_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -121,11 +122,7 @@
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="dtArchivoExistente1" />
             <Variable x:TypeArguments="sd:DataTable" Name="dtArchivoExistente2" />
-            <Variable x:TypeArguments="x:Boolean" Name="inicializardtNuevos">
-              <Variable.Default>
-                <Literal x:TypeArguments="x:Boolean" />
-              </Variable.Default>
-            </Variable>
+            <Variable x:TypeArguments="x:Boolean" Default="False" Name="inicializardtNuevos" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -141,7 +138,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dtArchivoExistente1]" DisplayName="Leer hoja &quot;Nuevos&quot;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Nuevos" WorkbookPath="Archivos/Comentarios.xlsx">
+              <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dtArchivoExistente1]" DisplayName="Leer hoja &quot;Nuevos&quot;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Nuevos" WorkbookPath="[varPathArchivo]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -196,7 +193,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dtArchivoExistente2]" DisplayName="Leer hoja &quot;Seguimiento&quot;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Seguimiento" WorkbookPath="Archivos/Comentarios.xlsx">
+              <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dtArchivoExistente2]" DisplayName="Leer hoja &quot;Seguimiento&quot;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Seguimiento" WorkbookPath="[varPathArchivo]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
