@@ -7,7 +7,8 @@
     "UiPath.Excel.Activities": "[2.8.5]",
     "UiPath.Mail.Activities": "[1.8.5]",
     "UiPath.System.Activities": "[20.4.0]",
-    "UiPath.UIAutomation.Activities": "[20.4.1]"
+    "UiPath.UIAutomation.Activities": "[20.4.1]",
+    "WakaTime": "[8.1.11]"
   },
   "webServices": [],
   "schemaVersion": "4.0",
