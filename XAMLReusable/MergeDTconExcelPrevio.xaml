@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="MergeDTconExcelPrevio" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="MergeDTconExcelPrevio" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_out_dtComentariosAcumulados" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="in_RemoverDuplicados" Type="InArgument(x:Boolean)" />
@@ -7,7 +7,7 @@
   <this:MergeDTconExcelPrevio.in_RemoverDuplicados>
     <InArgument x:TypeArguments="x:Boolean" />
   </this:MergeDTconExcelPrevio.in_RemoverDuplicados>
-  <sap:VirtualizedContainerService.HintSize>1125,2280</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1509,2280</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="19">
@@ -33,7 +33,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="20">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="40">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
       <AssemblyReference>System.Data</AssemblyReference>
@@ -54,6 +54,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -97,7 +98,7 @@
                 <OutArgument x:TypeArguments="x:Object">[row("URL")]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:Object">["platzi.com"+row("URL").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:Object">["platzi.com"+row("URL").ToString.Replace(" ","")]</InArgument>
               </Assign.Value>
             </Assign>
           </Sequence>
@@ -251,13 +252,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtArchivoExistente2]" DisplayName="Eliminar duplicados." sap:VirtualizedContainerService.HintSize="599,672" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtArchivoExistente2]" DisplayName="Eliminar duplicados." sap:VirtualizedContainerService.HintSize="771,1069" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                     </ActivityAction.Argument>
-                    <If Condition="[in_out_dtComentariosAcumulados.Select(&quot;URL='&quot;+row(&quot;URL&quot;).ToString+&quot;'&quot;).Count&gt;0]" DisplayName="Si el registro está repetido, eliminar" sap:VirtualizedContainerService.HintSize="549,524" sap2010:WorkflowViewState.IdRef="If_7">
+                    <If Condition="[in_out_dtComentariosAcumulados.Select(&quot;URL='&quot;+row(&quot;URL&quot;).ToString.ToString.Replace(&quot; &quot;,&quot;&quot;)+&quot;'&quot;).Count&gt;0]" DisplayName="Si el registro está repetido, eliminar" sap:VirtualizedContainerService.HintSize="721,921" sap2010:WorkflowViewState.IdRef="If_7">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -265,7 +266,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence DisplayName="Eliminación de registro previo" sap:VirtualizedContainerService.HintSize="304,376" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                        <Sequence DisplayName="Eliminación de registro previo" sap:VirtualizedContainerService.HintSize="476,773" sap2010:WorkflowViewState.IdRef="Sequence_18">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="s:Object[]" Name="tmpARow" />
                             <Variable x:TypeArguments="sd:DataRow" Name="dr" />
@@ -276,7 +277,7 @@
                               <x:Boolean x:Key="IsPinned">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                          <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_11">
                             <Assign.To>
                               <OutArgument x:TypeArguments="sd:DataRow">[dr]</OutArgument>
                             </Assign.To>
@@ -284,7 +285,7 @@
                               <InArgument x:TypeArguments="sd:DataRow">[in_out_dtComentariosAcumulados.Select("URL='"+row("URL").ToString+"'").First()]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                          <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_8">
                             <Assign.To>
                               <OutArgument x:TypeArguments="s:Object[]">[tmpARow]</OutArgument>
                             </Assign.To>
@@ -292,8 +293,36 @@
                               <InArgument x:TypeArguments="s:String[]">[{ row("Nombre").ToString, row("Comentario").ToString, row("URL").ToString, dr("Corazon").ToString, row("Curso").ToString, row("Seguimiento").ToString + Environment.NewLine + dr("Seguimiento").ToString, row("DarCorazon").ToString, row("MiRespuestaAnterior").ToString,row("ResponderLoSiguiente").ToString, row("Respuestas").ToString}]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <ui:RemoveDataRow RowIndex="{x:Null}" DataTable="[in_out_dtComentariosAcumulados]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="RemoveDataRow_1" Row="[dr]" />
-                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[tmpARow]" DataTable="[in_out_dtComentariosAcumulados]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                          <ui:InterruptibleDoWhile DisplayName="Eliminar mientras haya registros" sap:VirtualizedContainerService.HintSize="434,419" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                            <ui:InterruptibleDoWhile.Body>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="sd:DataRow">[dr]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="sd:DataRow">[in_out_dtComentariosAcumulados.Select("URL='"+row("URL").ToString.Replace(" ","")+"'").First()]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <ui:RemoveDataRow RowIndex="{x:Null}" DataTable="[in_out_dtComentariosAcumulados]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="RemoveDataRow_1" Row="[dr]" />
+                              </Sequence>
+                            </ui:InterruptibleDoWhile.Body>
+                            <ui:InterruptibleDoWhile.Condition>
+                              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="in_out_dtComentariosAcumulados.Select(&quot;URL='&quot;+row(&quot;URL&quot;).ToString.ToString.Replace(&quot; &quot;,&quot;&quot;)+&quot;'&quot;).Count&gt;0" />
+                            </ui:InterruptibleDoWhile.Condition>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:InterruptibleDoWhile>
+                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[tmpARow]" DataTable="[in_out_dtComentariosAcumulados]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
                         </Sequence>
                       </If.Then>
                       <If.Else>
