@@ -7,7 +7,7 @@
   <this:ObtenerrRespuestasDeComentarios.uiBrowser>
     <InArgument x:TypeArguments="ui:Browser" />
   </this:ObtenerrRespuestasDeComentarios.uiBrowser>
-  <sap:VirtualizedContainerService.HintSize>1218,2399</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>975,2299</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="17">
@@ -95,7 +95,7 @@
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:NavigateTo Browser="[uiBrowser]" DisplayName="Navigate To URL (comentario)" sap:VirtualizedContainerService.HintSize="619,59" sap2010:WorkflowViewState.IdRef="NavigateTo_7" Url="[&quot;platzi.com&quot;+rowComentario(&quot;URL&quot;).ToString]">
+                      <ui:NavigateTo Browser="[uiBrowser]" DisplayName="Navigate To URL (comentario)" sap:VirtualizedContainerService.HintSize="619,59" sap2010:WorkflowViewState.IdRef="NavigateTo_7" Url="[rowComentario(&quot;URL&quot;).ToString]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
