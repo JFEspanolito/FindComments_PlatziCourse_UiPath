@@ -7,7 +7,7 @@
   <this:AutenticarEnPlatzi.uiBrowser>
     <InArgument x:TypeArguments="ui:Browser" />
   </this:AutenticarEnPlatzi.uiBrowser>
-  <sap:VirtualizedContainerService.HintSize>975,1011</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1101,1051</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="17">
@@ -98,10 +98,7 @@
                   </ui:CursorPosition>
                 </ui:Click.CursorPosition>
                 <ui:Click.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="32b7dad6-b465-45cf-8033-180fa70e2258" InformativeScreenshot="453eb4206fd5dcd9c02d9a2306caa7cc" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/clases*' /&gt;&lt;webctrl aaname='Iniciar sesión' tag='SPAN' /&gt;">
-                    <ui:Target.TimeoutMS>
-                      <InArgument x:TypeArguments="x:Int32" />
-                    </ui:Target.TimeoutMS>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="32b7dad6-b465-45cf-8033-180fa70e2258" InformativeScreenshot="453eb4206fd5dcd9c02d9a2306caa7cc" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/clases*' /&gt;&lt;webctrl aaname='Iniciar sesión' tag='SPAN' /&gt;" TimeoutMS="3000">
                     <ui:Target.WaitForReady>
                       <InArgument x:TypeArguments="ui:WaitForReady" />
                     </ui:Target.WaitForReady>
