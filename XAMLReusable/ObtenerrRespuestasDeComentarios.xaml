@@ -3,11 +3,13 @@
     <x:Property Name="varRespuestaObtenerRepuestasComentario" Type="InArgument(x:String)" />
     <x:Property Name="dtComentariosAcumulados" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="uiBrowser" Type="InArgument(ui:Browser)" />
+    <x:Property Name="varPathArchivo" Type="InArgument(x:String)" />
+    <x:Property Name="varNombreExcel" Type="InArgument(x:String)" />
   </x:Members>
   <this:ObtenerrRespuestasDeComentarios.uiBrowser>
     <InArgument x:TypeArguments="ui:Browser" />
   </this:ObtenerrRespuestasDeComentarios.uiBrowser>
-  <sap:VirtualizedContainerService.HintSize>1218,2399</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1101,1995</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="17">
@@ -55,187 +57,220 @@
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="ObtenerRespuestasComentarios" sap:VirtualizedContainerService.HintSize="932,2194" sap2010:WorkflowViewState.IdRef="Sequence_60">
+  <Sequence DisplayName="ObtenerRespuestasComentarios" sap:VirtualizedContainerService.HintSize="974,1890" sap2010:WorkflowViewState.IdRef="Sequence_60">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[uiBrowser]" BrowserType="Firefox" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="890,2102" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
+    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[uiBrowser]" BrowserType="Firefox" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="932,1798" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <If Condition="[varRespuestaObtenerRepuestasComentario=&quot;Yes&quot;]" DisplayName="Si obtener respuestas es sí..." sap:VirtualizedContainerService.HintSize="856,1994" sap2010:WorkflowViewState.IdRef="If_31">
+          <Sequence DisplayName="Dentro del browser" sap:VirtualizedContainerService.HintSize="898,1650" sap2010:WorkflowViewState.IdRef="Sequence_62">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If.Then>
-              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtComentariosAcumulados]" DisplayName="Navegar a cada comentario." sap:VirtualizedContainerService.HintSize="711,1847" sap2010:WorkflowViewState.IdRef="ForEachRow_10">
-                <ui:ForEachRow.Body>
-                  <ActivityAction x:TypeArguments="sd:DataRow">
-                    <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="sd:DataRow" Name="rowComentario" />
-                    </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="661,1700" sap2010:WorkflowViewState.IdRef="Sequence_58">
-                      <Sequence.Variables>
-                        <Variable x:TypeArguments="sd:DataTable" Name="dtRespuestas" />
-                        <Variable x:TypeArguments="x:String" Name="varRespuesta" />
-                      </Sequence.Variables>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <ui:NavigateTo Browser="[uiBrowser]" DisplayName="Navigate To URL (comentario)" sap:VirtualizedContainerService.HintSize="619,59" sap2010:WorkflowViewState.IdRef="NavigateTo_7" Url="[&quot;platzi.com&quot;+rowComentario(&quot;URL&quot;).ToString]">
+            <If Condition="[varRespuestaObtenerRepuestasComentario=&quot;Yes&quot;]" DisplayName="Si obtener respuestas es sí..." sap:VirtualizedContainerService.HintSize="856,1496" sap2010:WorkflowViewState.IdRef="If_31">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtComentariosAcumulados]" DisplayName="Navegar a cada comentario." sap:VirtualizedContainerService.HintSize="711,1349" sap2010:WorkflowViewState.IdRef="ForEachRow_10">
+                  <ui:ForEachRow.Body>
+                    <ActivityAction x:TypeArguments="sd:DataRow">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="sd:DataRow" Name="rowComentario" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="661,1202" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="sd:DataTable" Name="dtRespuestas" />
+                          <Variable x:TypeArguments="x:String" Name="varRespuesta" />
+                        </Sequence.Variables>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                      </ui:NavigateTo>
-                      <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[dtRespuestas]" DisplayName="Extract Structured Data Respuestas" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='article' class='Comment'/&gt;&lt;webctrl tag='div' class='Comment-wrapper' idx='1'/&gt;&lt;/row&gt;&lt;column exact='1' name='Respuesta' attr='text'&gt;&lt;webctrl tag='article' class='Comment'/&gt;&lt;webctrl tag='div' class='Comment-wrapper' idx='1' /&gt;&lt;webctrl tag='div' class='Comment-body' idx='1' /&gt;&lt;webctrl tag='div' class='Comment-content' idx='1' /&gt;&lt;webctrl tag='div' class='CommentContent-text isExpanded' idx='1' /&gt;&lt;webctrl parentid='container' tag='P' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Autor' attr='text'&gt;&lt;webctrl tag='article' class='Comment'/&gt;&lt;webctrl tag='div' class='Comment-wrapper' idx='1'/&gt;&lt;webctrl tag='div' class='CommentMeta' idx='1'/&gt;&lt;webctrl tag='div' class='CommentAuthor-container' idx='1'/&gt;&lt;webctrl tag='div' class='CommentAuthor' idx='1'/&gt;&lt;webctrl tag='a' class='CommentAuthor-name' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="619,106" sap2010:WorkflowViewState.IdRef="ExtractData_14" MaxNumberOfResults="0" SimulateClick="True">
-                        <ui:ExtractData.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0fb7808a-2adc-4a9e-a6c4-5e102d52568b" InformativeScreenshot="0bb4c0c49f6bdb89fd62a5158617ab41" Selector="&lt;webctrl css-selector='body&amp;gt;section&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;section' parentid='discussion-detail' tag='SECTION' /&gt;" TimeoutMS="1000" WaitForReady="COMPLETE" />
-                        </ui:ExtractData.Target>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </ui:ExtractData>
-                      <Assign sap:VirtualizedContainerService.HintSize="619,60" sap2010:WorkflowViewState.IdRef="Assign_35">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:String">[varRespuesta]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[string.Empty]</InArgument>
-                        </Assign.Value>
-                      </Assign>
-                      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtRespuestas]" DisplayName="Reccorrer DTRespuestas Encontradas" sap:VirtualizedContainerService.HintSize="619,354" sap2010:WorkflowViewState.IdRef="ForEachRow_9">
-                        <ui:ForEachRow.Body>
-                          <ActivityAction x:TypeArguments="sd:DataRow">
-                            <ActivityAction.Argument>
-                              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="rowRespuestas" />
-                            </ActivityAction.Argument>
-                            <If Condition="[string.IsNullOrEmpty(rowComentario(&quot;Respuestas&quot;).ToString)]" DisplayName="si rowComentario(&quot;Respuestas&quot;) es vacío..." sap:VirtualizedContainerService.HintSize="569,207" sap2010:WorkflowViewState.IdRef="If_34">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <If.Then>
-                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_37">
-                                  <Assign.To>
-                                    <OutArgument x:TypeArguments="x:String">[varRespuesta]</OutArgument>
-                                  </Assign.To>
-                                  <Assign.Value>
-                                    <InArgument x:TypeArguments="x:String">[rowRespuestas("Autor").ToString + " : " +rowRespuestas("Respuesta").ToString]</InArgument>
-                                  </Assign.Value>
-                                </Assign>
-                              </If.Then>
-                              <If.Else>
-                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_38">
-                                  <Assign.To>
-                                    <OutArgument x:TypeArguments="x:String">[varRespuesta]</OutArgument>
-                                  </Assign.To>
-                                  <Assign.Value>
-                                    <InArgument x:TypeArguments="x:String">[rowRespuestas("Autor").ToString + " : " +rowRespuestas("Respuesta").ToString]</InArgument>
-                                  </Assign.Value>
-                                </Assign>
-                              </If.Else>
-                            </If>
-                          </ActivityAction>
-                        </ui:ForEachRow.Body>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </ui:ForEachRow>
-                      <If Condition="[string.IsNullOrEmpty(varRespuesta)]" DisplayName="Si se encontró respuesta" sap:VirtualizedContainerService.HintSize="619,869" sap2010:WorkflowViewState.IdRef="If_33">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <If.Else>
-                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,722" sap2010:WorkflowViewState.IdRef="TryCatch_2">
-                            <TryCatch.Try>
-                              <Assign DisplayName="Escribir respuesta en Columna" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_36">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:Object">[rowComentario("Respuestas")]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:Object">[varRespuesta.ToString]</InArgument>
-                                </Assign.Value>
-                              </Assign>
-                            </TryCatch.Try>
-                            <TryCatch.Catches>
-                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,352" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                        <ui:NavigateTo Browser="[uiBrowser]" DisplayName="Navigate To URL (comentario)" sap:VirtualizedContainerService.HintSize="619,51" sap2010:WorkflowViewState.IdRef="NavigateTo_7" Url="[rowComentario(&quot;URL&quot;).ToString]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:NavigateTo>
+                        <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[dtRespuestas]" DisplayName="Extract Structured Data Respuestas" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='article' class='Comment'/&gt;&lt;webctrl tag='div' class='Comment-wrapper' idx='1'/&gt;&lt;/row&gt;&lt;column exact='1' name='Respuesta' attr='text'&gt;&lt;webctrl tag='article' class='Comment'/&gt;&lt;webctrl tag='div' class='Comment-wrapper' idx='1' /&gt;&lt;webctrl tag='div' class='Comment-body' idx='1' /&gt;&lt;webctrl tag='div' class='Comment-content' idx='1' /&gt;&lt;webctrl tag='div' class='CommentContent-text isExpanded' idx='1' /&gt;&lt;webctrl parentid='container' tag='P' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Autor' attr='text'&gt;&lt;webctrl tag='article' class='Comment'/&gt;&lt;webctrl tag='div' class='Comment-wrapper' idx='1'/&gt;&lt;webctrl tag='div' class='CommentMeta' idx='1'/&gt;&lt;webctrl tag='div' class='CommentAuthor-container' idx='1'/&gt;&lt;webctrl tag='div' class='CommentAuthor' idx='1'/&gt;&lt;webctrl tag='a' class='CommentAuthor-name' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="619,51" sap2010:WorkflowViewState.IdRef="ExtractData_14" MaxNumberOfResults="0" SimulateClick="True">
+                          <ui:ExtractData.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0fb7808a-2adc-4a9e-a6c4-5e102d52568b" InformativeScreenshot="0bb4c0c49f6bdb89fd62a5158617ab41" Selector="&lt;webctrl css-selector='body&amp;gt;section&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;section' parentid='discussion-detail' tag='SECTION' /&gt;" TimeoutMS="1000" WaitForReady="COMPLETE" />
+                          </ui:ExtractData.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:ExtractData>
+                        <Assign sap:VirtualizedContainerService.HintSize="619,60" sap2010:WorkflowViewState.IdRef="Assign_35">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[varRespuesta]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[string.Empty]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtRespuestas]" DisplayName="Reccorrer DTRespuestas Encontradas" sap:VirtualizedContainerService.HintSize="619,354" sap2010:WorkflowViewState.IdRef="ForEachRow_9">
+                          <ui:ForEachRow.Body>
+                            <ActivityAction x:TypeArguments="sd:DataRow">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="rowRespuestas" />
+                              </ActivityAction.Argument>
+                              <If Condition="[string.IsNullOrEmpty(rowComentario(&quot;Respuestas&quot;).ToString)]" DisplayName="si rowComentario(&quot;Respuestas&quot;) es vacío..." sap:VirtualizedContainerService.HintSize="569,207" sap2010:WorkflowViewState.IdRef="If_34">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ActivityAction x:TypeArguments="s:Exception">
-                                  <ActivityAction.Argument>
-                                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                                  </ActivityAction.Argument>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="376,283" sap2010:WorkflowViewState.IdRef="Sequence_61">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <Assign DisplayName="Escribir respuesta en Columna" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_39">
-                                      <Assign.To>
-                                        <OutArgument x:TypeArguments="x:Object">[rowComentario("Respuestas")]</OutArgument>
-                                      </Assign.To>
-                                      <Assign.Value>
-                                        <InArgument x:TypeArguments="x:Object">["Contiene respuestas demasiado largas para ser soportadas en esta versión."]</InArgument>
-                                      </Assign.Value>
-                                    </Assign>
-                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Error" Message="[&quot;No se pudo guardar el comentario, es demasiado extenso. &quot; + varRespuesta.Length.ToString + &quot; carácteres.&quot; + Environment.NewLine+exception.Message]" />
-                                  </Sequence>
-                                </ActivityAction>
-                              </Catch>
-                            </TryCatch.Catches>
-                          </TryCatch>
-                        </If.Else>
-                      </If>
-                    </Sequence>
-                  </ActivityAction>
-                </ui:ForEachRow.Body>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </ui:ForEachRow>
-            </If.Then>
-          </If>
+                                <If.Then>
+                                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_37">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[varRespuesta]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">[rowRespuestas("Autor").ToString + " : " +rowRespuestas("Respuesta").ToString]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </If.Then>
+                                <If.Else>
+                                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_38">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[varRespuesta]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">[rowRespuestas("Autor").ToString + " : " +rowRespuestas("Respuesta").ToString + Environment.NewLine+ varRespuesta]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </If.Else>
+                              </If>
+                            </ActivityAction>
+                          </ui:ForEachRow.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:ForEachRow>
+                        <If Condition="[string.IsNullOrEmpty(varRespuesta)]" DisplayName="Si se encontró respuesta" sap:VirtualizedContainerService.HintSize="619,434" sap2010:WorkflowViewState.IdRef="If_33">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Else>
+                            <TryCatch DisplayName="Intentar asignar Respuesta" sap:VirtualizedContainerService.HintSize="438,287" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                              <TryCatch.Variables>
+                                <Variable x:TypeArguments="x:String" Name="varRutaImagen" />
+                              </TryCatch.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <TryCatch.Try>
+                                <Assign DisplayName="Escribir respuesta en Columna" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_36">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Object">[rowComentario("Respuestas")]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Object">[varRespuesta.ToString]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </TryCatch.Try>
+                              <TryCatch.Catches>
+                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ActivityAction x:TypeArguments="s:Exception">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                    </ActivityAction.Argument>
+                                    <Sequence DisplayName="Si falla tomar SS y registrar." sap:VirtualizedContainerService.HintSize="376,279" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke TomarScreenShot workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="XAMLReusable/TomarScreenShot.xaml">
+                                        <ui:InvokeWorkflowFile.Arguments>
+                                          <OutArgument x:TypeArguments="x:String" x:Key="varRutaImagen">[varRutaImagen]</OutArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="varPathArchivo">[varPathArchivo]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="varNombre">[rowComentario("URL").ToString.Replace("platzi.com/comentario/","")]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="SelectorFoto">&lt;html app='firefox.exe' url='http*://*platzi.com/comentario*'/&gt;</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="varNombreExcel">[varNombreExcel]</InArgument>
+                                        </ui:InvokeWorkflowFile.Arguments>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:InvokeWorkflowFile>
+                                      <Assign DisplayName="Escribir respuesta en Columna" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_39">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Object">[rowComentario("Respuestas")]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:String">["Respuestas largas para ser soportadas en esta versión. Foto guardada en: " + varRutaImagen]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </Sequence>
+                                  </ActivityAction>
+                                </Catch>
+                              </TryCatch.Catches>
+                            </TryCatch>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ForEachRow.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:ForEachRow>
+              </If.Then>
+            </If>
+            <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="856,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
+          </Sequence>
         </ActivityAction>
       </ui:BrowserScope.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:BrowserScope>
