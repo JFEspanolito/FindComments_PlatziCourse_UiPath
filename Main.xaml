@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1101,1154" sap2010:WorkflowViewState.IdRef="Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:bec="clr-namespace:BalaReva.Excel.Comment;assembly=BalaReva.Excel" xmlns:bes="clr-namespace:BalaReva.Excel.Sheets;assembly=BalaReva.Excel" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1101,1194" sap2010:WorkflowViewState.IdRef="Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:bec="clr-namespace:BalaReva.Excel.Comment;assembly=BalaReva.Excel" xmlns:bes="clr-namespace:BalaReva.Excel.Sheets;assembly=BalaReva.Excel" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
       <x:String>System.Activities</x:String>
@@ -694,7 +694,7 @@
                                               <av:PointCollection x:Key="ConnectorLocation">270,77.04 270,124.5</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CerrarNavegador_PestañaPlatzi workflow" sap:VirtualizedContainerService.HintSize="360,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="XAMLReusable/CerrarNavegador_PestañaPlatzi.xaml">
+                                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CerrarNavegador_PestañaPlatzi workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="XAMLReusable/CerrarNavegador_PestañaPlatzi.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
                                               <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                             </ui:InvokeWorkflowFile.Arguments>
@@ -721,7 +721,7 @@
                               <av:PointCollection x:Key="ConnectorLocation">579.641666666667,631.04 579.641666666667,688 333,688 333,756.5</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence DisplayName="Obtener datos de sitio web" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                          <Sequence DisplayName="Obtener datos de sitio web" sap:VirtualizedContainerService.HintSize="618,1599" sap2010:WorkflowViewState.IdRef="Sequence_29">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="sd:DataTable" Name="dtClasesEncontradas" />
                               <Variable x:TypeArguments="ui:Browser" Name="uiBrowser" />
@@ -731,17 +731,17 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Firefox" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="485,699" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[uiBrowser]" Url="[urlRespuesta]">
+                            <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Firefox" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="576,51" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[uiBrowser]" Url="[urlRespuesta]">
                               <ui:OpenBrowser.Body>
                                 <ActivityAction x:TypeArguments="x:Object">
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                   </ActivityAction.Argument>
-                                  <Sequence DisplayName="Hacer en el navegador" sap:VirtualizedContainerService.HintSize="376,598" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                                  <Sequence DisplayName="Hacer en el navegador" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_1">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AutenticarEnPlatzi workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="XAMLReusable/AutenticarEnPlatzi.xaml">
@@ -800,12 +800,12 @@
                               </ui:OpenBrowser.Body>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:OpenBrowser>
-                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ObtenerComentariosPorClase workflow" sap:VirtualizedContainerService.HintSize="485,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="XAMLReusable/ObtenerComentariosPorClase.xaml">
+                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ObtenerComentariosPorClase workflow" sap:VirtualizedContainerService.HintSize="576,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="XAMLReusable/ObtenerComentariosPorClase.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
                                 <InArgument x:TypeArguments="sd:DataTable" x:Key="dtClasesEncontradas">[dtClasesEncontradas]</InArgument>
                                 <OutArgument x:TypeArguments="sd:DataTable" x:Key="dtComentariosAcumulados">[dtComentariosAcumulados]</OutArgument>
@@ -818,14 +818,10 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:InvokeWorkflowFile>
-                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AddExtraColumns workflow" sap:VirtualizedContainerService.HintSize="485,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="XAMLReusable/AddExtraColumns.xaml">
+                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AddExtraColumns workflow" sap:VirtualizedContainerService.HintSize="576,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="XAMLReusable/AddExtraColumns.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InOutArgument x:TypeArguments="sd:DataTable" x:Key="in_dtComentariosAcumulados">
-                                  <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtComentariosAcumulados" />
-                                </InOutArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_NombreDelCurso">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="varNombreDelCurso" />
-                                </InArgument>
+                                <InOutArgument x:TypeArguments="sd:DataTable" x:Key="in_dtComentariosAcumulados">[dtComentariosAcumulados]</InOutArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_NombreDelCurso">[varNombreDelCurso]</InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -834,7 +830,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:InvokeWorkflowFile>
-                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke MergeDTconExcelPrevio workflow" sap:VirtualizedContainerService.HintSize="485,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="XAMLReusable/MergeDTconExcelPrevio.xaml">
+                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke MergeDTconExcelPrevio workflow" sap:VirtualizedContainerService.HintSize="576,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="XAMLReusable/MergeDTconExcelPrevio.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
                                 <InOutArgument x:TypeArguments="sd:DataTable" x:Key="in_out_dtComentariosAcumulados">[dtComentariosAcumulados]</InOutArgument>
                                 <InArgument x:TypeArguments="x:Boolean" x:Key="in_RemoverDuplicados">True</InArgument>
@@ -846,28 +842,43 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:InvokeWorkflowFile>
-                            <ui:RemoveDuplicateRows DataTable="[dtComentariosAcumulados]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="485,22" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_2" OutputDataTable="[dtComentariosAcumulados]" />
-                            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtComentariosAcumulados]" DisplayName="Corregir url" sap:VirtualizedContainerService.HintSize="485,300" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                            <ui:RemoveDuplicateRows DataTable="[dtComentariosAcumulados]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="576,22" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_2" OutputDataTable="[dtComentariosAcumulados]" />
+                            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtComentariosAcumulados]" DisplayName="Corregir url" sap:VirtualizedContainerService.HintSize="576,696" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                               <ui:ForEachRow.Body>
                                 <ActivityAction x:TypeArguments="sd:DataRow">
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                                   </ActivityAction.Argument>
-                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                                  <Sequence DisplayName="Corregir url, según situación:" sap:VirtualizedContainerService.HintSize="526,548" sap2010:WorkflowViewState.IdRef="Sequence_62">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Assign DisplayName="Añadir &quot;platzi.com&quot; a la url extraida" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_16">
-                                      <Assign.To>
-                                        <OutArgument x:TypeArguments="x:Object">[row("URL")]</OutArgument>
-                                      </Assign.To>
-                                      <Assign.Value>
-                                        <InArgument x:TypeArguments="x:Object">["platzi.com"+row("URL").ToString.Replace(" ","")]</InArgument>
-                                      </Assign.Value>
-                                    </Assign>
+                                    <If Condition="[row(&quot;URL&quot;).ToString.Contains(&quot;platzi.com&quot;)]" DisplayName="Si no contiene &quot;platzi.com&quot;" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_32">
+                                      <If.Else>
+                                        <Assign DisplayName="Añadir &quot;platzi.com&quot; a la url extraida" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:Object">[row("URL")]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:Object">["platzi.com"+row("URL").ToString.Replace(" ","")]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                      </If.Else>
+                                    </If>
+                                    <If Condition="[row(&quot;URL&quot;).ToString.Contains(&quot;platzi.complatzi.com&quot;)]" DisplayName="Si contiene &quot;platzi.complatzi.com&quot;" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_33">
+                                      <If.Then>
+                                        <Assign DisplayName="Añadir &quot;platzi.com&quot; a la url extraida" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:Object">[row("URL")]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">[row("URL").ToString.Replace("platzi.complatzi.com","platzi.com")]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                      </If.Then>
+                                    </If>
                                   </Sequence>
                                 </ActivityAction>
                               </ui:ForEachRow.Body>
@@ -878,8 +889,8 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:ForEachRow>
-                            <ui:RemoveDuplicateRows DataTable="[dtComentariosAcumulados]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="485,22" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_3" OutputDataTable="[dtComentariosAcumulados]" />
-                            <If Condition="[dtComentariosAcumulados.Rows.Count&gt;0]" DisplayName="Si hay registros" sap:VirtualizedContainerService.HintSize="485,51" sap2010:WorkflowViewState.IdRef="If_31">
+                            <ui:RemoveDuplicateRows DataTable="[dtComentariosAcumulados]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="576,22" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_3" OutputDataTable="[dtComentariosAcumulados]" />
+                            <If Condition="[dtComentariosAcumulados.Rows.Count&gt;0]" DisplayName="Si hay registros" sap:VirtualizedContainerService.HintSize="576,51" sap2010:WorkflowViewState.IdRef="If_31">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -922,8 +933,8 @@
                                 </Sequence>
                               </If.Then>
                             </If>
-                            <ui:RemoveDuplicateRows DataTable="[dtComentariosAcumulados]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="485,22" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_4" OutputDataTable="[dtComentariosAcumulados]" />
-                            <ui:CloseTab Browser="[uiBrowser]" ContinueOnError="True" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="485,22" sap2010:WorkflowViewState.IdRef="CloseTab_5" />
+                            <ui:RemoveDuplicateRows DataTable="[dtComentariosAcumulados]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="576,22" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_4" OutputDataTable="[dtComentariosAcumulados]" />
+                            <ui:CloseTab Browser="[uiBrowser]" ContinueOnError="True" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="576,22" sap2010:WorkflowViewState.IdRef="CloseTab_5" />
                           </Sequence>
                           <FlowStep.Next>
                             <x:Reference>__ReferenceID1</x:Reference>
