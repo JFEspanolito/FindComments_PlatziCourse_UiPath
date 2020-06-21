@@ -721,7 +721,7 @@
                               <av:PointCollection x:Key="ConnectorLocation">579.641666666667,631.04 579.641666666667,688 333,688 333,756.5</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence DisplayName="Obtener datos de sitio web" sap:VirtualizedContainerService.HintSize="618,1599" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                          <Sequence DisplayName="Obtener datos de sitio web" sap:VirtualizedContainerService.HintSize="395,768" sap2010:WorkflowViewState.IdRef="Sequence_29">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="sd:DataTable" Name="dtClasesEncontradas" />
                               <Variable x:TypeArguments="ui:Browser" Name="uiBrowser" />
@@ -731,7 +731,7 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Firefox" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="576,51" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[uiBrowser]" Url="[urlRespuesta]">
+                            <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Firefox" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="353,51" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[uiBrowser]" Url="[urlRespuesta]">
                               <ui:OpenBrowser.Body>
                                 <ActivityAction x:TypeArguments="x:Object">
                                   <ActivityAction.Argument>
@@ -805,7 +805,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:OpenBrowser>
-                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ObtenerComentariosPorClase workflow" sap:VirtualizedContainerService.HintSize="576,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="XAMLReusable/ObtenerComentariosPorClase.xaml">
+                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ObtenerComentariosPorClase workflow" sap:VirtualizedContainerService.HintSize="353,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="XAMLReusable/ObtenerComentariosPorClase.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
                                 <InArgument x:TypeArguments="sd:DataTable" x:Key="dtClasesEncontradas">[dtClasesEncontradas]</InArgument>
                                 <OutArgument x:TypeArguments="sd:DataTable" x:Key="dtComentariosAcumulados">[dtComentariosAcumulados]</OutArgument>
@@ -818,7 +818,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:InvokeWorkflowFile>
-                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AddExtraColumns workflow" sap:VirtualizedContainerService.HintSize="576,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="XAMLReusable/AddExtraColumns.xaml">
+                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AddExtraColumns workflow" sap:VirtualizedContainerService.HintSize="353,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="XAMLReusable/AddExtraColumns.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
                                 <InOutArgument x:TypeArguments="sd:DataTable" x:Key="in_dtComentariosAcumulados">[dtComentariosAcumulados]</InOutArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="in_NombreDelCurso">[varNombreDelCurso]</InArgument>
@@ -830,20 +830,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:InvokeWorkflowFile>
-                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke MergeDTconExcelPrevio workflow" sap:VirtualizedContainerService.HintSize="576,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="XAMLReusable/MergeDTconExcelPrevio.xaml">
-                              <ui:InvokeWorkflowFile.Arguments>
-                                <InOutArgument x:TypeArguments="sd:DataTable" x:Key="in_out_dtComentariosAcumulados">[dtComentariosAcumulados]</InOutArgument>
-                                <InArgument x:TypeArguments="x:Boolean" x:Key="in_RemoverDuplicados">True</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="varPathArchivo">[varPathArchivo]</InArgument>
-                              </ui:InvokeWorkflowFile.Arguments>
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </ui:InvokeWorkflowFile>
-                            <ui:RemoveDuplicateRows DataTable="[dtComentariosAcumulados]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="576,22" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_2" OutputDataTable="[dtComentariosAcumulados]" />
-                            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtComentariosAcumulados]" DisplayName="Corregir url" sap:VirtualizedContainerService.HintSize="576,696" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtComentariosAcumulados]" DisplayName="Corregir url" sap:VirtualizedContainerService.HintSize="353,51" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                               <ui:ForEachRow.Body>
                                 <ActivityAction x:TypeArguments="sd:DataRow">
                                   <ActivityAction.Argument>
@@ -884,13 +871,24 @@
                               </ui:ForEachRow.Body>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:ForEachRow>
-                            <ui:RemoveDuplicateRows DataTable="[dtComentariosAcumulados]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="576,22" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_3" OutputDataTable="[dtComentariosAcumulados]" />
-                            <If Condition="[dtComentariosAcumulados.Rows.Count&gt;0]" DisplayName="Si hay registros" sap:VirtualizedContainerService.HintSize="576,51" sap2010:WorkflowViewState.IdRef="If_31">
+                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke MergeDTconExcelPrevio workflow" sap:VirtualizedContainerService.HintSize="353,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="XAMLReusable/MergeDTconExcelPrevio.xaml">
+                              <ui:InvokeWorkflowFile.Arguments>
+                                <InOutArgument x:TypeArguments="sd:DataTable" x:Key="in_out_dtComentariosAcumulados">[dtComentariosAcumulados]</InOutArgument>
+                                <InArgument x:TypeArguments="x:Boolean" x:Key="in_RemoverDuplicados">True</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="varPathArchivo">[varPathArchivo]</InArgument>
+                              </ui:InvokeWorkflowFile.Arguments>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:InvokeWorkflowFile>
+                            <If Condition="[dtComentariosAcumulados.Rows.Count&gt;0]" DisplayName="Si hay registros" sap:VirtualizedContainerService.HintSize="353,51" sap2010:WorkflowViewState.IdRef="If_31">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -933,8 +931,7 @@
                                 </Sequence>
                               </If.Then>
                             </If>
-                            <ui:RemoveDuplicateRows DataTable="[dtComentariosAcumulados]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="576,22" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_4" OutputDataTable="[dtComentariosAcumulados]" />
-                            <ui:CloseTab Browser="[uiBrowser]" ContinueOnError="True" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="576,22" sap2010:WorkflowViewState.IdRef="CloseTab_5" />
+                            <ui:CloseTab Browser="[uiBrowser]" ContinueOnError="True" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="353,22" sap2010:WorkflowViewState.IdRef="CloseTab_5" />
                           </Sequence>
                           <FlowStep.Next>
                             <x:Reference>__ReferenceID1</x:Reference>
