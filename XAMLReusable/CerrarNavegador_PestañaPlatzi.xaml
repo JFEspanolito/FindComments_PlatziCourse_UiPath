@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CerrarNavegador_PestañaPlatzi" sap:VirtualizedContainerService.HintSize="1101,839" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CerrarNavegador_PestañaPlatzi" sap:VirtualizedContainerService.HintSize="1043,839" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="32">
+    <scg:List x:TypeArguments="x:String" Capacity="17">
       <x:String>System.Activities</x:String>
       <x:String>System</x:String>
       <x:String>System.Collections</x:String>
@@ -21,7 +21,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="16">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="12">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
@@ -36,9 +36,10 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Cerrar navegadores con &quot;platzi.com&quot;" sap:VirtualizedContainerService.HintSize="699,734" sap2010:WorkflowViewState.IdRef="Sequence_63">
+  <Sequence DisplayName="Cerrar navegadores con &quot;platzi.com&quot;" sap:VirtualizedContainerService.HintSize="454,708" sap2010:WorkflowViewState.IdRef="Sequence_63">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="existePestanaPlatzi" />
+      <Variable x:TypeArguments="x:Int32" Name="varContador" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -46,15 +47,23 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="657,642" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+    <Assign sap:VirtualizedContainerService.HintSize="412,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[varContador]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">1</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="412,516" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
       <ui:InterruptibleDoWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="621,477" sap2010:WorkflowViewState.IdRef="Sequence_62">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,351" sap2010:WorkflowViewState.IdRef="Sequence_62">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:UiElementExists DisplayName="Element Exists - Pestaña en &quot;platzi.com&quot;" Exists="[existePestanaPlatzi]" sap:VirtualizedContainerService.HintSize="579,68" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+          <ui:UiElementExists DisplayName="Element Exists - Pestaña en &quot;platzi.com&quot;" Exists="[existePestanaPlatzi]" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
             <ui:UiElementExists.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="79dd4bb3-77c5-4fbf-a218-d20fa7024a61" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/*' /&gt;" TimeoutMS="3000">
                 <ui:Target.WaitForReady>
@@ -63,24 +72,38 @@
               </ui:Target>
             </ui:UiElementExists.Target>
           </ui:UiElementExists>
-          <If Condition="[existePestanaPlatzi]" DisplayName="Si existe pestaña...cerrar" sap:VirtualizedContainerService.HintSize="579,277" sap2010:WorkflowViewState.IdRef="If_32">
+          <If Condition="[existePestanaPlatzi]" DisplayName="Si existe pestaña...cerrar" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="If_32">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <ui:BrowserScope Browser="{x:Null}" BrowserType="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="434,130" sap2010:WorkflowViewState.IdRef="BrowserScope_1" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/*' /&gt;">
+              <ui:BrowserScope Browser="{x:Null}" BrowserType="{x:Null}" SearchScope="{x:Null}" UiBrowser="{x:Null}" ContinueOnError="True" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="434,130" sap2010:WorkflowViewState.IdRef="BrowserScope_1" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/*' /&gt;" TimeoutMS="2000">
                 <ui:BrowserScope.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                     </ActivityAction.Argument>
-                    <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_6" />
+                    <ui:CloseTab Browser="{x:Null}" ContinueOnError="True" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_6" />
                   </ActivityAction>
                 </ui:BrowserScope.Body>
               </ui:BrowserScope>
             </If.Then>
           </If>
+          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[varContador]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">[varContador+1]</InArgument>
+            </Assign.Value>
+          </Assign>
         </Sequence>
       </ui:InterruptibleDoWhile.Body>
       <ui:InterruptibleDoWhile.Condition>
-        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="existePestanaPlatzi" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
+        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="existePestanaPlatzi and varContador &lt; 3" />
       </ui:InterruptibleDoWhile.Condition>
     </ui:InterruptibleDoWhile>
   </Sequence>
