@@ -7,7 +7,7 @@
   <this:ObtenerComentariosPorClase.uiBrowser>
     <InArgument x:TypeArguments="ui:Browser" />
   </this:ObtenerComentariosPorClase.uiBrowser>
-  <sap:VirtualizedContainerService.HintSize>1926,2719</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1170,2565</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="34">
@@ -60,7 +60,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="ObtenerComentariosPorClase" sap:VirtualizedContainerService.HintSize="1936,2654" sap2010:WorkflowViewState.IdRef="Sequence_54">
+  <Sequence DisplayName="ObtenerComentariosPorClase" sap:VirtualizedContainerService.HintSize="965,2460" sap2010:WorkflowViewState.IdRef="Sequence_54">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="varContador" />
     </Sequence.Variables>
@@ -70,7 +70,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1894,230" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="923,230" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_55">
           <sap:WorkflowViewStateService.ViewState>
@@ -89,19 +89,19 @@
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
-    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[uiBrowser]" BrowserType="Firefox" DisplayName="Seleccionar Navegador" sap:VirtualizedContainerService.HintSize="1894,2292" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
+    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[uiBrowser]" BrowserType="Firefox" DisplayName="Seleccionar Navegador" sap:VirtualizedContainerService.HintSize="923,2098" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtClasesEncontradas]" DisplayName="Recorrer cada clase" sap:VirtualizedContainerService.HintSize="1860,2184" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+          <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtClasesEncontradas]" DisplayName="Recorrer cada clase" sap:VirtualizedContainerService.HintSize="889,1990" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Con el registro del DT hacer" sap:VirtualizedContainerService.HintSize="1810,2037" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                <Sequence DisplayName="Con el registro del DT hacer" sap:VirtualizedContainerService.HintSize="839,1843" sap2010:WorkflowViewState.IdRef="Sequence_53">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="hayVideo" />
                     <Variable x:TypeArguments="sd:DataTable" Name="dtComentariosEncontrados" />
@@ -112,7 +112,7 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:NavigateTo Browser="[uiBrowser]" DisplayName="Navigate To URL (clase)" sap:VirtualizedContainerService.HintSize="1768,59" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="[&quot;platzi.com&quot;+row(&quot;URLClase&quot;).ToString]">
+                  <ui:NavigateTo Browser="[uiBrowser]" DisplayName="Navigate To URL (clase)" sap:VirtualizedContainerService.HintSize="797,59" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="[&quot;platzi.com&quot;+row(&quot;URLClase&quot;).ToString]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -120,8 +120,8 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:NavigateTo>
-                  <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="1768,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
-                  <ui:UiElementExists DisplayName="¿Existe Video?" Exists="[hayVideo]" sap:VirtualizedContainerService.HintSize="1768,68" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
+                  <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="797,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
+                  <ui:UiElementExists DisplayName="¿Existe Video?" Exists="[hayVideo]" sap:VirtualizedContainerService.HintSize="797,68" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
                     <ui:UiElementExists.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e73f09a6-270f-4105-ad7b-2485575f02a4" Selector="&lt;webctrl tag='VIDEO' /&gt;" TimeoutMS="2000">
                         <ui:Target.WaitForReady>
@@ -136,7 +136,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:UiElementExists>
-                  <If Condition="[hayVideo]" DisplayName="Si hay video hacer..." sap:VirtualizedContainerService.HintSize="1768,1259" sap2010:WorkflowViewState.IdRef="If_30">
+                  <If Condition="[hayVideo]" DisplayName="Si hay video hacer..." sap:VirtualizedContainerService.HintSize="797,1065" sap2010:WorkflowViewState.IdRef="If_30">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -144,14 +144,14 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence DisplayName="Requiere pausar video" sap:VirtualizedContainerService.HintSize="884,1019" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                      <Sequence DisplayName="Requiere pausar video" sap:VirtualizedContainerService.HintSize="376,918" sap2010:WorkflowViewState.IdRef="Sequence_49">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:Hover DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ContinueOnError="True" DisplayName="Hover Video" sap:VirtualizedContainerService.HintSize="842,106" sap2010:WorkflowViewState.IdRef="Hover_2" SimulateHover="True">
+                        <ui:Hover DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ContinueOnError="True" DisplayName="Hover Video" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Hover_2" SimulateHover="True">
                           <ui:Hover.CursorPosition>
                             <ui:CursorPosition Position="Center">
                               <ui:CursorPosition.OffsetX>
@@ -179,11 +179,11 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:Hover>
-                        <Parallel sap:VirtualizedContainerService.HintSize="842,152" sap2010:WorkflowViewState.IdRef="Parallel_2">
+                        <Parallel sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="Parallel_2">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click Pausa" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
@@ -229,7 +229,7 @@
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:ExtractData>
                         </Parallel>
-                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InicializardtAcumulado workflow" sap:VirtualizedContainerService.HintSize="842,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="XAMLReusable/InicializardtAcumulado.xaml">
+                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InicializardtAcumulado workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="XAMLReusable/InicializardtAcumulado.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="sd:DataTable" x:Key="dtComentariosEncontrados">[dtComentariosEncontrados]</InArgument>
                             <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dtComentariosAcumulados">[dtComentariosAcumulados]</InOutArgument>
@@ -240,9 +240,9 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:InvokeWorkflowFile>
-                        <ui:RemoveDuplicateRows DataTable="[dtComentariosEncontrados]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="842,22" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_1" OutputDataTable="[dtComentariosEncontrados]" />
-                        <ui:MergeDataTable Destination="[dtComentariosAcumulados]" DisplayName="Merge dtEncontrados en dtAcumulados" sap:VirtualizedContainerService.HintSize="842,22" sap2010:WorkflowViewState.IdRef="MergeDataTable_10" MissingSchemaAction="Add" Source="[dtComentariosEncontrados]" />
-                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click en Preguntas" sap:VirtualizedContainerService.HintSize="842,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                        <ui:RemoveDuplicateRows DataTable="[dtComentariosEncontrados]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_1" OutputDataTable="[dtComentariosEncontrados]" />
+                        <ui:MergeDataTable Destination="[dtComentariosAcumulados]" DisplayName="Merge dtEncontrados en dtAcumulados" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="MergeDataTable_10" MissingSchemaAction="Add" Source="[dtComentariosEncontrados]" />
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click en Preguntas" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                           <ui:Click.CursorPosition>
                             <ui:CursorPosition Position="Center">
                               <ui:CursorPosition.OffsetX>
@@ -269,7 +269,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:Click>
-                        <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[dtComentariosEncontrados]" DisplayName="Extract Structured Data Comentarios" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' class='Live VideoMaterialLayout-background' idx='1'/&gt;&lt;webctrl tag='div' class='Live-chat-content' idx='1'/&gt;&lt;webctrl tag='div' class='Live-chat VideoMaterialLayout-tabs' idx='1'/&gt;&lt;webctrl tag='section' class='TabSystem NoteSystem TabWrapper' idx='1'/&gt;&lt;webctrl tag='div' class='TabSystem-panels' idx='1'/&gt;&lt;webctrl tag='div' class='MaterialTabs-content' idx='1'/&gt;&lt;webctrl tag='div' class='CardsContainer' idx='1'/&gt;&lt;webctrl tag='div' class='CardList' idx='1'/&gt;&lt;webctrl tag='div' class='InfinityScrollLayout' idx='1'/&gt;&lt;webctrl tag='div' class='Card'/&gt;&lt;/row&gt;&lt;column exact='1' name='Nombre' attr='text'&gt;&lt;webctrl tag='div' class='Live VideoMaterialLayout-background' idx='1'/&gt;&lt;webctrl tag='div' class='Live-chat-content' idx='1'/&gt;&lt;webctrl tag='div' class='Live-chat VideoMaterialLayout-tabs' idx='1'/&gt;&lt;webctrl tag='section' class='TabSystem NoteSystem TabWrapper' idx='1'/&gt;&lt;webctrl tag='div' class='TabSystem-panels' idx='1'/&gt;&lt;webctrl tag='div' class='MaterialTabs-content' idx='1'/&gt;&lt;webctrl tag='div' class='CardsContainer' idx='1'/&gt;&lt;webctrl tag='div' class='CardList' idx='1'/&gt;&lt;webctrl tag='div' class='InfinityScrollLayout' idx='1'/&gt;&lt;webctrl tag='div' class='Card'/&gt;&lt;webctrl tag='div' class='Card-top' idx='1'/&gt;&lt;webctrl tag='div' class='Card-top-left' idx='1'/&gt;&lt;webctrl tag='div' class='Card-top-name' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='Comentario' attr='text'&gt;&lt;webctrl tag='div' class='Live VideoMaterialLayout-background' idx='1'/&gt;&lt;webctrl tag='div' class='Live-chat-content' idx='1'/&gt;&lt;webctrl tag='div' class='Live-chat VideoMaterialLayout-tabs' idx='1'/&gt;&lt;webctrl tag='section' class='TabSystem NoteSystem TabWrapper' idx='1'/&gt;&lt;webctrl tag='div' class='TabSystem-panels' idx='1'/&gt;&lt;webctrl tag='div' class='MaterialTabs-content' idx='1'/&gt;&lt;webctrl tag='div' class='CardsContainer' idx='1'/&gt;&lt;webctrl tag='div' class='CardList' idx='1'/&gt;&lt;webctrl tag='div' class='InfinityScrollLayout' idx='1'/&gt;&lt;webctrl tag='div' class='Card'/&gt;&lt;webctrl tag='div' class='Card-middle' idx='1'/&gt;&lt;webctrl tag='div' class='Card-content' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='URL' attr='href'&gt;&lt;webctrl tag='div' class='Live VideoMaterialLayout-background' idx='1'/&gt;&lt;webctrl tag='div' class='Live-chat-content' idx='1'/&gt;&lt;webctrl tag='div' class='Live-chat VideoMaterialLayout-tabs' idx='1'/&gt;&lt;webctrl tag='section' class='TabSystem NoteSystem TabWrapper' idx='1'/&gt;&lt;webctrl tag='div' class='TabSystem-panels' idx='1'/&gt;&lt;webctrl tag='div' class='MaterialTabs-content' idx='1'/&gt;&lt;webctrl tag='div' class='CardsContainer' idx='1'/&gt;&lt;webctrl tag='div' class='CardList' idx='1'/&gt;&lt;webctrl tag='div' class='InfinityScrollLayout' idx='1'/&gt;&lt;webctrl tag='div' class='Card'/&gt;&lt;webctrl tag='div' class='Card-middle' idx='1'/&gt;&lt;webctrl tag='a' class='Card-anchor' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='Corazon' attr='text'&gt;&lt;webctrl tag='div' class='Live VideoMaterialLayout-background' idx='1'/&gt;&lt;webctrl tag='div' class='Live-chat-content' idx='1'/&gt;&lt;webctrl tag='div' class='Live-chat VideoMaterialLayout-tabs' idx='1'/&gt;&lt;webctrl tag='section' class='TabSystem NoteSystem TabWrapper' idx='1'/&gt;&lt;webctrl tag='div' class='TabSystem-panels' idx='1'/&gt;&lt;webctrl tag='div' class='MaterialTabs-content' idx='1'/&gt;&lt;webctrl tag='div' class='CardsContainer' idx='1'/&gt;&lt;webctrl tag='div' class='CardList' idx='1'/&gt;&lt;webctrl tag='div' class='InfinityScrollLayout' idx='1'/&gt;&lt;webctrl tag='div' class='Card'/&gt;&lt;webctrl tag='div' class='Card-bottom' idx='1'/&gt;&lt;webctrl tag='div' class='Card-bottom-left' idx='1'/&gt;&lt;webctrl tag='div' class='Card-bottom-star' idx='1'/&gt;&lt;webctrl tag='div' class='Star is-level-1 is-small is-card' idx='1'/&gt;&lt;webctrl tag='span' class='Star-number' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="842,68" sap2010:WorkflowViewState.IdRef="ExtractData_18" MaxNumberOfResults="0" SimulateClick="True">
+                        <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[dtComentariosEncontrados]" DisplayName="Extract Structured Data Comentarios" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' class='Live VideoMaterialLayout-background' idx='1'/&gt;&lt;webctrl tag='div' class='Live-chat-content' idx='1'/&gt;&lt;webctrl tag='div' class='Live-chat VideoMaterialLayout-tabs' idx='1'/&gt;&lt;webctrl tag='section' class='TabSystem NoteSystem TabWrapper' idx='1'/&gt;&lt;webctrl tag='div' class='TabSystem-panels' idx='1'/&gt;&lt;webctrl tag='div' class='MaterialTabs-content' idx='1'/&gt;&lt;webctrl tag='div' class='CardsContainer' idx='1'/&gt;&lt;webctrl tag='div' class='CardList' idx='1'/&gt;&lt;webctrl tag='div' class='InfinityScrollLayout' idx='1'/&gt;&lt;webctrl tag='div' class='Card'/&gt;&lt;/row&gt;&lt;column exact='1' name='Nombre' attr='text'&gt;&lt;webctrl tag='div' class='Live VideoMaterialLayout-background' idx='1'/&gt;&lt;webctrl tag='div' class='Live-chat-content' idx='1'/&gt;&lt;webctrl tag='div' class='Live-chat VideoMaterialLayout-tabs' idx='1'/&gt;&lt;webctrl tag='section' class='TabSystem NoteSystem TabWrapper' idx='1'/&gt;&lt;webctrl tag='div' class='TabSystem-panels' idx='1'/&gt;&lt;webctrl tag='div' class='MaterialTabs-content' idx='1'/&gt;&lt;webctrl tag='div' class='CardsContainer' idx='1'/&gt;&lt;webctrl tag='div' class='CardList' idx='1'/&gt;&lt;webctrl tag='div' class='InfinityScrollLayout' idx='1'/&gt;&lt;webctrl tag='div' class='Card'/&gt;&lt;webctrl tag='div' class='Card-top' idx='1'/&gt;&lt;webctrl tag='div' class='Card-top-left' idx='1'/&gt;&lt;webctrl tag='div' class='Card-top-name' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='Comentario' attr='text'&gt;&lt;webctrl tag='div' class='Live VideoMaterialLayout-background' idx='1'/&gt;&lt;webctrl tag='div' class='Live-chat-content' idx='1'/&gt;&lt;webctrl tag='div' class='Live-chat VideoMaterialLayout-tabs' idx='1'/&gt;&lt;webctrl tag='section' class='TabSystem NoteSystem TabWrapper' idx='1'/&gt;&lt;webctrl tag='div' class='TabSystem-panels' idx='1'/&gt;&lt;webctrl tag='div' class='MaterialTabs-content' idx='1'/&gt;&lt;webctrl tag='div' class='CardsContainer' idx='1'/&gt;&lt;webctrl tag='div' class='CardList' idx='1'/&gt;&lt;webctrl tag='div' class='InfinityScrollLayout' idx='1'/&gt;&lt;webctrl tag='div' class='Card'/&gt;&lt;webctrl tag='div' class='Card-middle' idx='1'/&gt;&lt;webctrl tag='div' class='Card-content' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='URL' attr='href'&gt;&lt;webctrl tag='div' class='Live VideoMaterialLayout-background' idx='1'/&gt;&lt;webctrl tag='div' class='Live-chat-content' idx='1'/&gt;&lt;webctrl tag='div' class='Live-chat VideoMaterialLayout-tabs' idx='1'/&gt;&lt;webctrl tag='section' class='TabSystem NoteSystem TabWrapper' idx='1'/&gt;&lt;webctrl tag='div' class='TabSystem-panels' idx='1'/&gt;&lt;webctrl tag='div' class='MaterialTabs-content' idx='1'/&gt;&lt;webctrl tag='div' class='CardsContainer' idx='1'/&gt;&lt;webctrl tag='div' class='CardList' idx='1'/&gt;&lt;webctrl tag='div' class='InfinityScrollLayout' idx='1'/&gt;&lt;webctrl tag='div' class='Card'/&gt;&lt;webctrl tag='div' class='Card-middle' idx='1'/&gt;&lt;webctrl tag='a' class='Card-anchor' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='Corazon' attr='text'&gt;&lt;webctrl tag='div' class='Live VideoMaterialLayout-background' idx='1'/&gt;&lt;webctrl tag='div' class='Live-chat-content' idx='1'/&gt;&lt;webctrl tag='div' class='Live-chat VideoMaterialLayout-tabs' idx='1'/&gt;&lt;webctrl tag='section' class='TabSystem NoteSystem TabWrapper' idx='1'/&gt;&lt;webctrl tag='div' class='TabSystem-panels' idx='1'/&gt;&lt;webctrl tag='div' class='MaterialTabs-content' idx='1'/&gt;&lt;webctrl tag='div' class='CardsContainer' idx='1'/&gt;&lt;webctrl tag='div' class='CardList' idx='1'/&gt;&lt;webctrl tag='div' class='InfinityScrollLayout' idx='1'/&gt;&lt;webctrl tag='div' class='Card'/&gt;&lt;webctrl tag='div' class='Card-bottom' idx='1'/&gt;&lt;webctrl tag='div' class='Card-bottom-left' idx='1'/&gt;&lt;webctrl tag='div' class='Card-bottom-star' idx='1'/&gt;&lt;webctrl tag='div' class='Star is-level-1 is-small is-card' idx='1'/&gt;&lt;webctrl tag='span' class='Star-number' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="ExtractData_18" MaxNumberOfResults="0" SimulateClick="True">
                           <ui:ExtractData.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="257251f4-33a8-43a5-80f6-f2b3e5b95350" Selector="&lt;webctrl id='video-content' tag='DIV' /&gt;" WaitForReady="COMPLETE">
                               <ui:Target.TimeoutMS>
@@ -283,19 +283,19 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:ExtractData>
-                        <ui:RemoveDuplicateRows DataTable="[dtComentariosEncontrados]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="842,22" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_2" OutputDataTable="[dtComentariosEncontrados]" />
-                        <ui:MergeDataTable Destination="[dtComentariosAcumulados]" DisplayName="Merge dtEncontrados en dtAcumulados" sap:VirtualizedContainerService.HintSize="842,22" sap2010:WorkflowViewState.IdRef="MergeDataTable_7" MissingSchemaAction="Add" Source="[dtComentariosEncontrados]" />
+                        <ui:RemoveDuplicateRows DataTable="[dtComentariosEncontrados]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_2" OutputDataTable="[dtComentariosEncontrados]" />
+                        <ui:MergeDataTable Destination="[dtComentariosAcumulados]" DisplayName="Merge dtEncontrados en dtAcumulados" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="MergeDataTable_7" MissingSchemaAction="Add" Source="[dtComentariosEncontrados]" />
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence DisplayName="Validar Si hay Video de Youtube" sap:VirtualizedContainerService.HintSize="839,1112" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                      <Sequence DisplayName="Validar Si hay Video de Youtube" sap:VirtualizedContainerService.HintSize="376,289" sap2010:WorkflowViewState.IdRef="Sequence_52">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:UiElementExists DisplayName="¿Existe Video Youtube?" Exists="[hayVideo]" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
+                        <ui:UiElementExists DisplayName="¿Existe Video Youtube?" Exists="[hayVideo]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
                           <ui:UiElementExists.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e73f09a6-270f-4105-ad7b-2485575f02a4" InformativeScreenshot="10ace9f9c3b7e722f5dd3f41d70168e2" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/clases*' /&gt;&lt;webctrl src='*' tag='IFRAME' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='1' isleaf='1' parentid='player_uid_*_*' tag='DIV' /&gt;" TimeoutMS="2000">
                               <ui:Target.WaitForReady>
@@ -310,11 +310,11 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:UiElementExists>
-                        <If Condition="[hayVideo]" DisplayName="Validar si es vídeo de Youtube" sap:VirtualizedContainerService.HintSize="797,874" sap2010:WorkflowViewState.IdRef="If_29">
+                        <If Condition="[hayVideo]" DisplayName="Validar si es vídeo de Youtube" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="If_29">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
@@ -416,7 +416,7 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1768,377" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="797,377" sap2010:WorkflowViewState.IdRef="CommentOut_2">
                     <ui:CommentOut.Body>
                       <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="549,299" sap2010:WorkflowViewState.IdRef="Sequence_56">
                         <sap:WorkflowViewStateService.ViewState>

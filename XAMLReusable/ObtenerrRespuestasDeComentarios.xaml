@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ObtenerrRespuestasDeComentarios" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ObtenerrRespuestasDeComentarios" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="varRespuestaObtenerRepuestasComentario" Type="InArgument(x:String)" />
     <x:Property Name="dtComentariosAcumulados" Type="InOutArgument(sd:DataTable)" />
@@ -9,7 +9,7 @@
   <this:ObtenerrRespuestasDeComentarios.uiBrowser>
     <InArgument x:TypeArguments="ui:Browser" />
   </this:ObtenerrRespuestasDeComentarios.uiBrowser>
-  <sap:VirtualizedContainerService.HintSize>1101,1995</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1169,1436</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="17">
@@ -61,27 +61,27 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="ObtenerRespuestasComentarios" sap:VirtualizedContainerService.HintSize="974,1890" sap2010:WorkflowViewState.IdRef="Sequence_60">
+  <Sequence DisplayName="ObtenerRespuestasComentarios" sap:VirtualizedContainerService.HintSize="689,1331" sap2010:WorkflowViewState.IdRef="Sequence_60">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[uiBrowser]" BrowserType="Firefox" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="932,1798" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
+    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[uiBrowser]" BrowserType="Firefox" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="647,1239" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Dentro del browser" sap:VirtualizedContainerService.HintSize="898,1650" sap2010:WorkflowViewState.IdRef="Sequence_62">
+          <Sequence DisplayName="Dentro del browser" sap:VirtualizedContainerService.HintSize="613,1091" sap2010:WorkflowViewState.IdRef="Sequence_62">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[varRespuestaObtenerRepuestasComentario=&quot;Yes&quot;]" DisplayName="Si obtener respuestas es sí..." sap:VirtualizedContainerService.HintSize="856,1496" sap2010:WorkflowViewState.IdRef="If_31">
+            <If Condition="[varRespuestaObtenerRepuestasComentario=&quot;Yes&quot;]" DisplayName="Si obtener respuestas es sí..." sap:VirtualizedContainerService.HintSize="571,937" sap2010:WorkflowViewState.IdRef="If_31">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -89,13 +89,13 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtComentariosAcumulados]" DisplayName="Navegar a cada comentario." sap:VirtualizedContainerService.HintSize="711,1349" sap2010:WorkflowViewState.IdRef="ForEachRow_10">
+                <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtComentariosAcumulados]" DisplayName="Navegar a cada comentario." sap:VirtualizedContainerService.HintSize="426,790" sap2010:WorkflowViewState.IdRef="ForEachRow_10">
                   <ui:ForEachRow.Body>
                     <ActivityAction x:TypeArguments="sd:DataRow">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="sd:DataRow" Name="rowComentario" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="661,1202" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,643" sap2010:WorkflowViewState.IdRef="Sequence_58">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="sd:DataTable" Name="dtRespuestas" />
                           <Variable x:TypeArguments="x:String" Name="varRespuesta" />
@@ -106,7 +106,7 @@
                             <x:Boolean x:Key="IsPinned">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:NavigateTo Browser="[uiBrowser]" DisplayName="Navigate To URL (comentario)" sap:VirtualizedContainerService.HintSize="619,51" sap2010:WorkflowViewState.IdRef="NavigateTo_7" Url="[rowComentario(&quot;URL&quot;).ToString]">
+                        <ui:NavigateTo Browser="[uiBrowser]" DisplayName="Navigate To URL (comentario)" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NavigateTo_7" Url="[rowComentario(&quot;URL&quot;).ToString]">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -114,7 +114,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:NavigateTo>
-                        <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[dtRespuestas]" DisplayName="Extract Structured Data Respuestas" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='article' class='Comment'/&gt;&lt;webctrl tag='div' class='Comment-wrapper' idx='1'/&gt;&lt;/row&gt;&lt;column exact='1' name='Respuesta' attr='text'&gt;&lt;webctrl tag='article' class='Comment'/&gt;&lt;webctrl tag='div' class='Comment-wrapper' idx='1' /&gt;&lt;webctrl tag='div' class='Comment-body' idx='1' /&gt;&lt;webctrl tag='div' class='Comment-content' idx='1' /&gt;&lt;webctrl tag='div' class='CommentContent-text isExpanded' idx='1' /&gt;&lt;webctrl parentid='container' tag='P' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Autor' attr='text'&gt;&lt;webctrl tag='article' class='Comment'/&gt;&lt;webctrl tag='div' class='Comment-wrapper' idx='1'/&gt;&lt;webctrl tag='div' class='CommentMeta' idx='1'/&gt;&lt;webctrl tag='div' class='CommentAuthor-container' idx='1'/&gt;&lt;webctrl tag='div' class='CommentAuthor' idx='1'/&gt;&lt;webctrl tag='a' class='CommentAuthor-name' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="619,51" sap2010:WorkflowViewState.IdRef="ExtractData_14" MaxNumberOfResults="0" SimulateClick="True">
+                        <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[dtRespuestas]" DisplayName="Extract Structured Data Respuestas" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='article' class='Comment'/&gt;&lt;webctrl tag='div' class='Comment-wrapper' idx='1'/&gt;&lt;/row&gt;&lt;column exact='1' name='Respuesta' attr='text'&gt;&lt;webctrl tag='article' class='Comment'/&gt;&lt;webctrl tag='div' class='Comment-wrapper' idx='1' /&gt;&lt;webctrl tag='div' class='Comment-body' idx='1' /&gt;&lt;webctrl tag='div' class='Comment-content' idx='1' /&gt;&lt;webctrl tag='div' class='CommentContent-text isExpanded' idx='1' /&gt;&lt;webctrl parentid='container' tag='P' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Autor' attr='text'&gt;&lt;webctrl tag='article' class='Comment'/&gt;&lt;webctrl tag='div' class='Comment-wrapper' idx='1'/&gt;&lt;webctrl tag='div' class='CommentMeta' idx='1'/&gt;&lt;webctrl tag='div' class='CommentAuthor-container' idx='1'/&gt;&lt;webctrl tag='div' class='CommentAuthor' idx='1'/&gt;&lt;webctrl tag='a' class='CommentAuthor-name' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="ExtractData_14" MaxNumberOfResults="0" SimulateClick="True">
                           <ui:ExtractData.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0fb7808a-2adc-4a9e-a6c4-5e102d52568b" InformativeScreenshot="0bb4c0c49f6bdb89fd62a5158617ab41" Selector="&lt;webctrl css-selector='body&amp;gt;section&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;section' parentid='discussion-detail' tag='SECTION' /&gt;" TimeoutMS="1000" WaitForReady="COMPLETE" />
                           </ui:ExtractData.Target>
@@ -125,7 +125,22 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:ExtractData>
-                        <Assign sap:VirtualizedContainerService.HintSize="619,60" sap2010:WorkflowViewState.IdRef="Assign_35">
+                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DarCorazon workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="XAMLReusable\DarCorazon.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InOutArgument x:TypeArguments="sd:DataRow" x:Key="row">
+                              <mva:VisualBasicReference x:TypeArguments="sd:DataRow" ExpressionText="rowComentario" />
+                            </InOutArgument>
+                            <InArgument x:TypeArguments="x:Boolean" x:Key="SoloEsValidacion">
+                              <Literal x:TypeArguments="x:Boolean" Value="True" />
+                            </InArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:InvokeWorkflowFile>
+                        <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_35">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[varRespuesta]</OutArgument>
                           </Assign.To>
@@ -133,7 +148,7 @@
                             <InArgument x:TypeArguments="x:String">[string.Empty]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtRespuestas]" DisplayName="Reccorrer DTRespuestas Encontradas" sap:VirtualizedContainerService.HintSize="619,354" sap2010:WorkflowViewState.IdRef="ForEachRow_9">
+                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtRespuestas]" DisplayName="Reccorrer DTRespuestas Encontradas" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="ForEachRow_9">
                           <ui:ForEachRow.Body>
                             <ActivityAction x:TypeArguments="sd:DataRow">
                               <ActivityAction.Argument>
@@ -171,16 +186,16 @@
                           </ui:ForEachRow.Body>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:ForEachRow>
-                        <If Condition="[string.IsNullOrEmpty(varRespuesta)]" DisplayName="Si se encontró respuesta" sap:VirtualizedContainerService.HintSize="619,434" sap2010:WorkflowViewState.IdRef="If_33">
+                        <If Condition="[string.IsNullOrEmpty(varRespuesta)]" DisplayName="Si se encontró respuesta" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="If_33">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Else>
@@ -263,7 +278,7 @@
                 </ui:ForEachRow>
               </If.Then>
             </If>
-            <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="856,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
+            <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="571,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
           </Sequence>
         </ActivityAction>
       </ui:BrowserScope.Body>

@@ -1,9 +1,9 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SeguimientoManual" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="SeguimientoManual" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="varTotalComentarios" Type="InArgument(x:String)" />
     <x:Property Name="dtComentariosAcumulados" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1101,2820</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1169,4113</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="17">
@@ -54,7 +54,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="SeguimientoManual" sap:VirtualizedContainerService.HintSize="862,2715" sap2010:WorkflowViewState.IdRef="Sequence_42">
+  <Sequence DisplayName="SeguimientoManual" sap:VirtualizedContainerService.HintSize="1165,4008" sap2010:WorkflowViewState.IdRef="Sequence_42">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="varContadorComentario" />
       <Variable x:TypeArguments="ui:Browser" Name="uiBrowser" />
@@ -65,7 +65,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign DisplayName="Inicializar contador en 0" sap:VirtualizedContainerService.HintSize="820,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+    <Assign DisplayName="Inicializar contador en 0" sap:VirtualizedContainerService.HintSize="1123,60" sap2010:WorkflowViewState.IdRef="Assign_21">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[varContadorComentario]</OutArgument>
       </Assign.To>
@@ -73,7 +73,7 @@
         <InArgument x:TypeArguments="x:Int32">0</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Firefox" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="820,116" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[uiBrowser]" Url="platzi.com">
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Firefox" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1123,116" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[uiBrowser]" Url="platzi.com">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -88,25 +88,25 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:OpenBrowser>
-    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" Browser="[uiBrowser]" BrowserType="Firefox" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="820,2367" sap2010:WorkflowViewState.IdRef="BrowserScope_1" UiBrowser="[uiBrowser]">
+    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" Browser="[uiBrowser]" BrowserType="Firefox" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="1123,3660" sap2010:WorkflowViewState.IdRef="BrowserScope_1" UiBrowser="[uiBrowser]">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="786,2259" sap2010:WorkflowViewState.IdRef="Sequence_43">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1089,3552" sap2010:WorkflowViewState.IdRef="Sequence_43">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtComentariosAcumulados]" DisplayName="Mientras haya comentarios..." sap:VirtualizedContainerService.HintSize="744,2105" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtComentariosAcumulados]" DisplayName="Mientras haya comentarios..." sap:VirtualizedContainerService.HintSize="1047,3398" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Seguimiento manual" sap:VirtualizedContainerService.HintSize="694,1958" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <Sequence DisplayName="Seguimiento manual" sap:VirtualizedContainerService.HintSize="997,3251" sap2010:WorkflowViewState.IdRef="Sequence_15">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="ComentarioSeguimiento" />
                       <Variable x:TypeArguments="x:String" Name="ComentarioParaElAlumno" />
@@ -118,7 +118,7 @@
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:NavigateTo Browser="[uiBrowser]" DisplayName="Navigate To url comentario" sap:VirtualizedContainerService.HintSize="652,59" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="[row(&quot;URL&quot;).ToString()]">
+                    <ui:NavigateTo Browser="[uiBrowser]" DisplayName="Navigate To url comentario" sap:VirtualizedContainerService.HintSize="955,59" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="[row(&quot;URL&quot;).ToString()]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -126,7 +126,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:NavigateTo>
-                    <Assign DisplayName="Aumentar el contador en 1" sap:VirtualizedContainerService.HintSize="652,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                    <Assign DisplayName="Aumentar el contador en 1" sap:VirtualizedContainerService.HintSize="955,60" sap2010:WorkflowViewState.IdRef="Assign_10">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[varContadorComentario]</OutArgument>
                       </Assign.To>
@@ -134,7 +134,7 @@
                         <InArgument x:TypeArguments="x:Int32">[1+varContadorComentario]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:InputDialog Options="{x:Null}" DisplayName="Preguntar por comentario interno" sap:VirtualizedContainerService.HintSize="652,92" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="[&quot;¿Desea guardar comentario en control interno?&quot; + Environment.NewLine + &quot;ejemplo: Revisar respuesta del alumno después.&quot; +Environment.NewLine+&quot;El valor es opcional.&quot; +Environment.NewLine+&quot;Si deseas detener el ciclo, escribe '{exit}' (con llaves).&quot;+Environment.NewLine+&quot;Comentario : &quot; + varContadorComentario.ToString + &quot; / &quot; + varTotalComentarios]" Title="¿Dar seguimiento?">
+                    <ui:InputDialog Options="{x:Null}" DisplayName="Preguntar por comentario interno" sap:VirtualizedContainerService.HintSize="955,92" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="[&quot;¿Desea guardar comentario en control interno?&quot; + Environment.NewLine + &quot;ejemplo: Revisar respuesta del alumno después.&quot; +Environment.NewLine+&quot;El valor es opcional.&quot; +Environment.NewLine+&quot;Si deseas detener el ciclo, escribe '{exit}' (con llaves).&quot;+Environment.NewLine+&quot;Comentario : &quot; + varContadorComentario.ToString + &quot; / &quot; + varTotalComentarios]" Title="¿Dar seguimiento?">
                       <ui:InputDialog.Result>
                         <OutArgument x:TypeArguments="x:String">[ComentarioSeguimiento]</OutArgument>
                       </ui:InputDialog.Result>
@@ -145,7 +145,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:InputDialog>
-                    <If Condition="[string.IsNullOrEmpty(ComentarioSeguimiento)]" DisplayName="Guardar comentario interno" sap:VirtualizedContainerService.HintSize="652,354" sap2010:WorkflowViewState.IdRef="If_5">
+                    <If Condition="[string.IsNullOrEmpty(ComentarioSeguimiento)]" DisplayName="Guardar comentario interno" sap:VirtualizedContainerService.HintSize="955,354" sap2010:WorkflowViewState.IdRef="If_5">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -176,7 +176,7 @@
                         </If>
                       </If.Else>
                     </If>
-                    <ui:InputDialog Options="{x:Null}" DisplayName="Preguntar por &quot;Responder al alumno&quot;" sap:VirtualizedContainerService.HintSize="652,92" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="[&quot;El texto que escribas se escribirá en el sitio web para responderle al alumno.&quot;+Environment.NewLine+&quot;Dejar vacío si no desea responder.&quot;]" Title="¿Desea responder comentario al alumno?">
+                    <ui:InputDialog Options="{x:Null}" DisplayName="Preguntar por &quot;Responder al alumno&quot;" sap:VirtualizedContainerService.HintSize="955,92" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="[&quot;El texto que escribas se escribirá en el sitio web para responderle al alumno.&quot;+Environment.NewLine+&quot;Dejar vacío si no desea responder.&quot;]" Title="¿Desea responder comentario al alumno?">
                       <ui:InputDialog.Result>
                         <OutArgument x:TypeArguments="x:String">[ComentarioParaElAlumno]</OutArgument>
                       </ui:InputDialog.Result>
@@ -187,7 +187,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:InputDialog>
-                    <If Condition="[string.IsNullOrEmpty(ComentarioParaElAlumno)]" DisplayName="Guardar comentario interno" sap:VirtualizedContainerService.HintSize="652,856" sap2010:WorkflowViewState.IdRef="If_10">
+                    <If Condition="[string.IsNullOrEmpty(ComentarioParaElAlumno)]" DisplayName="Guardar comentario interno" sap:VirtualizedContainerService.HintSize="955,892" sap2010:WorkflowViewState.IdRef="If_10">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -195,7 +195,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Else>
-                        <Sequence DisplayName="Escribir comentario y dar &lt;3" sap:VirtualizedContainerService.HintSize="376,709" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                        <Sequence DisplayName="Escribir comentario y dar &lt;3" sap:VirtualizedContainerService.HintSize="376,745" sap2010:WorkflowViewState.IdRef="Sequence_17">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -281,35 +281,40 @@
                               <InArgument x:TypeArguments="x:Object">[ComentarioParaElAlumno]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DarCorazon workflow" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="XAMLReusable/DarCorazon.xaml">
+                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DarCorazon workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="XAMLReusable/DarCorazon.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InOutArgument x:TypeArguments="sd:DataRow" x:Key="row">[row]</InOutArgument>
+                              <InOutArgument x:TypeArguments="sd:DataRow" x:Key="row">
+                                <mva:VisualBasicReference x:TypeArguments="sd:DataRow" ExpressionText="row" />
+                              </InOutArgument>
+                              <InArgument x:TypeArguments="x:Boolean" x:Key="SoloEsValidacion">
+                                <Literal x:TypeArguments="x:Boolean" />
+                              </InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:InvokeWorkflowFile>
                         </Sequence>
                       </If.Else>
                     </If>
-                    <TryCatch DisplayName="Intentar validar si tiene &lt;3" sap:VirtualizedContainerService.HintSize="652,51" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                    <TryCatch DisplayName="Intentar validar si tiene &lt;3" sap:VirtualizedContainerService.HintSize="955,1308" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <TryCatch.Try>
-                        <Sequence DisplayName="Validar si tiene &lt;3" sap:VirtualizedContainerService.HintSize="376,317" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                        <Sequence DisplayName="Validar si tiene &lt;3" sap:VirtualizedContainerService.HintSize="917,838" sap2010:WorkflowViewState.IdRef="Sequence_44">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:GetAttribute Attribute="class" ContinueOnError="True" DisplayName="Get Attribute Class" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="GetAttribute_3">
+                          <ui:GetAttribute Attribute="class" ContinueOnError="True" DisplayName="Get Attribute Class" sap:VirtualizedContainerService.HintSize="875,134" sap2010:WorkflowViewState.IdRef="GetAttribute_3">
                             <ui:GetAttribute.Result>
                               <OutArgument x:TypeArguments="x:String">[corazonVerde]</OutArgument>
                             </ui:GetAttribute.Result>
@@ -327,15 +332,40 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:GetAttribute>
-                          <If Condition="[corazonVerde.Contains(&quot;Star-heart is-loved&quot;)]" DisplayName="Si es &quot;Star-heart is-loved animated-like&quot; no hacer nada" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="If_23">
+                          <If Condition="[corazonVerde.Contains(&quot;Star-heart is-loved&quot;)]" DisplayName="Si es &quot;Star-heart is-loved animated-like&quot; no hacer nada" sap:VirtualizedContainerService.HintSize="875,572" sap2010:WorkflowViewState.IdRef="If_23">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
+                            <If.Then>
+                              <Sequence DisplayName="Marcar como Corazón dado" sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign DisplayName="Desactivar dar corazón" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_22">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Object">[row("DarCorazon")]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Object">["0"]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <Assign DisplayName="Marcador de corazón dado" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Object">[row("CorazonDado")]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Object">["Sí"]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </Sequence>
+                            </If.Then>
                             <If.Else>
-                              <Sequence DisplayName="Dar clic en &lt;3" sap:VirtualizedContainerService.HintSize="376,242" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                              <Sequence DisplayName="Dar clic en &lt;3" sap:VirtualizedContainerService.HintSize="526,425" sap2010:WorkflowViewState.IdRef="Sequence_39">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:String" Name="varMarcarComoLeido" />
                                 </Sequence.Variables>
@@ -345,18 +375,23 @@
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:MessageBox Buttons="YesNo" Caption="Dar Corazón: Marca de leído" ChosenButton="[varMarcarComoLeido]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_9" Text="[&quot;¿Marcar como leído? (dar un corazón)&quot;]" />
-                                <If Condition="[varMarcarComoLeido=&quot;Yes&quot;]" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="If_24">
+                                <ui:MessageBox Buttons="YesNo" Caption="Dar Corazón: Marca de leído" ChosenButton="[varMarcarComoLeido]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="484,59" sap2010:WorkflowViewState.IdRef="MessageBox_9" Text="[&quot;¿Marcar como leído? (dar un corazón)&quot;]" />
+                                <If Condition="[varMarcarComoLeido=&quot;Yes&quot;]" sap:VirtualizedContainerService.HintSize="484,234" sap2010:WorkflowViewState.IdRef="If_24">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <If.Then>
                                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DarCorazon workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="XAMLReusable/DarCorazon.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="row">[row]</InOutArgument>
+                                        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="row">
+                                          <mva:VisualBasicReference x:TypeArguments="sd:DataRow" ExpressionText="row" />
+                                        </InOutArgument>
+                                        <InArgument x:TypeArguments="x:Boolean" x:Key="SoloEsValidacion">
+                                          <Literal x:TypeArguments="x:Boolean" />
+                                        </InArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                     </ui:InvokeWorkflowFile>
                                   </If.Then>
@@ -367,7 +402,7 @@
                         </Sequence>
                       </TryCatch.Try>
                       <TryCatch.Catches>
-                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,160" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="921,160" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -383,7 +418,7 @@
                         </Catch>
                       </TryCatch.Catches>
                     </TryCatch>
-                    <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="652,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
+                    <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="955,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
                   </Sequence>
                 </ActivityAction>
               </ui:ForEachRow.Body>
@@ -394,7 +429,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEachRow>
-            <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="744,22" sap2010:WorkflowViewState.IdRef="CloseTab_3" />
+            <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="1047,22" sap2010:WorkflowViewState.IdRef="CloseTab_3" />
           </Sequence>
         </ActivityAction>
       </ui:BrowserScope.Body>
