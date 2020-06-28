@@ -73,11 +73,17 @@ Al finalizar el ciclo de seguimiento, se generá un reporte con 2 hojas:
 - La segunda hoja es para todos los que tienen más de un corazón.
 
 Ambas hojas contiendrán 
-- Nombre del Estudiante.
-- Comentario del Estudiante.
-- URL del comentario.
-- Número de corazones.
-- Texto del seguimiento que escribimos durante la revisión puntual.
+- Nombre : Nombre del Estudiante que dejó el comentario escrito por el estudiante en el curso.
+- Comentario : Comentario escrito por el estudiante en el curso.
+- URL : La URL del comentario. No la modifiques es la que se usa para navegar al comentario en el sistema de seguimiento.
+- Corazon : El número de corazones que hay en el sitio web al momento de extraer los datos.
+- Curso : Nombre del curso donde se encontró el comentario.
+- Seguimiento : Colocar aquí el mensaje de seguimiento para ti, son tus notas de profesor.
+- CorazonDado : Indica si el comentario ya cuenta con un corazón dado por el robot o el usuaro que ejecuta el robot.
+- DarCorazon : Colocar un 1 si deseas dar un corazón a este comentario dentro del sitio web.
+- MiRespuestaAnterior : La última respuesta que fue dada al comentario desde el robot.
+- ResponderLoSiguiente : El texto que coloques en esta columna será el texto que se le responderá al estudiante en el próximo seguimiento automático que realices.
+- Respuestas : Todas las respuesta encontradas en el comentario.
 
 ![Seguimiento Puntual 8][9]
 ![Seguimiento Puntual 9][10]

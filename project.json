@@ -11,6 +11,7 @@
     "WakaTime": "[8.1.11]"
   },
   "webServices": [],
+  "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "20.4.1.0",
   "projectVersion": "1.0.9",
