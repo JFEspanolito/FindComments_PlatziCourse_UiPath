@@ -37,8 +37,6 @@ Si no proporcionas una URL, buscará el archivo de excel previamente creado en a
 
 Si proporcionas una URL, el robot abrirá el navegador web para el curso proporcionado, buscará la url de cada clase del curso y luego navegará en cada clase para leer los comentarios.
 
-*Actualización 17/06/2020* Ahora el robot pregunta si deseas obtener las respuestas existentes de cada comentario, este paso es opcional y automático.
-
 ![Solicitud de URL 1.3][1.3]
 
 Luego de leer todos los comentarios de todas las clases del curso indicado, nos pregunta si deseamos (opcional) hacer el seguimiento puntual de cada comentario.
@@ -89,6 +87,13 @@ Ambas hojas contiendrán
 ![Seguimiento Puntual 9][10]
 
 El documento generado se guarda en la carpeta Archivos dentro de la carpeta del proyecto.
+
+## Actualizaciones implementadas
+*Actualización 17/06/2020* Ahora el robot pregunta si deseas obtener las respuestas existentes de cada comentario, este paso es opcional y automático.
+*Actualización 27/06/2020* Ahora el robot detecta cuando otorgaste ya un corazón al comentario para marcarlo como "atendido" o "leído".
+*Actualización 30/06/2020* Ahora el robot acepta múltiples urles de cursos separadas por ; como ejemplo:  " platzi.com/clases/uipath ; https://platzi.com/cursos/machine-learning/ " lo que permitirá que realice búsquedas de comentarios en ambos cursos (o más, ¡puedes poner los que quieras!)
+*Actualización 30/06/2020* Se añade sistema de delay dinámico controlado por variable "varTimeOutGeneral", el valor proporcionado será transformado en "milisegundos de espera."
+
 
 [//]: #
 [0]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img0.png> "Diagrama del Proyecto"

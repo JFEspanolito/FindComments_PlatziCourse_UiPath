@@ -149,12 +149,12 @@
                       <av:PointCollection x:Key="ConnectorLocation">370,390 369.895,390 369.895,420</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+                  <Assign DisplayName="Eliminar espacios y dobles /" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_15">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[varPathArchivo]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[varPathArchivo.Replace("\","/").Replace("//","/") + "/"+varNombreExcel]</InArgument>
+                      <InArgument x:TypeArguments="x:String">[varPathArchivo.Replace(" ","").Replace("\","/").Replace("//","/") + "/"+varNombreExcel]</InArgument>
                     </Assign.Value>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -171,7 +171,7 @@
                           <av:PointCollection x:Key="ConnectorLocation">369.895,480 369.79,480 369.79,510</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+                      <Assign DisplayName="Iniciar contador en 0" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_18">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Int32">[varContadorIndexUrl]</OutArgument>
                         </Assign.To>
@@ -194,7 +194,7 @@
                               <av:PointCollection x:Key="ConnectorLocation">369.79,570 369.79,600</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+                          <Assign DisplayName="Crear arreglo de urls" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_19">
                             <Assign.To>
                               <OutArgument x:TypeArguments="s:String[]">[arrayListaDeCursos]</OutArgument>
                             </Assign.To>
@@ -217,7 +217,7 @@
                                   <av:PointCollection x:Key="ConnectorLocation">369.79,660 365.641666666667,660 365.641666666667,685.5</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+                              <Assign DisplayName="Asignar la URL -varContadorIndex- para iterarla." sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_20">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[urlRespuesta]</OutArgument>
                                 </Assign.To>
@@ -441,7 +441,7 @@
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <av:Point x:Key="ShapeLocation">110.5,1083</av:Point>
                                                       <av:Size x:Key="ShapeSize">200,68</av:Size>
-                                                      <av:PointCollection x:Key="ConnectorLocation">310.5,1117 500,1117 500,1206.5</av:PointCollection>
+                                                      <av:PointCollection x:Key="ConnectorLocation">310.5,1117 502.5,1117 502.5,1206.5</av:PointCollection>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                   <Sequence DisplayName="Generar reporte" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_23">
@@ -798,7 +798,7 @@
                                                     </Sequence>
                                                   </Sequence>
                                                   <FlowStep.Next>
-                                                    <FlowDecision x:Name="__ReferenceID16" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
+                                                    <FlowDecision x:Name="__ReferenceID16" DisplayName="¿Hay más urls?" sap:VirtualizedContainerService.HintSize="84,87" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
                                                       <FlowDecision.Condition>
                                                         <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="varContadorIndexUrl&lt;(arrayListaDeCursos.Length-1)" />
                                                       </FlowDecision.Condition>
@@ -807,7 +807,7 @@
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                           <av:Point x:Key="ShapeLocation">460.5,1206.5</av:Point>
-                                                          <av:Size x:Key="ShapeSize">79,87</av:Size>
+                                                          <av:Size x:Key="ShapeSize">84,87</av:Size>
                                                           <av:PointCollection x:Key="TrueConnector">460.5,1250 292,1250</av:PointCollection>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
@@ -820,7 +820,7 @@
                                                               <av:PointCollection x:Key="ConnectorLocation">30,1250 0,1250 0,630 238.79,630</av:PointCollection>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+                                                          <Assign DisplayName="Aumentar contador en 1" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_21">
                                                             <Assign.To>
                                                               <OutArgument x:TypeArguments="x:Int32">[varContadorIndexUrl]</OutArgument>
                                                             </Assign.To>
@@ -870,7 +870,7 @@
                                                       <av:Point x:Key="ShapeLocation">590.5,1016.5</av:Point>
                                                       <av:Size x:Key="ShapeSize">97,87</av:Size>
                                                       <av:PointCollection x:Key="TrueConnector">280.5,530 150.5,530 150.5,607</av:PointCollection>
-                                                      <av:PointCollection x:Key="FalseConnector">687.5,1060 717.5,1060 717.5,1180 57.5,1180 57.5,10 330,10 330,36.04</av:PointCollection>
+                                                      <av:PointCollection x:Key="FalseConnector">687.5,1060 717.5,1060 717.5,1180 57.4999999999999,1180 57.4999999999999,10 330,10 330,36.04</av:PointCollection>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                   <FlowDecision.False>
@@ -919,7 +919,7 @@
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Firefox" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="566,699" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[uiBrowser]" Url="[urlRespuesta]">
+                                        <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Firefox" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="566,700" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[uiBrowser]" Url="[urlRespuesta]">
                                           <ui:OpenBrowser.Body>
                                             <ActivityAction x:TypeArguments="x:Object">
                                               <ActivityAction.Argument>
