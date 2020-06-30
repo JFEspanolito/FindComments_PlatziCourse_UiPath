@@ -2,11 +2,15 @@
   <x:Members>
     <x:Property Name="row" Type="InOutArgument(sd:DataRow)" />
     <x:Property Name="SoloEsValidacion" Type="InArgument(x:Boolean)" />
+    <x:Property Name="varTimeOutGeneral" Type="InArgument(x:Int32)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1169,1165</sap:VirtualizedContainerService.HintSize>
+  <this:DarCorazon.varTimeOutGeneral>
+    <InArgument x:TypeArguments="x:Int32" />
+  </this:DarCorazon.varTimeOutGeneral>
+  <sap:VirtualizedContainerService.HintSize>1173,1165</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="32">
+    <scg:List x:TypeArguments="x:String" Capacity="17">
       <x:String>System.Activities</x:String>
       <x:String>System</x:String>
       <x:String>System.Collections</x:String>
@@ -27,7 +31,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="19">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
@@ -64,7 +68,7 @@
         <OutArgument x:TypeArguments="x:String">[corazonVerde]</OutArgument>
       </ui:GetAttribute.Result>
       <ui:GetAttribute.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="556b4273-9c5e-481e-bbd9-b01da7ac9660" InformativeScreenshot="fee02934650147969db0bc6337a204d6" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/comentario*' /&gt;&lt;webctrl idx='1' isleaf='1' parentid='discussion-detail' tag='SPAN' /&gt;" TimeoutMS="5000">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="556b4273-9c5e-481e-bbd9-b01da7ac9660" InformativeScreenshot="fee02934650147969db0bc6337a204d6" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/comentario*' /&gt;&lt;webctrl idx='1' isleaf='1' parentid='discussion-detail' tag='SPAN' /&gt;" TimeoutMS="[varTimeOutGeneral]">
           <ui:Target.WaitForReady>
             <InArgument x:TypeArguments="ui:WaitForReady" />
           </ui:Target.WaitForReady>
@@ -135,7 +139,7 @@
                   </ui:CursorPosition>
                 </ui:Click.CursorPosition>
                 <ui:Click.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f0d602ef-7a03-4282-ba42-f1befa17dffe" InformativeScreenshot="2c4abdd582c1539555ee416a17ef183c" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/comentario*' /&gt;&lt;webctrl idx='1' isleaf='1' parentid='discussion-detail' tag='SPAN' /&gt;" TimeoutMS="3000">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f0d602ef-7a03-4282-ba42-f1befa17dffe" InformativeScreenshot="2c4abdd582c1539555ee416a17ef183c" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/comentario*' /&gt;&lt;webctrl idx='1' isleaf='1' parentid='discussion-detail' tag='SPAN' /&gt;" TimeoutMS="[varTimeOutGeneral]">
                     <ui:Target.WaitForReady>
                       <InArgument x:TypeArguments="ui:WaitForReady" />
                     </ui:Target.WaitForReady>

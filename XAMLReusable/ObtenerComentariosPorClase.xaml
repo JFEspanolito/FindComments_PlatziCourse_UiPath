@@ -3,14 +3,18 @@
     <x:Property Name="dtClasesEncontradas" Type="InArgument(sd:DataTable)" />
     <x:Property Name="dtComentariosAcumulados" Type="OutArgument(sd:DataTable)" />
     <x:Property Name="uiBrowser" Type="InArgument(ui:Browser)" />
+    <x:Property Name="varTimeOutGeneral" Type="InArgument(x:Int32)" />
   </x:Members>
   <this:ObtenerComentariosPorClase.uiBrowser>
     <InArgument x:TypeArguments="ui:Browser" />
   </this:ObtenerComentariosPorClase.uiBrowser>
-  <sap:VirtualizedContainerService.HintSize>1170,2565</sap:VirtualizedContainerService.HintSize>
+  <this:ObtenerComentariosPorClase.varTimeOutGeneral>
+    <InArgument x:TypeArguments="x:Int32" />
+  </this:ObtenerComentariosPorClase.varTimeOutGeneral>
+  <sap:VirtualizedContainerService.HintSize>1418,2759</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="34">
+    <scg:List x:TypeArguments="x:String" Capacity="18">
       <x:String>System.Activities</x:String>
       <x:String>System.Data</x:String>
       <x:String>System</x:String>
@@ -32,7 +36,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="28">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="19">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>System.Data</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -60,7 +64,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="ObtenerComentariosPorClase" sap:VirtualizedContainerService.HintSize="965,2460" sap2010:WorkflowViewState.IdRef="Sequence_54">
+  <Sequence DisplayName="ObtenerComentariosPorClase" sap:VirtualizedContainerService.HintSize="1428,2654" sap2010:WorkflowViewState.IdRef="Sequence_54">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="varContador" />
     </Sequence.Variables>
@@ -70,7 +74,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="923,230" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1386,230" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_55">
           <sap:WorkflowViewStateService.ViewState>
@@ -89,19 +93,19 @@
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
-    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[uiBrowser]" BrowserType="Firefox" DisplayName="Seleccionar Navegador" sap:VirtualizedContainerService.HintSize="923,2098" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
+    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[uiBrowser]" BrowserType="Firefox" DisplayName="Seleccionar Navegador" sap:VirtualizedContainerService.HintSize="1386,2292" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtClasesEncontradas]" DisplayName="Recorrer cada clase" sap:VirtualizedContainerService.HintSize="889,1990" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+          <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtClasesEncontradas]" DisplayName="Recorrer cada clase" sap:VirtualizedContainerService.HintSize="1352,2184" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Con el registro del DT hacer" sap:VirtualizedContainerService.HintSize="839,1843" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                <Sequence DisplayName="Con el registro del DT hacer" sap:VirtualizedContainerService.HintSize="1302,2037" sap2010:WorkflowViewState.IdRef="Sequence_53">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="hayVideo" />
                     <Variable x:TypeArguments="sd:DataTable" Name="dtComentariosEncontrados" />
@@ -112,7 +116,7 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:NavigateTo Browser="[uiBrowser]" DisplayName="Navigate To URL (clase)" sap:VirtualizedContainerService.HintSize="797,59" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="[&quot;platzi.com&quot;+row(&quot;URLClase&quot;).ToString]">
+                  <ui:NavigateTo Browser="[uiBrowser]" DisplayName="Navigate To URL (clase)" sap:VirtualizedContainerService.HintSize="1260,59" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="[&quot;platzi.com&quot;+row(&quot;URLClase&quot;).ToString]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -120,10 +124,10 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:NavigateTo>
-                  <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="797,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
-                  <ui:UiElementExists DisplayName="¿Existe Video?" Exists="[hayVideo]" sap:VirtualizedContainerService.HintSize="797,68" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
+                  <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="1260,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
+                  <ui:UiElementExists DisplayName="¿Existe Video?" Exists="[hayVideo]" sap:VirtualizedContainerService.HintSize="1260,68" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
                     <ui:UiElementExists.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e73f09a6-270f-4105-ad7b-2485575f02a4" Selector="&lt;webctrl tag='VIDEO' /&gt;" TimeoutMS="2000">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e73f09a6-270f-4105-ad7b-2485575f02a4" Selector="&lt;webctrl tag='VIDEO' /&gt;" TimeoutMS="[varTimeOutGeneral]">
                         <ui:Target.WaitForReady>
                           <InArgument x:TypeArguments="ui:WaitForReady" />
                         </ui:Target.WaitForReady>
@@ -136,7 +140,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:UiElementExists>
-                  <If Condition="[hayVideo]" DisplayName="Si hay video hacer..." sap:VirtualizedContainerService.HintSize="797,1065" sap2010:WorkflowViewState.IdRef="If_30">
+                  <If Condition="[hayVideo]" DisplayName="Si hay video hacer..." sap:VirtualizedContainerService.HintSize="1260,1259" sap2010:WorkflowViewState.IdRef="If_30">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -254,10 +258,7 @@
                             </ui:CursorPosition>
                           </ui:Click.CursorPosition>
                           <ui:Click.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7f1f5079-ef3f-44a2-8c79-edcd66adbbcd" InformativeScreenshot="ebb46082610cd6e789009c492ef634ee" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/clases*' /&gt;&lt;webctrl aaname='Preguntas ' parentid='video-content' tag='LABEL' /&gt;">
-                              <ui:Target.TimeoutMS>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:Target.TimeoutMS>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7f1f5079-ef3f-44a2-8c79-edcd66adbbcd" InformativeScreenshot="ebb46082610cd6e789009c492ef634ee" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/clases*' /&gt;&lt;webctrl aaname='Preguntas ' parentid='video-content' tag='LABEL' /&gt;" TimeoutMS="[varTimeOutGeneral]">
                               <ui:Target.WaitForReady>
                                 <InArgument x:TypeArguments="ui:WaitForReady" />
                               </ui:Target.WaitForReady>
@@ -288,16 +289,16 @@
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence DisplayName="Validar Si hay Video de Youtube" sap:VirtualizedContainerService.HintSize="376,289" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                      <Sequence DisplayName="Validar Si hay Video de Youtube" sap:VirtualizedContainerService.HintSize="839,1112" sap2010:WorkflowViewState.IdRef="Sequence_52">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:UiElementExists DisplayName="¿Existe Video Youtube?" Exists="[hayVideo]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
+                        <ui:UiElementExists DisplayName="¿Existe Video Youtube?" Exists="[hayVideo]" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
                           <ui:UiElementExists.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e73f09a6-270f-4105-ad7b-2485575f02a4" InformativeScreenshot="10ace9f9c3b7e722f5dd3f41d70168e2" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/clases*' /&gt;&lt;webctrl src='*' tag='IFRAME' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='1' isleaf='1' parentid='player_uid_*_*' tag='DIV' /&gt;" TimeoutMS="2000">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e73f09a6-270f-4105-ad7b-2485575f02a4" InformativeScreenshot="10ace9f9c3b7e722f5dd3f41d70168e2" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/clases*' /&gt;&lt;webctrl src='*' tag='IFRAME' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='1' isleaf='1' parentid='player_uid_*_*' tag='DIV' /&gt;" TimeoutMS="[varTimeOutGeneral]">
                               <ui:Target.WaitForReady>
                                 <InArgument x:TypeArguments="ui:WaitForReady" />
                               </ui:Target.WaitForReady>
@@ -310,11 +311,11 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:UiElementExists>
-                        <If Condition="[hayVideo]" DisplayName="Validar si es vídeo de Youtube" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="If_29">
+                        <If Condition="[hayVideo]" DisplayName="Validar si es vídeo de Youtube" sap:VirtualizedContainerService.HintSize="797,874" sap2010:WorkflowViewState.IdRef="If_29">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
@@ -359,10 +360,7 @@
                                   </ui:CursorPosition>
                                 </ui:Click.CursorPosition>
                                 <ui:Click.Target>
-                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7f1f5079-ef3f-44a2-8c79-edcd66adbbcd" InformativeScreenshot="ebb46082610cd6e789009c492ef634ee" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/clases*' /&gt;&lt;webctrl aaname='Preguntas ' parentid='video-content' tag='LABEL' /&gt;">
-                                    <ui:Target.TimeoutMS>
-                                      <InArgument x:TypeArguments="x:Int32" />
-                                    </ui:Target.TimeoutMS>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7f1f5079-ef3f-44a2-8c79-edcd66adbbcd" InformativeScreenshot="ebb46082610cd6e789009c492ef634ee" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/clases*' /&gt;&lt;webctrl aaname='Preguntas ' parentid='video-content' tag='LABEL' /&gt;" TimeoutMS="[varTimeOutGeneral]">
                                     <ui:Target.WaitForReady>
                                       <InArgument x:TypeArguments="ui:WaitForReady" />
                                     </ui:Target.WaitForReady>
@@ -416,7 +414,7 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="797,377" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1260,377" sap2010:WorkflowViewState.IdRef="CommentOut_2">
                     <ui:CommentOut.Body>
                       <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="549,299" sap2010:WorkflowViewState.IdRef="Sequence_56">
                         <sap:WorkflowViewStateService.ViewState>
