@@ -3,11 +3,15 @@
     <x:Property Name="requireLogin" Type="InArgument(x:Boolean)" />
     <x:Property Name="urlRespuesta" Type="InArgument(x:String)" />
     <x:Property Name="uiBrowser" Type="InArgument(ui:Browser)" />
+    <x:Property Name="varTimeOutGeneral" Type="InArgument(x:Int32)" />
   </x:Members>
   <this:AutenticarEnPlatzi.uiBrowser>
     <InArgument x:TypeArguments="ui:Browser" />
   </this:AutenticarEnPlatzi.uiBrowser>
-  <sap:VirtualizedContainerService.HintSize>1101,1051</sap:VirtualizedContainerService.HintSize>
+  <this:AutenticarEnPlatzi.varTimeOutGeneral>
+    <InArgument x:TypeArguments="x:Int32" />
+  </this:AutenticarEnPlatzi.varTimeOutGeneral>
+  <sap:VirtualizedContainerService.HintSize>1173,1051</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="17">
@@ -58,7 +62,7 @@
         </sap:WorkflowViewStateService.ViewState>
         <ui:UiElementExists DisplayName="Element Exists Pantalla de Login" Exists="[requireLogin]" sap:VirtualizedContainerService.HintSize="521,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
           <ui:UiElementExists.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9f91ebc5-d3a1-4a82-bc9b-a300bab6eb75" InformativeScreenshot="626f8600796cc8b9b27874770b953a7a" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/clases*' /&gt;&lt;webctrl aaname='Iniciar sesión' tag='SPAN' /&gt;" TimeoutMS="3000">
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9f91ebc5-d3a1-4a82-bc9b-a300bab6eb75" InformativeScreenshot="626f8600796cc8b9b27874770b953a7a" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/clases*' /&gt;&lt;webctrl aaname='Iniciar sesión' tag='SPAN' /&gt;" TimeoutMS="[varTimeOutGeneral]">
               <ui:Target.WaitForReady>
                 <InArgument x:TypeArguments="ui:WaitForReady" />
               </ui:Target.WaitForReady>
@@ -98,7 +102,7 @@
                   </ui:CursorPosition>
                 </ui:Click.CursorPosition>
                 <ui:Click.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="32b7dad6-b465-45cf-8033-180fa70e2258" InformativeScreenshot="453eb4206fd5dcd9c02d9a2306caa7cc" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/clases*' /&gt;&lt;webctrl aaname='Iniciar sesión' tag='SPAN' /&gt;" TimeoutMS="3000">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="32b7dad6-b465-45cf-8033-180fa70e2258" InformativeScreenshot="453eb4206fd5dcd9c02d9a2306caa7cc" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/clases*' /&gt;&lt;webctrl aaname='Iniciar sesión' tag='SPAN' /&gt;" TimeoutMS="[varTimeOutGeneral]">
                     <ui:Target.WaitForReady>
                       <InArgument x:TypeArguments="ui:WaitForReady" />
                     </ui:Target.WaitForReady>
