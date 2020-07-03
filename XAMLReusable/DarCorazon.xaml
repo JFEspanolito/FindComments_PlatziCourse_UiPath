@@ -176,7 +176,7 @@
                   <InArgument x:TypeArguments="x:Object">["Sí"]</InArgument>
                 </Assign.Value>
               </Assign>
-              <Delay Duration="[TimeSpan.Parse(varTimeOutGeneral.ToString)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+              <Delay Duration="[TimeSpan.Parse(&quot;00:00:0&quot;+varTimeOutGeneral.ToString.Replace(&quot;0&quot;,&quot;&quot;))]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
             </Sequence>
           </If.Else>
         </If>
