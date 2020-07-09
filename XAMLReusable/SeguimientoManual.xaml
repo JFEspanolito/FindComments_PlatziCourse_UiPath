@@ -7,7 +7,7 @@
   <this:SeguimientoManual.varTimeOutGeneral>
     <InArgument x:TypeArguments="x:Int32" />
   </this:SeguimientoManual.varTimeOutGeneral>
-  <sap:VirtualizedContainerService.HintSize>1173,4082</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1209,4122</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="17">
@@ -276,15 +276,9 @@
                           </Assign>
                           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DarCorazon workflow" sap:VirtualizedContainerService.HintSize="412,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="XAMLReusable/DarCorazon.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InOutArgument x:TypeArguments="sd:DataRow" x:Key="row">
-                                <mva:VisualBasicReference x:TypeArguments="sd:DataRow" ExpressionText="row" />
-                              </InOutArgument>
-                              <InArgument x:TypeArguments="x:Boolean" x:Key="SoloEsValidacion">
-                                <Literal x:TypeArguments="x:Boolean" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:Int32" x:Key="varTimeOutGeneral">
-                                <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="varTimeOutGeneral" />
-                              </InArgument>
+                              <InOutArgument x:TypeArguments="sd:DataRow" x:Key="row">[row]</InOutArgument>
+                              <InArgument x:TypeArguments="x:Boolean" x:Key="SoloEsValidacion">False</InArgument>
+                              <InArgument x:TypeArguments="x:Int32" x:Key="varTimeOutGeneral">[varTimeOutGeneral]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -406,8 +400,15 @@
                                   <If.Then>
                                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DarCorazon workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="XAMLReusable/DarCorazon.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="row">[row]</InOutArgument>
-                                        <InArgument x:TypeArguments="x:Boolean" x:Key="SoloEsValidacion">False</InArgument>
+                                        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="row">
+                                          <mva:VisualBasicReference x:TypeArguments="sd:DataRow" ExpressionText="row" />
+                                        </InOutArgument>
+                                        <InArgument x:TypeArguments="x:Boolean" x:Key="SoloEsValidacion">
+                                          <Literal x:TypeArguments="x:Boolean" />
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="x:Int32" x:Key="varTimeOutGeneral">
+                                          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="varTimeOutGeneral" />
+                                        </InArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                     </ui:InvokeWorkflowFile>
                                   </If.Then>
