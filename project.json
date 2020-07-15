@@ -1,20 +1,19 @@
 {
-  "name": "FindComments_PlatziCourse",
-  "description": "Obtener los comentarios en un curso en Platzi.",
+  "name": "FindComments_PlatziCourseREF",
+  "description": "Robot en UiPath para buscar todos los comentarios en todas las clases del curso especificado. ",
   "main": "Main.xaml",
   "dependencies": {
-    "BalaReva.Excel.Activities": "[2019.4.0]",
-    "UiPath.Excel.Activities": "[2.8.5]",
-    "UiPath.Mail.Activities": "[1.8.5]",
-    "UiPath.System.Activities": "[20.4.0]",
-    "UiPath.UIAutomation.Activities": "[20.4.1]",
+    "BalaReva.Excel.Activities": "[2019.10.1]",
+    "UiPath.Excel.Activities": "[2.9.0-preview]",
+    "UiPath.System.Activities": "[20.6.1-preview]",
+    "UiPath.UIAutomation.Activities": "[20.6.0-preview]",
     "WakaTime": "[8.1.11]"
   },
   "webServices": [],
   "entitiesStores": [],
   "schemaVersion": "4.0",
-  "studioVersion": "20.4.1.0",
-  "projectVersion": "1.0.14",
+  "studioVersion": "20.6.0.0",
+  "projectVersion": "1.0.0",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
@@ -34,10 +33,6 @@
       "privateWorkflows": []
     },
     "fileInfoCollection": []
-  },
-  "arguments": {
-    "input": [],
-    "output": []
   },
   "expressionLanguage": "VisualBasic"
 }
