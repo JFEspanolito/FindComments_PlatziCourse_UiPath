@@ -90,7 +90,7 @@ El documento generado se guarda en la carpeta Archivos dentro de la carpeta del 
 - **Actualización 27/06/2020** : Ahora el robot detecta cuando otorgaste ya un corazón al comentario para marcarlo como "atendido" o "leído".
 - **Actualización 30/06/2020** :  Ahora el robot acepta múltiples urles de cursos separadas por ; como ejemplo:  " platzi.com/clases/uipath ; https://platzi.com/cursos/machine-learning/ " lo que permitirá que realice búsquedas de comentarios en ambos cursos (o más, ¡puedes poner los que quieras!)
 - **Actualización 30/06/2020** : Se añade sistema de delay dinámico controlado por variable "varTimeOutGeneral", el valor proporcionado será transformado en "milisegundos de espera."
-- **Actualización 30/06/2020** : Se modifica el sistema ahora en versión REF, lo que permite tener un control desde archivo CONFIG para hacerlo *desatendido* a menos que hagas un seguimiento manual. De esta manera la revisión se puede realizar sin estar en el equipo donde el robot se ejecuta.
+- **Actualización 15/07/2020** : Se modifica el sistema ahora en versión REF, lo que permite tener un control desde archivo CONFIG para hacerlo *desatendido* a menos que hagas un seguimiento manual. De esta manera la revisión se puede realizar sin estar en el equipo donde el robot se ejecuta.
 
 [//]: #
 [0]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img0.png> "Diagrama del Proyecto"
