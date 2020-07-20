@@ -3,7 +3,7 @@
     <x:Property Name="in_dtComentariosAcumulados" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="in_NombreDelCurso" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1170,830</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1204,830</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -42,19 +42,30 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Añadir columnas extras" sap:VirtualizedContainerService.HintSize="242,486" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Añadir columnas extras" sap:VirtualizedContainerService.HintSize="478,656" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" Unique="{x:Null}" ColumnName="Curso" DataTable="[in_dtComentariosAcumulados]" DefaultValue="[in_NombreDelCurso]" DisplayName="Add Data Column &quot;Curso&quot;" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_6" MaxLength="1000" />
-    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="Seguimiento" DataTable="[in_dtComentariosAcumulados]" DisplayName="Add Data Column &quot;Seguimiento&quot;" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_7" MaxLength="999999" />
-    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" Unique="{x:Null}" ColumnName="CorazonDado" DataTable="[in_dtComentariosAcumulados]" DefaultValue="No" DisplayName="Add Data Column &quot;CorazonDado&quot;" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_13" MaxLength="10" />
-    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" Unique="{x:Null}" ColumnName="DarCorazon" DataTable="[in_dtComentariosAcumulados]" DefaultValue="0" DisplayName="Add Data Column &quot;DarCorazon&quot;" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_8" MaxLength="10" />
-    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="MiRespuestaAnterior" DataTable="[in_dtComentariosAcumulados]" DisplayName="Add Data Column &quot;MiRespuestaAnterior&quot;" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_9" MaxLength="999999" />
-    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="ResponderLoSiguiente" DataTable="[in_dtComentariosAcumulados]" DisplayName="Add Data Column &quot;ResponderLoSiguiente&quot;" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_10" MaxLength="999999" />
-    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="Respuestas" DataTable="[in_dtComentariosAcumulados]" DisplayName="Add Data Column &quot;Respuestas&quot;" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_12" MaxLength="999999" />
+    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" Unique="{x:Null}" ColumnName="Curso" DataTable="[in_dtComentariosAcumulados]" DefaultValue="[in_NombreDelCurso]" DisplayName="Add Data Column &quot;Curso&quot;" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_6" MaxLength="1000" />
+    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="Seguimiento" DataTable="[in_dtComentariosAcumulados]" DisplayName="Add Data Column &quot;Seguimiento&quot;" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_7" MaxLength="999999" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,192" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" Unique="{x:Null}" ColumnName="CorazonDado" DataTable="[in_dtComentariosAcumulados]" DefaultValue="No" DisplayName="Add Data Column &quot;CorazonDado&quot;" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_13" MaxLength="10" />
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" Unique="{x:Null}" ColumnName="DarCorazon" DataTable="[in_dtComentariosAcumulados]" DefaultValue="0" DisplayName="Add Data Column &quot;DarCorazon&quot;" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_8" MaxLength="10" />
+    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="MiRespuestaAnterior" DataTable="[in_dtComentariosAcumulados]" DisplayName="Add Data Column &quot;MiRespuestaAnterior&quot;" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_9" MaxLength="999999" />
+    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="ResponderLoSiguiente" DataTable="[in_dtComentariosAcumulados]" DisplayName="Add Data Column &quot;ResponderLoSiguiente&quot;" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_10" MaxLength="999999" />
+    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="Respuestas" DataTable="[in_dtComentariosAcumulados]" DisplayName="Add Data Column &quot;Respuestas&quot;" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_12" MaxLength="999999" />
   </Sequence>
 </Activity>
