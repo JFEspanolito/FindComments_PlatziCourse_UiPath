@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="UnitTest" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1209,830" sap2010:WorkflowViewState.IdRef="UnitTest_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="UnitTest" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1204,830" sap2010:WorkflowViewState.IdRef="UnitTest_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="42">
       <x:String>System.Activities</x:String>
@@ -51,7 +51,7 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="UnitTest" sap:VirtualizedContainerService.HintSize="518,528" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="UnitTest" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Default="2000" Name="varTimeOutGeneral" />
     </Sequence.Variables>
@@ -60,40 +60,5 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="476,436" sap2010:WorkflowViewState.IdRef="Sequence_3">
-      <Sequence.Variables>
-        <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
-      </Sequence.Variables>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Firefox" DisplayName="Attach Browser 'Megenerae Page'" sap:VirtualizedContainerService.HintSize="434,344" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="0127af55c553a2dca67d019d12493828" Selector="&lt;html app='firefox.exe' title='Me genera el siguiente error lo intento hacer en la herramienta como manualmente por git y me muestra el mismo error. por medio de UIpath Acceso denegado a la ruta de acceso XAMLcreadosenelcurso por medio de Git ’XAMLCreadosEnElCurso/’: Permission denied' /&gt;">
-        <ui:BrowserScope.Body>
-          <ActivityAction x:TypeArguments="x:Object">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
-            </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_2">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Structured Data 'SECTION'" ExtractMetadata="&lt;extract&gt;&lt;row exact=&amp;apos;1&amp;apos;&gt;&lt;webctrl tag=&amp;apos;article&amp;apos; class=&amp;apos;Comment&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;Comment-wrapper&amp;apos; idx=&amp;apos;1&amp;apos;/&gt;&lt;/row&gt;&lt;column exact=&amp;apos;1&amp;apos; name=&amp;apos;Respuesta&amp;apos; attr=&amp;apos;text&amp;apos;&gt;&lt;webctrl tag=&amp;apos;article&amp;apos; class=&amp;apos;Comment&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;Comment-wrapper&amp;apos; idx=&amp;apos;1&amp;apos; /&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;Comment-body&amp;apos; idx=&amp;apos;1&amp;apos; /&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;Comment-content&amp;apos; idx=&amp;apos;1&amp;apos; /&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;CommentContent-text isExpanded&amp;apos; idx=&amp;apos;1&amp;apos; /&gt;&lt;webctrl parentid=&amp;apos;container&amp;apos; tag=&amp;apos;P&amp;apos; idx=&amp;apos;1&amp;apos; /&gt;&lt;/column&gt;&lt;column exact=&amp;apos;1&amp;apos; name=&amp;apos;Autor&amp;apos; attr=&amp;apos;text&amp;apos;&gt;&lt;webctrl tag=&amp;apos;article&amp;apos; class=&amp;apos;Comment&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;Comment-wrapper&amp;apos; idx=&amp;apos;1&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;CommentMeta&amp;apos; idx=&amp;apos;1&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;CommentAuthor-container&amp;apos; idx=&amp;apos;1&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;CommentAuthor&amp;apos; idx=&amp;apos;1&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;a&amp;apos; class=&amp;apos;CommentAuthor-name&amp;apos; idx=&amp;apos;1&amp;apos;/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="100" SimulateClick="True">
-                <ui:ExtractData.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8baa1013-43dd-4b9c-8a75-1cbeab0cc091" InformativeScreenshot="dbebf3645f7124b417fd6c918b03cecc" Selector="&lt;webctrl css-selector='body&amp;gt;section&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;section' parentid='discussion-detail' tag='SECTION' /&gt;" WaitForReady="COMPLETE">
-                    <ui:Target.TimeoutMS>
-                      <InArgument x:TypeArguments="x:Int32" />
-                    </ui:Target.TimeoutMS>
-                  </ui:Target>
-                </ui:ExtractData.Target>
-              </ui:ExtractData>
-            </Sequence>
-          </ActivityAction>
-        </ui:BrowserScope.Body>
-      </ui:BrowserScope>
-    </Sequence>
   </Sequence>
 </Activity>
