@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1204,830</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1234,830</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
@@ -69,7 +69,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Flowchart DisplayName="Process" sap:VirtualizedContainerService.HintSize="714,659" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Process" sap:VirtualizedContainerService.HintSize="714,649" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtComentariosAcumulados" />
     </Flowchart.Variables>
@@ -80,7 +80,7 @@
         <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
         <av:Size x:Key="ShapeSize">60,75</av:Size>
         <x:Double x:Key="Width">680</x:Double>
-        <x:Double x:Key="Height">623</x:Double>
+        <x:Double x:Key="Height">613</x:Double>
         <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,156.5</av:PointCollection>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
@@ -95,7 +95,7 @@
           <av:PointCollection x:Key="ConnectorLocation">310.5,1116 412.5,1116 412.5,1206.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Generar reporte" sap:VirtualizedContainerService.HintSize="568,1920" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <Sequence DisplayName="Generar reporte" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_8">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd:DataTable" Name="dtComentariosAcumuladosFiltrado" />
           <Variable x:TypeArguments="x:Int16" sap2010:Annotation.AnnotationText="Este valor se convierte en Segundos, al colocar 1 genera que cada actividad de formato tenga un tiempo de espera de 1 segundo. Son apróximadamente 15 actividades de Formato." Default="3" Name="varFormatReportDelay" />
@@ -116,7 +116,7 @@
           </Assign.Value>
         </Assign>
         <ui:Delete ContinueOnError="True" DisplayName="Borrar archivo anterior" sap:VirtualizedContainerService.HintSize="526,22" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[varPathArchivo]" />
-        <Sequence DisplayName="Crear documento nuevo" sap:VirtualizedContainerService.HintSize="526,870" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Crear documento nuevo" sap:VirtualizedContainerService.HintSize="526,932" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -127,28 +127,12 @@
           <ui:FilterDataTable DataTable="[dtComentariosAcumulados]" DisplayName="Filtrar los registros que no tienen corazón" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dtComentariosAcumuladosFiltrado]" SelectColumnsMode="Keep">
             <ui:FilterDataTable.Filters>
               <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
-                <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
                   <ui:FilterOperationArgument.Column>
                     <InArgument x:TypeArguments="x:String">["CorazonDado"]</InArgument>
                   </ui:FilterOperationArgument.Column>
                   <ui:FilterOperationArgument.Operand>
                     <InArgument x:TypeArguments="x:String">["No"]</InArgument>
-                  </ui:FilterOperationArgument.Operand>
-                </ui:FilterOperationArgument>
-                <ui:FilterOperationArgument BooleanOperator="Or" Operator="EQ">
-                  <ui:FilterOperationArgument.Column>
-                    <InArgument x:TypeArguments="x:String">["Corazon"]</InArgument>
-                  </ui:FilterOperationArgument.Column>
-                  <ui:FilterOperationArgument.Operand>
-                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
-                  </ui:FilterOperationArgument.Operand>
-                </ui:FilterOperationArgument>
-                <ui:FilterOperationArgument BooleanOperator="Or" Operator="EQ">
-                  <ui:FilterOperationArgument.Column>
-                    <InArgument x:TypeArguments="x:String">["Corazon"]</InArgument>
-                  </ui:FilterOperationArgument.Column>
-                  <ui:FilterOperationArgument.Operand>
-                    <InArgument x:TypeArguments="x:String">["1"]</InArgument>
                   </ui:FilterOperationArgument.Operand>
                 </ui:FilterOperationArgument>
               </scg:List>
@@ -175,10 +159,11 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:WriteRange>
+          <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
           <ui:FilterDataTable DataTable="[dtComentariosAcumulados]" DisplayName="Filtrar los registros que ya tienen corazón" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[dtComentariosAcumuladosFiltrado]" SelectColumnsMode="Keep">
             <ui:FilterDataTable.Filters>
               <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
-                <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
                   <ui:FilterOperationArgument.Column>
                     <InArgument x:TypeArguments="x:String">["CorazonDado"]</InArgument>
                   </ui:FilterOperationArgument.Column>
@@ -186,20 +171,12 @@
                     <InArgument x:TypeArguments="x:String">["Sí"]</InArgument>
                   </ui:FilterOperationArgument.Operand>
                 </ui:FilterOperationArgument>
-                <ui:FilterOperationArgument BooleanOperator="And" Operator="NOTEQ">
+                <ui:FilterOperationArgument BooleanOperator="Or" Operator="CONTAINS">
                   <ui:FilterOperationArgument.Column>
-                    <InArgument x:TypeArguments="x:String">["Corazon"]</InArgument>
+                    <InArgument x:TypeArguments="x:String">["CorazonDado"]</InArgument>
                   </ui:FilterOperationArgument.Column>
                   <ui:FilterOperationArgument.Operand>
-                    <InArgument x:TypeArguments="x:String">["0"]</InArgument>
-                  </ui:FilterOperationArgument.Operand>
-                </ui:FilterOperationArgument>
-                <ui:FilterOperationArgument BooleanOperator="And" Operator="NOTEQ">
-                  <ui:FilterOperationArgument.Column>
-                    <InArgument x:TypeArguments="x:String">["Corazon"]</InArgument>
-                  </ui:FilterOperationArgument.Column>
-                  <ui:FilterOperationArgument.Operand>
-                    <InArgument x:TypeArguments="x:String">["1"]</InArgument>
+                    <InArgument x:TypeArguments="x:String">["Si"]</InArgument>
                   </ui:FilterOperationArgument.Operand>
                 </ui:FilterOperationArgument>
               </scg:List>
@@ -227,290 +204,14 @@
             </sap:WorkflowViewStateService.ViewState>
           </ui:WriteRange>
         </Sequence>
-        <Sequence DisplayName="Formato al documento." sap:VirtualizedContainerService.HintSize="526,756" sap2010:WorkflowViewState.IdRef="Sequence_7">
-          <Sequence.Variables>
-            <Variable x:TypeArguments="x:TimeSpan" Name="delayTime" />
-          </Sequence.Variables>
+        <Sequence DisplayName="Formato al documento." sap:VirtualizedContainerService.HintSize="526,306" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_7">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:Int16">[varFormatReportDelay]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:Int16">[int16.Parse(in_Config("delayGenerarReporte").ToString)]</InArgument>
-            </Assign.Value>
-          </Assign>
-          <If Condition="[varFormatReportDelay.ToString.Length&gt;1]" DisplayName="Convertir delayTime en TimeSpan" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="If_7">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <If.Then>
-              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="x:TimeSpan">[delayTime]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="x:TimeSpan">[TimeSpan.Parse("00:00:"+varFormatReportDelay.ToString)]</InArgument>
-                </Assign.Value>
-              </Assign>
-            </If.Then>
-            <If.Else>
-              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_9">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="x:TimeSpan">[delayTime]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="x:TimeSpan">[TimeSpan.Parse("00:00:0"+varFormatReportDelay.ToString)]</InArgument>
-                </Assign.Value>
-              </Assign>
-            </If.Else>
-          </If>
-          <TryCatch DisplayName="Try Catch - Añadir comentarios a Excel" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="TryCatch_2">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <TryCatch.Try>
-              <Sequence DisplayName="Añadir comentarios a Excel" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="A1" Comment="Nombre del Estudiante que dejó el comentario escrito por el estudiante en el curso." Delay="[varFormatReportDelay]" DisplayName="Add Comment &quot;Nombre&quot; - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,69" sap2010:WorkflowViewState.IdRef="AddComment_1" SheetName="Nuevos">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </bec:AddComment>
-                <Delay Duration="[delayTime]" sap:VirtualizedContainerService.HintSize="445,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
-                <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="A1" Comment="Nombre del Estudiante que dejó el comentario escrito por el estudiante en el curso." Delay="[varFormatReportDelay]" DisplayName="Add Comment &quot;Nombre&quot; - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,69" sap2010:WorkflowViewState.IdRef="AddComment_2" SheetName="Seguimiento">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </bec:AddComment>
-                <Delay Duration="[delayTime]" sap:VirtualizedContainerService.HintSize="445,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
-                <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="B1" Comment="Comentario escrito por el estudiante en el curso." Delay="[varFormatReportDelay]" DisplayName="Add Comment &quot;Comentario&quot; - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,69" sap2010:WorkflowViewState.IdRef="AddComment_3" SheetName="Nuevos">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </bec:AddComment>
-                <Delay Duration="[delayTime]" sap:VirtualizedContainerService.HintSize="445,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
-                <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="B1" Comment="Comentario escrito por el estudiante en el curso." Delay="[varFormatReportDelay]" DisplayName="Add Comment &quot;Comentario&quot; - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,69" sap2010:WorkflowViewState.IdRef="AddComment_4" SheetName="Seguimiento">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </bec:AddComment>
-                <Delay Duration="[delayTime]" sap:VirtualizedContainerService.HintSize="445,22" sap2010:WorkflowViewState.IdRef="Delay_4" />
-                <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="C1" Comment="La URL del comentario. No la modifiques es la que se usa para navegar al comentario en el sistema de seguimiento." Delay="[varFormatReportDelay]" DisplayName="Add Comment &quot;url&quot; - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,69" sap2010:WorkflowViewState.IdRef="AddComment_5" SheetName="Nuevos">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </bec:AddComment>
-                <Delay Duration="[delayTime]" sap:VirtualizedContainerService.HintSize="445,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
-                <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="C1" Comment="La URL del comentario. No la modifiques es la que se usa para navegar al comentario en el sistema de seguimiento." Delay="[varFormatReportDelay]" DisplayName="Add Comment &quot;url&quot; - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,69" sap2010:WorkflowViewState.IdRef="AddComment_6" SheetName="Seguimiento">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </bec:AddComment>
-                <Delay Duration="[delayTime]" sap:VirtualizedContainerService.HintSize="445,22" sap2010:WorkflowViewState.IdRef="Delay_6" />
-                <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="D1" Comment="El número de corazones que hay en el sitio web al momento de extraer los datos." Delay="[varFormatReportDelay]" DisplayName="Add Comment &quot;Corazon&quot; - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,69" sap2010:WorkflowViewState.IdRef="AddComment_7" SheetName="Nuevos">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </bec:AddComment>
-                <Delay Duration="[delayTime]" sap:VirtualizedContainerService.HintSize="445,22" sap2010:WorkflowViewState.IdRef="Delay_7" />
-                <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="D1" Comment="El número de corazones que hay en el sitio web al momento de extraer los datos." Delay="[varFormatReportDelay]" DisplayName="Add Comment &quot;Corazon&quot; - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,69" sap2010:WorkflowViewState.IdRef="AddComment_8" SheetName="Seguimiento">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </bec:AddComment>
-                <Delay Duration="[delayTime]" sap:VirtualizedContainerService.HintSize="445,22" sap2010:WorkflowViewState.IdRef="Delay_12" />
-                <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="E1" Comment="Indica si el comentario ya cuenta con un corazón dado por el robot o el usuaro que ejecuta el robot." Delay="[varFormatReportDelay]" DisplayName="Add Comment &quot;CorazonDado&quot; - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,69" sap2010:WorkflowViewState.IdRef="AddComment_13" SheetName="Nuevos">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </bec:AddComment>
-                <Delay Duration="[delayTime]" sap:VirtualizedContainerService.HintSize="445,22" sap2010:WorkflowViewState.IdRef="Delay_13" />
-                <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="E1" Comment="Indica si el comentario ya cuenta con un corazón dado por el robot o el usuaro que ejecuta el robot." Delay="[varFormatReportDelay]" DisplayName="Add Comment &quot;CorazonDado&quot; - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,69" sap2010:WorkflowViewState.IdRef="AddComment_14" SheetName="Seguimiento">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </bec:AddComment>
-                <Delay Duration="[delayTime]" sap:VirtualizedContainerService.HintSize="445,22" sap2010:WorkflowViewState.IdRef="Delay_8" />
-                <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="F1" Comment="Nombre del curso donde se encontró el comentario." Delay="[varFormatReportDelay]" DisplayName="Add Comment &quot;Curso&quot; - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,69" sap2010:WorkflowViewState.IdRef="AddComment_9" SheetName="Nuevos">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </bec:AddComment>
-                <Delay Duration="[delayTime]" sap:VirtualizedContainerService.HintSize="445,22" sap2010:WorkflowViewState.IdRef="Delay_9" />
-                <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="F1" Comment="Nombre del curso donde se encontró el comentario." Delay="[varFormatReportDelay]" DisplayName="Add Comment &quot;Curso&quot; - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,69" sap2010:WorkflowViewState.IdRef="AddComment_10" SheetName="Seguimiento">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </bec:AddComment>
-                <Delay Duration="[delayTime]" sap:VirtualizedContainerService.HintSize="445,22" sap2010:WorkflowViewState.IdRef="Delay_10" />
-                <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="G1" Comment="Colocar aquí el mensaje de seguimiento para ti, son tus notas de profesor." Delay="[varFormatReportDelay]" DisplayName="Add Comment &quot;Seguimiento&quot; - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,69" sap2010:WorkflowViewState.IdRef="AddComment_11" SheetName="Nuevos">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </bec:AddComment>
-                <Delay Duration="[delayTime]" sap:VirtualizedContainerService.HintSize="445,22" sap2010:WorkflowViewState.IdRef="Delay_11" />
-                <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="G1" Comment="Colocar aquí el mensaje de seguimiento para ti, son tus notas de profesor." Delay="[varFormatReportDelay]" DisplayName="Add Comment &quot;Seguimiento&quot; - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,69" sap2010:WorkflowViewState.IdRef="AddComment_12" SheetName="Seguimiento">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </bec:AddComment>
-                <Delay Duration="[delayTime]" sap:VirtualizedContainerService.HintSize="445,22" sap2010:WorkflowViewState.IdRef="Delay_14" />
-                <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="H1" Comment="Colocar un 1 si deseas dar un corazón a este comentario dentro del sitio web." Delay="[varFormatReportDelay]" DisplayName="Add Comment &quot;DarCorazon&quot; - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,69" sap2010:WorkflowViewState.IdRef="AddComment_15" SheetName="Nuevos">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </bec:AddComment>
-                <Delay Duration="[delayTime]" sap:VirtualizedContainerService.HintSize="445,22" sap2010:WorkflowViewState.IdRef="Delay_15" />
-                <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="H1" Comment="Colocar un 1 si deseas dar un corazón a este comentario dentro del sitio web." Delay="[varFormatReportDelay]" DisplayName="Add Comment &quot;DarCorazon&quot; - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,69" sap2010:WorkflowViewState.IdRef="AddComment_16" SheetName="Seguimiento">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </bec:AddComment>
-                <Delay Duration="[delayTime]" sap:VirtualizedContainerService.HintSize="445,22" sap2010:WorkflowViewState.IdRef="Delay_16" />
-                <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="I1" Comment="La última respuesta que fue dada al comentario desde el robot." Delay="[varFormatReportDelay]" DisplayName="Add Comment &quot;MiRespuestaAnterior&quot; - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,69" sap2010:WorkflowViewState.IdRef="AddComment_17" SheetName="Nuevos">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </bec:AddComment>
-                <Delay Duration="[delayTime]" sap:VirtualizedContainerService.HintSize="445,22" sap2010:WorkflowViewState.IdRef="Delay_17" />
-                <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="I1" Comment="La última respuesta que fue dada al comentario desde el robot." Delay="[varFormatReportDelay]" DisplayName="Add Comment &quot;MiRespuestaAnterior&quot; - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,69" sap2010:WorkflowViewState.IdRef="AddComment_18" SheetName="Seguimiento">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </bec:AddComment>
-                <Delay Duration="[delayTime]" sap:VirtualizedContainerService.HintSize="445,22" sap2010:WorkflowViewState.IdRef="Delay_18" />
-                <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="J1" Comment="El texto que coloques en esta columna será el texto que se le responderá al estudiante en el próximo seguimiento automático que realices." Delay="[varFormatReportDelay]" DisplayName="Add Comment &quot;ResponderLoSiguiente&quot; - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,69" sap2010:WorkflowViewState.IdRef="AddComment_19" SheetName="Nuevos">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </bec:AddComment>
-                <Delay Duration="[delayTime]" sap:VirtualizedContainerService.HintSize="445,22" sap2010:WorkflowViewState.IdRef="Delay_19" />
-                <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="J1" Comment="El texto que coloques en esta columna será el texto que se le responderá al estudiante en el próximo seguimiento automático que realices." Delay="[varFormatReportDelay]" DisplayName="Add Comment &quot;ResponderLoSiguiente&quot; - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AddComment_20" SheetName="Seguimiento">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </bec:AddComment>
-                <Delay Duration="[delayTime]" sap:VirtualizedContainerService.HintSize="445,22" sap2010:WorkflowViewState.IdRef="Delay_20" />
-                <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="K1" Comment="Todas las respuesta encontradas en el comentario." Delay="[varFormatReportDelay]" DisplayName="Add Comment &quot;MiRespuestaAnterior&quot; - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AddComment_21" SheetName="Nuevos">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </bec:AddComment>
-                <Delay Duration="[delayTime]" sap:VirtualizedContainerService.HintSize="445,22" sap2010:WorkflowViewState.IdRef="Delay_21" />
-                <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="K1" Comment="Todas las respuesta encontradas en el comentario." Delay="[varFormatReportDelay]" DisplayName="Add Comment &quot;MiRespuestaAnterior&quot; - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AddComment_22" SheetName="Seguimiento">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </bec:AddComment>
-              </Sequence>
-            </TryCatch.Try>
-            <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,160" sap2010:WorkflowViewState.IdRef="Catch`1_2">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ActivityAction x:TypeArguments="s:Exception">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                  </ActivityAction.Argument>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Falló el sistema al añadir un comentario al Reporte.&quot; + Environment.NewLine + exception.Message]">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:LogMessage>
-                </ActivityAction>
-              </Catch>
-            </TryCatch.Catches>
-          </TryCatch>
-          <If Condition="[Boolean.Parse(in_Config(&quot;DarFormatoReporte&quot;).ToString)]" DisplayName="Si DarFormatoReporte=True" sap:VirtualizedContainerService.HintSize="484,382" sap2010:WorkflowViewState.IdRef="If_9">
+          <If Condition="[Boolean.Parse(in_Config(&quot;DarFormatoReporte&quot;).ToString)]" DisplayName="Si DarFormatoReporte=True" sap:VirtualizedContainerService.HintSize="484,214" sap2010:WorkflowViewState.IdRef="If_9">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -518,12 +219,252 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence DisplayName="Dar Formato" sap:VirtualizedContainerService.HintSize="242,234" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <Sequence DisplayName="Dar Formato" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_14">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
+                <ui:CopyFile ContinueOnError="{x:Null}" Destination="[varPathArchivo.Replace(&quot;.xlsx&quot;, &quot;_respaldo.xlsx&quot;)]" DisplayName="Generar respaldo antes añadir formato." sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[varPathArchivo]">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:CopyFile>
+                <TryCatch DisplayName="Try Catch - Añadir comentarios a Excel" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <TryCatch.Try>
+                    <Sequence DisplayName="Añadir comentarios a Excel" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="A1" Comment="Nombre del Estudiante que dejó el comentario escrito por el estudiante en el curso." Delay="3" DisplayName="Add Comment &quot;Nombre&quot; - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AddComment_1" SheetName="Nuevos">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </bec:AddComment>
+                      <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="A1" Comment="Nombre del Estudiante que dejó el comentario escrito por el estudiante en el curso." Delay="3" DisplayName="Add Comment &quot;Nombre&quot; - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AddComment_2" SheetName="Seguimiento">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </bec:AddComment>
+                      <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="B1" Comment="Comentario escrito por el estudiante en el curso." Delay="3" DisplayName="Add Comment &quot;Comentario&quot; - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AddComment_3" SheetName="Nuevos">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </bec:AddComment>
+                      <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="B1" Comment="Comentario escrito por el estudiante en el curso." Delay="3" DisplayName="Add Comment &quot;Comentario&quot; - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AddComment_4" SheetName="Seguimiento">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </bec:AddComment>
+                      <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="C1" Comment="La URL del comentario. No la modifiques es la que se usa para navegar al comentario en el sistema de seguimiento." Delay="3" DisplayName="Add Comment &quot;url&quot; - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AddComment_5" SheetName="Nuevos">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </bec:AddComment>
+                      <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="C1" Comment="La URL del comentario. No la modifiques es la que se usa para navegar al comentario en el sistema de seguimiento." Delay="3" DisplayName="Add Comment &quot;url&quot; - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AddComment_6" SheetName="Seguimiento">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </bec:AddComment>
+                      <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="D1" Comment="El número de corazones que hay en el sitio web al momento de extraer los datos." Delay="3" DisplayName="Add Comment &quot;Corazon&quot; - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AddComment_7" SheetName="Nuevos">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </bec:AddComment>
+                      <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="D1" Comment="El número de corazones que hay en el sitio web al momento de extraer los datos." Delay="3" DisplayName="Add Comment &quot;Corazon&quot; - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AddComment_8" SheetName="Seguimiento">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </bec:AddComment>
+                      <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="E1" Comment="Indica si el comentario ya cuenta con un corazón dado por el robot o el usuaro que ejecuta el robot." Delay="3" DisplayName="Add Comment &quot;CorazonDado&quot; - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AddComment_13" SheetName="Nuevos">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </bec:AddComment>
+                      <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="E1" Comment="Indica si el comentario ya cuenta con un corazón dado por el robot o el usuaro que ejecuta el robot." Delay="3" DisplayName="Add Comment &quot;CorazonDado&quot; - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AddComment_14" SheetName="Seguimiento">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </bec:AddComment>
+                      <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="F1" Comment="Nombre del curso donde se encontró el comentario." Delay="3" DisplayName="Add Comment &quot;Curso&quot; - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AddComment_9" SheetName="Nuevos">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </bec:AddComment>
+                      <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="F1" Comment="Nombre del curso donde se encontró el comentario." Delay="3" DisplayName="Add Comment &quot;Curso&quot; - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AddComment_10" SheetName="Seguimiento">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </bec:AddComment>
+                      <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="G1" Comment="Colocar aquí el mensaje de seguimiento para ti, son tus notas de profesor." Delay="3" DisplayName="Add Comment &quot;Seguimiento&quot; - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AddComment_11" SheetName="Nuevos">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </bec:AddComment>
+                      <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="G1" Comment="Colocar aquí el mensaje de seguimiento para ti, son tus notas de profesor." Delay="3" DisplayName="Add Comment &quot;Seguimiento&quot; - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AddComment_12" SheetName="Seguimiento">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </bec:AddComment>
+                      <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="H1" Comment="Colocar un 1 si deseas dar un corazón a este comentario dentro del sitio web." Delay="3" DisplayName="Add Comment &quot;DarCorazon&quot; - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AddComment_15" SheetName="Nuevos">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </bec:AddComment>
+                      <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="H1" Comment="Colocar un 1 si deseas dar un corazón a este comentario dentro del sitio web." Delay="3" DisplayName="Add Comment &quot;DarCorazon&quot; - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AddComment_16" SheetName="Seguimiento">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </bec:AddComment>
+                      <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="I1" Comment="La última respuesta que fue dada al comentario desde el robot." Delay="3" DisplayName="Add Comment &quot;MiRespuestaAnterior&quot; - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AddComment_17" SheetName="Nuevos">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </bec:AddComment>
+                      <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="I1" Comment="La última respuesta que fue dada al comentario desde el robot." Delay="3" DisplayName="Add Comment &quot;MiRespuestaAnterior&quot; - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AddComment_18" SheetName="Seguimiento">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </bec:AddComment>
+                      <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="J1" Comment="El texto que coloques en esta columna será el texto que se le responderá al estudiante en el próximo seguimiento automático que realices." Delay="3" DisplayName="Add Comment &quot;ResponderLoSiguiente&quot; - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AddComment_19" SheetName="Nuevos">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </bec:AddComment>
+                      <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="J1" Comment="El texto que coloques en esta columna será el texto que se le responderá al estudiante en el próximo seguimiento automático que realices." Delay="3" DisplayName="Add Comment &quot;ResponderLoSiguiente&quot; - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AddComment_20" SheetName="Seguimiento">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </bec:AddComment>
+                      <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="K1" Comment="Todas las respuesta encontradas en el comentario." Delay="3" DisplayName="Add Comment &quot;MiRespuestaAnterior&quot; - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AddComment_21" SheetName="Nuevos">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </bec:AddComment>
+                      <bec:AddComment ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" Cell="K1" Comment="Todas las respuesta encontradas en el comentario." Delay="3" DisplayName="Add Comment &quot;MiRespuestaAnterior&quot; - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AddComment_22" SheetName="Seguimiento">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </bec:AddComment>
+                    </Sequence>
+                  </TryCatch.Try>
+                  <TryCatch.Catches>
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="432,449" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ActivityAction x:TypeArguments="s:Exception">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                        </ActivityAction.Argument>
+                        <Sequence sap:VirtualizedContainerService.HintSize="426,380" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="384,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Falló el sistema al añadir un comentario al Reporte.&quot; + Environment.NewLine + exception.Message]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                          <ui:CopyFile ContinueOnError="{x:Null}" Destination="[varPathArchivo]" DisplayName="Restaurar archivo" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="CopyFile_2" Overwrite="True" Path="[varPathArchivo.Replace(&quot;.xlsx&quot;, &quot;_respaldo.xlsx&quot;)]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:CopyFile>
+                        </Sequence>
+                      </ActivityAction>
+                    </Catch>
+                  </TryCatch.Catches>
+                </TryCatch>
                 <TryCatch DisplayName="Try Catch - AutoFit Column" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -532,14 +473,14 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <TryCatch.Try>
-                    <Sequence DisplayName="AutoFit Column" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <Sequence DisplayName="AutoFit Column" sap:VirtualizedContainerService.HintSize="487,272" sap2010:WorkflowViewState.IdRef="Sequence_5">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <bes:AutoFitColumns ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" AutoFit="False" ColumnWidth="20" ColumnsRange="[{&quot;A:K&quot;}]" Delay="[varFormatReportDelay]" DisplayName="AutoFit Columns - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,69" sap2010:WorkflowViewState.IdRef="AutoFitColumns_1" SheetName="Nuevos">
+                      <bes:AutoFitColumns ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" AutoFit="False" ColumnWidth="20" ColumnsRange="[{&quot;A:K&quot;}]" Delay="3" DisplayName="AutoFit Columns - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AutoFitColumns_1" SheetName="Nuevos">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -547,8 +488,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </bes:AutoFitColumns>
-                      <Delay Duration="[delayTime]" sap:VirtualizedContainerService.HintSize="445,22" sap2010:WorkflowViewState.IdRef="Delay_22" />
-                      <bes:AutoFitColumns ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" AutoFit="False" ColumnWidth="20" ColumnsRange="[{&quot;A:K&quot;}]" Delay="[varFormatReportDelay]" DisplayName="AutoFit Columns - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,69" sap2010:WorkflowViewState.IdRef="AutoFitColumns_2" SheetName="Seguimiento">
+                      <bes:AutoFitColumns ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" AutoFit="False" ColumnWidth="20" ColumnsRange="[{&quot;A:K&quot;}]" Delay="[varFormatReportDelay]" DisplayName="AutoFit Columns - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" sap2010:WorkflowViewState.IdRef="AutoFitColumns_2" SheetName="Seguimiento">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -559,7 +499,7 @@
                     </Sequence>
                   </TryCatch.Try>
                   <TryCatch.Catches>
-                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,160" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="491,449" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -570,13 +510,28 @@
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                         </ActivityAction.Argument>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[&quot;Falló el sistema al añadir un comentario al Reporte.&quot; + Environment.NewLine + exception.Message]">
+                        <Sequence sap:VirtualizedContainerService.HintSize="426,380" sap2010:WorkflowViewState.IdRef="Sequence_16">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                        </ui:LogMessage>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="384,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[&quot;Falló el sistema al añadir un comentario al Reporte.&quot; + Environment.NewLine + exception.Message]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                          <ui:CopyFile ContinueOnError="{x:Null}" Destination="[varPathArchivo]" DisplayName="Restaurar archivo" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="CopyFile_3" Overwrite="True" Path="[varPathArchivo.Replace(&quot;.xlsx&quot;, &quot;_respaldo.xlsx&quot;)]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:CopyFile>
+                        </Sequence>
                       </ActivityAction>
                     </Catch>
                   </TryCatch.Catches>
@@ -589,21 +544,20 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <TryCatch.Try>
-                    <Sequence DisplayName="Format Cell" sap:VirtualizedContainerService.HintSize="487,332" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <Sequence DisplayName="Format Cell" sap:VirtualizedContainerService.HintSize="487,272" sap2010:WorkflowViewState.IdRef="Sequence_6">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <bes:FormatCells ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" CellRange="[{&quot;A:K&quot;}]" Delay="[varFormatReportDelay]" DisplayName="Format Cells - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,69" Horizontal="Left" sap2010:WorkflowViewState.IdRef="FormatCells_1" Indent="0" MergeCells="Select" OrientationDeg="0" SheetName="Nuevos" ShrinkFit="Select" TextDirection="Select" Verticle="Select" WrapText="False">
+                      <bes:FormatCells ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" CellRange="[{&quot;A:K&quot;}]" Delay="3" DisplayName="Format Cells - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" Horizontal="Left" sap2010:WorkflowViewState.IdRef="FormatCells_1" Indent="0" MergeCells="Select" OrientationDeg="0" SheetName="Nuevos" ShrinkFit="Select" TextDirection="Select" Verticle="Select" WrapText="False">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </bes:FormatCells>
-                      <Delay Duration="[delayTime]" sap:VirtualizedContainerService.HintSize="445,22" sap2010:WorkflowViewState.IdRef="Delay_23" />
-                      <bes:FormatCells ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" CellRange="[{&quot;A:K&quot;}]" Delay="[varFormatReportDelay]" DisplayName="Format Cells - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,69" Horizontal="Select" sap2010:WorkflowViewState.IdRef="FormatCells_2" Indent="0" MergeCells="Select" OrientationDeg="0" SheetName="Seguimiento" ShrinkFit="Select" TextDirection="Select" Verticle="Select" WrapText="False">
+                      <bes:FormatCells ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" CellRange="[{&quot;A:K&quot;}]" Delay="3" DisplayName="Format Cells - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" Horizontal="Select" sap2010:WorkflowViewState.IdRef="FormatCells_2" Indent="0" MergeCells="Select" OrientationDeg="0" SheetName="Seguimiento" ShrinkFit="Select" TextDirection="Select" Verticle="Select" WrapText="False">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -613,7 +567,7 @@
                     </Sequence>
                   </TryCatch.Try>
                   <TryCatch.Catches>
-                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="491,160" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="491,449" sap2010:WorkflowViewState.IdRef="Catch`1_4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -624,13 +578,28 @@
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                         </ActivityAction.Argument>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Falló el sistema al dar formato de encabezado al Reporte.&quot; + Environment.NewLine + exception.Message]">
+                        <Sequence sap:VirtualizedContainerService.HintSize="426,380" sap2010:WorkflowViewState.IdRef="Sequence_17">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                        </ui:LogMessage>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="384,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Falló el sistema al dar formato de encabezado al Reporte.&quot; + Environment.NewLine + exception.Message]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                          <ui:CopyFile ContinueOnError="{x:Null}" Destination="[varPathArchivo]" DisplayName="Restaurar archivo" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="CopyFile_4" Overwrite="True" Path="[varPathArchivo.Replace(&quot;.xlsx&quot;, &quot;_respaldo.xlsx&quot;)]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:CopyFile>
+                        </Sequence>
                       </ActivityAction>
                     </Catch>
                   </TryCatch.Catches>
@@ -652,7 +621,6 @@
       <Sequence DisplayName="Seguimiento puntual" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="varTotalComentarios" />
-          <Variable x:TypeArguments="x:String" Name="darSeguimiento_RespuestaUsuario" />
           <Variable x:TypeArguments="x:String" Name="varTotalRespuestas" />
           <Variable x:TypeArguments="sd:DataTable" Name="dtRespuestaEncontradas" />
         </Sequence.Variables>
@@ -771,7 +739,7 @@
           <av:PointCollection x:Key="ConnectorLocation">580,233 580,263 327.5,263 327.5,356.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Obtener datos de sitio web" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_12">
+      <Sequence DisplayName="Obtener datos de sitio web" sap:VirtualizedContainerService.HintSize="527,1838" sap2010:WorkflowViewState.IdRef="Sequence_12">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd:DataTable" Name="dtClasesEncontradas" />
           <Variable x:TypeArguments="ui:Browser" Name="uiBrowser" />
@@ -782,7 +750,7 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Firefox" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="661,51" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[uiBrowser]" Url="[in_TransactionItem]">
+        <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Firefox" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="485,699" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[uiBrowser]" Url="[in_TransactionItem]">
           <ui:OpenBrowser.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
@@ -852,28 +820,18 @@
           </ui:OpenBrowser.Body>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:OpenBrowser>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ObtenerComentariosPorClase workflow" sap:VirtualizedContainerService.HintSize="661,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="XAMLReusable/ObtenerComentariosPorClase.xaml">
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ObtenerComentariosPorClase workflow" sap:VirtualizedContainerService.HintSize="485,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="XAMLReusable/ObtenerComentariosPorClase.xaml">
           <ui:InvokeWorkflowFile.Arguments>
-            <InArgument x:TypeArguments="sd:DataTable" x:Key="dtClasesEncontradas">
-              <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dtClasesEncontradas" />
-            </InArgument>
-            <OutArgument x:TypeArguments="sd:DataTable" x:Key="dtComentariosAcumulados">
-              <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtComentariosAcumulados" />
-            </OutArgument>
-            <InArgument x:TypeArguments="ui:Browser" x:Key="uiBrowser">
-              <mva:VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="uiBrowser" />
-            </InArgument>
-            <InArgument x:TypeArguments="x:Int32" x:Key="varTimeOutGeneral">
-              <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="int32.Parse(in_Config(&quot;varTimeOutGeneral&quot;).ToString)" />
-            </InArgument>
-            <InArgument x:TypeArguments="x:Boolean" x:Key="ModoDebug">
-              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Boolean.Parse(in_Config(&quot;ActivarModoDebug&quot;).ToString)" />
-            </InArgument>
+            <InArgument x:TypeArguments="sd:DataTable" x:Key="dtClasesEncontradas">[dtClasesEncontradas]</InArgument>
+            <OutArgument x:TypeArguments="sd:DataTable" x:Key="dtComentariosAcumulados">[dtComentariosAcumulados]</OutArgument>
+            <InArgument x:TypeArguments="ui:Browser" x:Key="uiBrowser">[uiBrowser]</InArgument>
+            <InArgument x:TypeArguments="x:Int32" x:Key="varTimeOutGeneral">[int32.Parse(in_Config("varTimeOutGeneral").ToString)]</InArgument>
+            <InArgument x:TypeArguments="x:Boolean" x:Key="ModoDebug">[Boolean.Parse(in_Config("ActivarModoDebug").ToString)]</InArgument>
           </ui:InvokeWorkflowFile.Arguments>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -882,7 +840,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:InvokeWorkflowFile>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AddExtraColumns workflow" sap:VirtualizedContainerService.HintSize="661,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="XAMLReusable/AddExtraColumns.xaml">
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AddExtraColumns workflow" sap:VirtualizedContainerService.HintSize="485,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="XAMLReusable/AddExtraColumns.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <InOutArgument x:TypeArguments="sd:DataTable" x:Key="in_dtComentariosAcumulados">[dtComentariosAcumulados]</InOutArgument>
             <InArgument x:TypeArguments="x:String" x:Key="in_NombreDelCurso">[NombreDelCurso]</InArgument>
@@ -894,20 +852,26 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:InvokeWorkflowFile>
-        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtComentariosAcumulados]" DisplayName="Corregir URL y CorazonDado" sap:VirtualizedContainerService.HintSize="661,944" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtComentariosAcumulados]" DisplayName="Corregir URL y CorazonDado" sap:VirtualizedContainerService.HintSize="485,473" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Corregir url, según situación:" sap:VirtualizedContainerService.HintSize="611,796" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <Sequence DisplayName="Corregir url, según situación:" sap:VirtualizedContainerService.HintSize="242,325" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <If Condition="[row(&quot;URL&quot;).ToString.Contains(&quot;platzi.com&quot;)]" DisplayName="Si no contiene &quot;platzi.com&quot;" sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_2">
+                <If Condition="[row(&quot;URL&quot;).ToString.Contains(&quot;platzi.com&quot;)]" DisplayName="Si no contiene &quot;platzi.com&quot;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
                   <If.Else>
                     <Assign DisplayName="Añadir &quot;platzi.com&quot; a la url extraida" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
                       <Assign.To>
@@ -919,7 +883,13 @@
                     </Assign>
                   </If.Else>
                 </If>
-                <If Condition="[row(&quot;URL&quot;).ToString.Contains(&quot;platzi.complatzi.com&quot;)]" DisplayName="Si contiene &quot;platzi.complatzi.com&quot;" sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_3">
+                <If Condition="[row(&quot;URL&quot;).ToString.Contains(&quot;platzi.complatzi.com&quot;)]" DisplayName="Si contiene &quot;platzi.complatzi.com&quot;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
                     <Assign DisplayName="Añadir &quot;platzi.com&quot; a la url extraida" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                       <Assign.To>
@@ -931,7 +901,13 @@
                     </Assign>
                   </If.Then>
                 </If>
-                <If Condition="[row(&quot;CorazonDado&quot;).ToString.Contains(&quot;Star-heart is-loved&quot;)]" sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_8">
+                <If Condition="[row(&quot;CorazonDado&quot;).ToString.Contains(&quot;Star-heart is-loved&quot;)]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
                     <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_10">
                       <Assign.To>
@@ -963,7 +939,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:ForEachRow>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke MergeDTconExcelPrevio workflow" sap:VirtualizedContainerService.HintSize="661,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="XAMLReusable/MergeDTconExcelPrevio.xaml">
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke MergeDTconExcelPrevio workflow" sap:VirtualizedContainerService.HintSize="485,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="XAMLReusable/MergeDTconExcelPrevio.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <InOutArgument x:TypeArguments="sd:DataTable" x:Key="in_out_dtComentariosAcumulados">[dtComentariosAcumulados]</InOutArgument>
             <InArgument x:TypeArguments="x:Boolean" x:Key="in_RemoverDuplicados">True</InArgument>
@@ -976,7 +952,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:InvokeWorkflowFile>
-        <If Condition="[dtComentariosAcumulados.Rows.Count&gt;0]" DisplayName="Si hay registros" sap:VirtualizedContainerService.HintSize="661,51" sap2010:WorkflowViewState.IdRef="If_4">
+        <If Condition="[dtComentariosAcumulados.Rows.Count&gt;0]" DisplayName="Si hay registros" sap:VirtualizedContainerService.HintSize="485,51" sap2010:WorkflowViewState.IdRef="If_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -1001,7 +977,7 @@
             </ui:InvokeWorkflowFile>
           </If.Then>
         </If>
-        <ui:CloseTab Browser="[uiBrowser]" ContinueOnError="True" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="661,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
+        <ui:CloseTab Browser="[uiBrowser]" ContinueOnError="True" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="485,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
       </Sequence>
       <FlowStep.Next>
         <x:Reference>__ReferenceID2</x:Reference>
