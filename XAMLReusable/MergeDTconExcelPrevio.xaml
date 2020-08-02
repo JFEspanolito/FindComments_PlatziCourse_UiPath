@@ -1,13 +1,17 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="MergeDTconExcelPrevio" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="MergeDTconExcelPrevio" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_out_dtComentariosAcumulados" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="in_RemoverDuplicados" Type="InArgument(x:Boolean)" />
     <x:Property Name="varPathArchivo" Type="InArgument(x:String)" />
+    <x:Property Name="in_NombreReporte" Type="InArgument(x:String)" />
   </x:Members>
   <this:MergeDTconExcelPrevio.in_RemoverDuplicados>
     <InArgument x:TypeArguments="x:Boolean" />
   </this:MergeDTconExcelPrevio.in_RemoverDuplicados>
-  <sap:VirtualizedContainerService.HintSize>1354,2245</sap:VirtualizedContainerService.HintSize>
+  <this:MergeDTconExcelPrevio.in_NombreReporte>
+    <InArgument x:TypeArguments="x:String" />
+  </this:MergeDTconExcelPrevio.in_NombreReporte>
+  <sap:VirtualizedContainerService.HintSize>1075,1563</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="19">
@@ -64,7 +68,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Merge de información" sap:VirtualizedContainerService.HintSize="1364,2180" sap2010:WorkflowViewState.IdRef="Sequence_21">
+  <Sequence DisplayName="Merge de información" sap:VirtualizedContainerService.HintSize="1085,1498" sap2010:WorkflowViewState.IdRef="Sequence_21">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="existeArchivo" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtFinal" />
@@ -75,15 +79,15 @@
         <x:Boolean x:Key="IsPinned">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:PathExists DisplayName="¿Existe archivo anterior?" Exists="[existeArchivo]" sap:VirtualizedContainerService.HintSize="1322,89" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[varPathArchivo]" PathType="File">
+    <ui:PathExists DisplayName="¿Existe archivo anterior?" Exists="[existeArchivo]" sap:VirtualizedContainerService.HintSize="1043,51" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[varPathArchivo]" PathType="File">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:PathExists>
-    <If Condition="[existeArchivo]" DisplayName="Si existe, depurar" sap:VirtualizedContainerService.HintSize="1322,1959" sap2010:WorkflowViewState.IdRef="If_6">
+    <If Condition="[existeArchivo]" DisplayName="Si existe, depurar" sap:VirtualizedContainerService.HintSize="1043,1315" sap2010:WorkflowViewState.IdRef="If_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -91,14 +95,14 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <TryCatch DisplayName="Merge de data anterior" sap:VirtualizedContainerService.HintSize="793,1811" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+        <TryCatch DisplayName="Merge de data anterior" sap:VirtualizedContainerService.HintSize="514,1167" sap2010:WorkflowViewState.IdRef="TryCatch_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsPinned">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <TryCatch.Try>
-            <Sequence DisplayName="Merge de data anterior" sap:VirtualizedContainerService.HintSize="755,1584" sap2010:WorkflowViewState.IdRef="Sequence_16">
+            <Sequence DisplayName="Merge de data anterior" sap:VirtualizedContainerService.HintSize="476,940" sap2010:WorkflowViewState.IdRef="Sequence_16">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataTable" Name="dtHojaNuevos" />
                 <Variable x:TypeArguments="sd:DataTable" Name="dtHojaSeguimiento" />
@@ -109,7 +113,28 @@
                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <TryCatch DisplayName="Leer hoja &quot;Nuevos&quot; - dtHojaNuevos" sap:VirtualizedContainerService.HintSize="713,51" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+              <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" Window="{x:Null}" ContinueOnError="True" DisplayName="Focus en Excel del Reporte" sap:VirtualizedContainerService.HintSize="434,254" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="a249ed11e0acfd12c1e803bb23a815e4" Selector="[&quot;&lt;wnd app='excel.exe' cls='XLMAIN' title='&quot;+in_NombreReporte+&quot;*- Excel' /&gt;&quot;]" TimeoutMS="3000">
+                <ui:WindowScope.Body>
+                  <ActivityAction x:TypeArguments="x:Object">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                    </ActivityAction.Argument>
+                    <ui:CloseWindow Selector="{x:Null}" TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Window" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="CloseWindow_1" WaitForReady="INTERACTIVE">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:CloseWindow>
+                  </ActivityAction>
+                </ui:WindowScope.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:WindowScope>
+              <TryCatch DisplayName="Leer hoja &quot;Nuevos&quot; - dtHojaNuevos" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -149,7 +174,7 @@
                   </Catch>
                 </TryCatch.Catches>
               </TryCatch>
-              <TryCatch DisplayName="Leer hoja &quot;Seguimiento&quot; - dtHojaSeguimiento" sap:VirtualizedContainerService.HintSize="713,51" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+              <TryCatch DisplayName="Leer hoja &quot;Seguimiento&quot; - dtHojaSeguimiento" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -189,17 +214,17 @@
                   </Catch>
                 </TryCatch.Catches>
               </TryCatch>
-              <Sequence DisplayName="Juntar Datos" sap:VirtualizedContainerService.HintSize="713,1004" sap2010:WorkflowViewState.IdRef="Sequence_24">
+              <Sequence DisplayName="Juntar Datos" sap:VirtualizedContainerService.HintSize="434,66" sap2010:WorkflowViewState.IdRef="Sequence_24">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If Condition="[dtHojaNuevos IsNot Nothing]" DisplayName="Tomar datos de Nuevos" sap:VirtualizedContainerService.HintSize="671,362" sap2010:WorkflowViewState.IdRef="If_28">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -208,7 +233,7 @@
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <Assign DisplayName="Inicializar DTFinal" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_16">
@@ -238,7 +263,7 @@
                           <x:Boolean x:Key="IsPinned">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <If Condition="[dtFinal is Nothing or dtFinal.Rows.Count=0]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_32">
+                      <If Condition="[dtFinal is Nothing]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_32">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -260,10 +285,13 @@
                   </If.Then>
                 </If>
               </Sequence>
-              <ui:InterruptibleWhile Condition="[dtFinal.Select(&quot;URL=''&quot;).Count&gt;0]" DisplayName="Si hay filas vacías, eliminarlas" sap:VirtualizedContainerService.HintSize="713,51" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+              <ui:InterruptibleWhile DisplayName="Si hay filas vacías, eliminarlas" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
                 <ui:InterruptibleWhile.Body>
                   <ui:RemoveDataRow RowIndex="{x:Null}" DataTable="[dtHojaSeguimiento]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataRow_1" Row="[dtHojaSeguimiento.Select(&quot;URL=''&quot;).First]" />
                 </ui:InterruptibleWhile.Body>
+                <ui:InterruptibleWhile.Condition>
+                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="dtFinal.Select(&quot;URL=''&quot;).Count&gt;0" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
+                </ui:InterruptibleWhile.Condition>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -271,7 +299,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InterruptibleWhile>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke RemoverDuplicados workflow" sap:VirtualizedContainerService.HintSize="713,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="XAMLReusable/RemoverDuplicados.xaml">
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke RemoverDuplicados workflow" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="XAMLReusable/RemoverDuplicados.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="sd:DataTable" x:Key="dtArchivoExistente2">[dtFinal]</InArgument>
                   <InOutArgument x:TypeArguments="sd:DataTable" x:Key="in_out_dtComentariosAcumulados">[in_out_dtComentariosAcumulados]</InOutArgument>
@@ -285,12 +313,12 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InvokeWorkflowFile>
-              <ui:RemoveDuplicateRows DataTable="[in_out_dtComentariosAcumulados]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="526,22" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_1" OutputDataTable="[in_out_dtComentariosAcumulados]" />
-              <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Corazon" DataTable="[in_out_dtComentariosAcumulados]" DisplayName="Ordenar por número de corazones" sap:VirtualizedContainerService.HintSize="526,22" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Ascending" OutputDataTable="[in_out_dtComentariosAcumulados]" SortOrder="Ascending" />
+              <ui:RemoveDuplicateRows DataTable="[in_out_dtComentariosAcumulados]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_1" OutputDataTable="[in_out_dtComentariosAcumulados]" />
+              <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Corazon" DataTable="[in_out_dtComentariosAcumulados]" DisplayName="Ordenar por número de corazones" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Ascending" OutputDataTable="[in_out_dtComentariosAcumulados]" SortOrder="Ascending" />
             </Sequence>
           </TryCatch.Try>
           <TryCatch.Catches>
-            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="572,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="480,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>

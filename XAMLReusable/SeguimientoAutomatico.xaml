@@ -1,13 +1,21 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SeguimientoAutomatico" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="SeguimientoAutomatico" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="dtRespuestaEncontradas" Type="InArgument(sd:DataTable)" />
     <x:Property Name="dtComentariosAcumulados" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="varTimeOutGeneral" Type="InArgument(x:Int32)" />
+    <x:Property Name="myBrowserApp" Type="InArgument(x:String)" />
+    <x:Property Name="myBrowserType" Type="InArgument(ui:BrowserType)" />
   </x:Members>
   <this:SeguimientoAutomatico.varTimeOutGeneral>
     <InArgument x:TypeArguments="x:Int32" />
   </this:SeguimientoAutomatico.varTimeOutGeneral>
-  <sap:VirtualizedContainerService.HintSize>1209,3250</sap:VirtualizedContainerService.HintSize>
+  <this:SeguimientoAutomatico.myBrowserApp>
+    <InArgument x:TypeArguments="x:String" />
+  </this:SeguimientoAutomatico.myBrowserApp>
+  <this:SeguimientoAutomatico.myBrowserType>
+    <InArgument x:TypeArguments="ui:BrowserType" />
+  </this:SeguimientoAutomatico.myBrowserType>
+  <sap:VirtualizedContainerService.HintSize>1307,2484</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="19">
@@ -33,7 +41,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="19">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="21">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>System.Data</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -53,34 +61,41 @@
       <AssemblyReference>UiPath.CV</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SeguimientoAutomatico" sap:VirtualizedContainerService.HintSize="809,3145" sap2010:WorkflowViewState.IdRef="Sequence_41">
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="SeguimientoAutomatico" sap:VirtualizedContainerService.HintSize="809,2379" sap2010:WorkflowViewState.IdRef="Sequence_41">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Firefox" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="767,2286" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="platzi.com">
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="[myBrowserType]" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="767,1520" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="platzi.com">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="733,2185" sap2010:WorkflowViewState.IdRef="Sequence_45">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="733,1419" sap2010:WorkflowViewState.IdRef="Sequence_45">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtRespuestaEncontradas]" DisplayName="Mientras haya comentarios..." sap:VirtualizedContainerService.HintSize="691,2031" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
+            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtRespuestaEncontradas]" DisplayName="Mientras haya comentarios..." sap:VirtualizedContainerService.HintSize="691,1265" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Seguimiento Automático" sap:VirtualizedContainerService.HintSize="641,1884" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                  <Sequence DisplayName="Seguimiento Automático" sap:VirtualizedContainerService.HintSize="563,1118" sap2010:WorkflowViewState.IdRef="Sequence_37">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="corazonVerde" />
                     </Sequence.Variables>
@@ -90,7 +105,7 @@
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To url comentario" sap:VirtualizedContainerService.HintSize="599,59" sap2010:WorkflowViewState.IdRef="NavigateTo_5" Url="[row(&quot;URL&quot;).ToString()]">
+                    <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To url comentario" sap:VirtualizedContainerService.HintSize="521,59" sap2010:WorkflowViewState.IdRef="NavigateTo_5" Url="[row(&quot;URL&quot;).ToString()]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -98,7 +113,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:NavigateTo>
-                    <If Condition="[string.IsNullOrEmpty(row(&quot;ResponderLoSiguiente&quot;).ToString)]" DisplayName="Guardar comentario interno" sap:VirtualizedContainerService.HintSize="599,1419" sap2010:WorkflowViewState.IdRef="If_22">
+                    <If Condition="[string.IsNullOrEmpty(row(&quot;ResponderLoSiguiente&quot;).ToString)]" DisplayName="Guardar comentario interno" sap:VirtualizedContainerService.HintSize="521,653" sap2010:WorkflowViewState.IdRef="If_22">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -106,7 +121,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Else>
-                        <Sequence DisplayName="Escribir comentario y dar &lt;3" sap:VirtualizedContainerService.HintSize="454,1272" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                        <Sequence DisplayName="Escribir comentario y dar &lt;3" sap:VirtualizedContainerService.HintSize="376,506" sap2010:WorkflowViewState.IdRef="Sequence_36">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:Boolean" Name="existBtnPublicar" />
                           </Sequence.Variables>
@@ -116,75 +131,12 @@
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click en &quot;Escribe tu comentario&quot;" sap:VirtualizedContainerService.HintSize="412,106" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
-                            <ui:Click.CursorPosition>
-                              <ui:CursorPosition Position="Center">
-                                <ui:CursorPosition.OffsetX>
-                                  <InArgument x:TypeArguments="x:Int32" />
-                                </ui:CursorPosition.OffsetX>
-                                <ui:CursorPosition.OffsetY>
-                                  <InArgument x:TypeArguments="x:Int32" />
-                                </ui:CursorPosition.OffsetY>
-                              </ui:CursorPosition>
-                            </ui:Click.CursorPosition>
-                            <ui:Click.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e1ae3a4b-67bc-4709-8a36-be7a76c52613" InformativeScreenshot="ea0c15b56dd251930dde38852288c38f" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/comentario*' /&gt;&lt;webctrl aaname='Escribe tu comentario' parentid='discussion-detail' tag='SPAN' /&gt;" TimeoutMS="[varTimeOutGeneral]">
-                                <ui:Target.WaitForReady>
-                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                </ui:Target.WaitForReady>
-                              </ui:Target>
-                            </ui:Click.Target>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </ui:Click>
-                          <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Escribir el comentario" EmptyField="True" sap:VirtualizedContainerService.HintSize="412,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" SimulateType="True" Text="[row(&quot;ResponderLoSiguiente&quot;).ToString]">
-                            <ui:TypeInto.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b3471d53-5d14-4aea-99b3-1a35021f6f1a" InformativeScreenshot="98488897b8a39519d223cb4afe7970cf" Selector="&lt;html app='firefox.exe' url='http*://*platzi.com/comentario*' /&gt;&lt;webctrl id='textarea-*' tag='TEXTAREA' /&gt;">
-                                <ui:Target.TimeoutMS>
-                                  <InArgument x:TypeArguments="x:Int32" />
-                                </ui:Target.TimeoutMS>
-                                <ui:Target.WaitForReady>
-                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                </ui:Target.WaitForReady>
-                              </ui:Target>
-                            </ui:TypeInto.Target>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </ui:TypeInto>
-                          <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="3000" DisplayName="Click  Publicar" sap:VirtualizedContainerService.HintSize="412,106" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
-                            <ui:Click.CursorPosition>
-                              <ui:CursorPosition Position="Center">
-                                <ui:CursorPosition.OffsetX>
-                                  <InArgument x:TypeArguments="x:Int32" />
-                                </ui:CursorPosition.OffsetX>
-                                <ui:CursorPosition.OffsetY>
-                                  <InArgument x:TypeArguments="x:Int32" />
-                                </ui:CursorPosition.OffsetY>
-                              </ui:CursorPosition>
-                            </ui:Click.CursorPosition>
-                            <ui:Click.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c9a3ba85-4efc-4a54-8ffa-930a8bba1517" InformativeScreenshot="d307bbf16a1fdb5c297923a4e2bd0bf7" Selector="&lt;webctrl tag='BUTTON' type='submit' /&gt;" TimeoutMS="[varTimeOutGeneral]" WaitForReady="INTERACTIVE" />
-                            </ui:Click.Target>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </ui:Click>
-                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DarCorazon workflow" sap:VirtualizedContainerService.HintSize="412,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="XAMLReusable/DarCorazon.xaml">
+                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DarCorazon workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="XAMLReusable/DarCorazon.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InOutArgument x:TypeArguments="sd:DataRow" x:Key="row">[row]</InOutArgument>
                               <InArgument x:TypeArguments="x:Boolean" x:Key="SoloEsValidacion">False</InArgument>
                               <InArgument x:TypeArguments="x:Int32" x:Key="varTimeOutGeneral">[varTimeOutGeneral]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="myBrowserApp">[myBrowserApp]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -193,28 +145,23 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:InvokeWorkflowFile>
-                          <ui:InterruptibleDoWhile Condition="[existBtnPublicar]" DisplayName="delay &quot;dinámico&quot;" sap:VirtualizedContainerService.HintSize="412,387" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
-                            <ui:InterruptibleDoWhile.Body>
-                              <Sequence DisplayName="Hacer:" sap:VirtualizedContainerService.HintSize="376,222" sap2010:WorkflowViewState.IdRef="Sequence_48">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <Delay DisplayName="Delay - 1 sec" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_7" />
-                                <ui:UiElementExists DisplayName="Element Exists - Botón Publicar" Exists="[existBtnPublicar]" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
-                                  <ui:UiElementExists.Target>
-                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0dc77f36-e0b1-425a-9244-4924a01851dc" Selector="&lt;webctrl tag='BUTTON' type='submit' /&gt;" TimeoutMS="[varTimeOutGeneral]">
-                                      <ui:Target.WaitForReady>
-                                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                                      </ui:Target.WaitForReady>
-                                    </ui:Target>
-                                  </ui:UiElementExists.Target>
-                                </ui:UiElementExists>
-                              </Sequence>
-                            </ui:InterruptibleDoWhile.Body>
-                          </ui:InterruptibleDoWhile>
-                          <Assign sap:VirtualizedContainerService.HintSize="412,60" sap2010:WorkflowViewState.IdRef="Assign_24">
+                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke EscribirComentario workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="XAMLReusable\EscribirComentario.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InOutArgument x:TypeArguments="sd:DataRow" x:Key="row">
+                                <mva:VisualBasicReference x:TypeArguments="sd:DataRow" ExpressionText="row" />
+                              </InOutArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="ComentarioParaElAlumno">
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="row(&quot;ResponderLoSiguiente&quot;).ToString" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="myBrowserApp">
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="myBrowserApp" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:Int32" x:Key="varTimeOutGeneral">
+                                <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="varTimeOutGeneral" />
+                              </InArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                          </ui:InvokeWorkflowFile>
+                          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_24">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Object">[row("MiRespuestaAnterior")]</OutArgument>
                             </Assign.To>
@@ -222,7 +169,7 @@
                               <InArgument x:TypeArguments="x:Object">[row("ResponderLoSiguiente").ToString]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <Assign sap:VirtualizedContainerService.HintSize="412,60" sap2010:WorkflowViewState.IdRef="Assign_25">
+                          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_25">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Object">[row("ResponderLoSiguiente")]</OutArgument>
                             </Assign.To>
@@ -233,7 +180,7 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If Condition="[row(&quot;DarCorazon&quot;).ToString = &quot;1&quot;]" DisplayName="Si DarCorazones es = 1" sap:VirtualizedContainerService.HintSize="599,234" sap2010:WorkflowViewState.IdRef="If_26">
+                    <If Condition="[row(&quot;DarCorazon&quot;).ToString = &quot;1&quot;]" DisplayName="Si DarCorazones es = 1" sap:VirtualizedContainerService.HintSize="521,234" sap2010:WorkflowViewState.IdRef="If_26">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -246,6 +193,7 @@
                             <InOutArgument x:TypeArguments="sd:DataRow" x:Key="row">[row]</InOutArgument>
                             <InArgument x:TypeArguments="x:Boolean" x:Key="SoloEsValidacion">False</InArgument>
                             <InArgument x:TypeArguments="x:Int32" x:Key="varTimeOutGeneral">[varTimeOutGeneral]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="myBrowserApp">[myBrowserApp]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
