@@ -6,7 +6,7 @@
   <this:ValidarNavegarACurso.varTimeOutGeneral>
     <InArgument x:TypeArguments="x:Int32" />
   </this:ValidarNavegarACurso.varTimeOutGeneral>
-  <sap:VirtualizedContainerService.HintSize>997,977</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1073,977</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="17">
@@ -77,7 +77,7 @@
               <OutArgument x:TypeArguments="x:String">[mySelector]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">["&lt;html "+myBrowserApp+"url='*platzi.com/cursos*' /&gt;&lt;webctrl aaname='Ir al curso' parentid='courses-landing' tag='SPAN' /&gt;"]</InArgument>
+              <InArgument x:TypeArguments="x:String">["&lt;html "+myBrowserApp+" url='*platzi.com/cursos*' /&gt;&lt;webctrl aaname='Ir al curso' parentid='courses-landing' tag='SPAN' /&gt;"]</InArgument>
             </Assign.Value>
           </Assign>
           <ui:UiElementExists DisplayName="Element Exists 'Ir a Curso'" Exists="[navegoACursos]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
