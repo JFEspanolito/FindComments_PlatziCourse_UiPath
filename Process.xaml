@@ -908,9 +908,9 @@
     <FlowStep x:Name="__ReferenceID3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">10,414.5</av:Point>
+          <av:Point x:Key="ShapeLocation">10,384.5</av:Point>
           <av:Size x:Key="ShapeSize">200,51</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">210,440 292.5,440 292.5,506.5</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">210,410 292.5,410 292.5,506.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke MergeDTconExcelPrevio workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="XAMLReusable\MergeDTconExcelPrevio.xaml">
@@ -939,7 +939,7 @@
           <av:PointCollection x:Key="ConnectorLocation">520,383 520,413 327.5,413 327.5,506.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Obtener datos de sitio web" sap:VirtualizedContainerService.HintSize="566,2811" sap2010:WorkflowViewState.IdRef="Sequence_12">
+      <Sequence DisplayName="Obtener datos de sitio web" sap:VirtualizedContainerService.HintSize="566,844" sap2010:WorkflowViewState.IdRef="Sequence_12">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd:DataTable" Name="dtClasesEncontradas" />
           <Variable x:TypeArguments="ui:Browser" Name="uiBrowser" />
@@ -950,7 +950,7 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="[myBrowserType]" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="524,1488" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[uiBrowser]" Url="[in_TransactionItem]">
+        <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="[myBrowserType]" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="514,1488" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[uiBrowser]" Url="[in_TransactionItem]">
           <ui:OpenBrowser.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
@@ -1020,7 +1020,7 @@
                     <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,479" sap2010:WorkflowViewState.IdRef="Catch`1_7">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
@@ -1048,21 +1048,11 @@
                           </Assign>
                           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke TomarScreenShot workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="FrameWork/TakeScreenshot.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <OutArgument x:TypeArguments="x:String" x:Key="varRutaImagen">
-                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="varRutaImagen" />
-                              </OutArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="varPathArchivo">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;RutaPadre&quot;).ToString" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="varNombre">
-                                <Literal x:TypeArguments="x:String">ObtenerNombreCurso</Literal>
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="SelectorFoto">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;&lt;html &quot;+myBrowserApp+&quot; url='*platzi.com/c*'/&gt;&quot;" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="varNombreExcel">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;NombreReporte&quot;).ToString" />
-                              </InArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="varRutaImagen">[varRutaImagen]</OutArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="varPathArchivo">[in_Config("RutaPadre").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="varNombre">ObtenerNombreCurso</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="SelectorFoto">["&lt;html "+myBrowserApp+" url='*platzi.com/c*'/&gt;"]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="varNombreExcel">[in_Config("NombreReporte").ToString]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1107,7 +1097,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:OpenBrowser>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ObtenerComentariosPorClase workflow" sap:VirtualizedContainerService.HintSize="524,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="XAMLReusable/ObtenerComentariosPorClase.xaml">
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ObtenerComentariosPorClase workflow" sap:VirtualizedContainerService.HintSize="524,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="XAMLReusable/ObtenerComentariosPorClase.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <InArgument x:TypeArguments="sd:DataTable" x:Key="dtClasesEncontradas">[dtClasesEncontradas]</InArgument>
             <OutArgument x:TypeArguments="sd:DataTable" x:Key="dtComentariosAcumulados">[dtComentariosAcumulados]</OutArgument>
@@ -1124,7 +1114,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:InvokeWorkflowFile>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AddExtraColumns workflow" sap:VirtualizedContainerService.HintSize="524,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="XAMLReusable/AddExtraColumns.xaml">
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AddExtraColumns workflow" sap:VirtualizedContainerService.HintSize="524,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="XAMLReusable/AddExtraColumns.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <InOutArgument x:TypeArguments="sd:DataTable" x:Key="in_dtComentariosAcumulados">[dtComentariosAcumulados]</InOutArgument>
             <InArgument x:TypeArguments="x:String" x:Key="in_NombreDelCurso">[NombreDelCurso]</InArgument>
@@ -1136,7 +1126,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:InvokeWorkflowFile>
-        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtComentariosAcumulados]" DisplayName="Corregir URL y CorazonDado" sap:VirtualizedContainerService.HintSize="524,473" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtComentariosAcumulados]" DisplayName="Corregir URL y CorazonDado" sap:VirtualizedContainerService.HintSize="524,51" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
@@ -1223,7 +1213,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:ForEachRow>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke MergeDTconExcelPrevio workflow" sap:VirtualizedContainerService.HintSize="524,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="XAMLReusable/MergeDTconExcelPrevio.xaml">
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke MergeDTconExcelPrevio workflow" sap:VirtualizedContainerService.HintSize="524,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="XAMLReusable/MergeDTconExcelPrevio.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <InOutArgument x:TypeArguments="sd:DataTable" x:Key="in_out_dtComentariosAcumulados">[dtComentariosAcumulados]</InOutArgument>
             <InArgument x:TypeArguments="x:Boolean" x:Key="in_RemoverDuplicados">True</InArgument>
@@ -1277,7 +1267,7 @@
           <av:Point x:Key="ShapeLocation">265,306.5</av:Point>
           <av:Size x:Key="ShapeSize">70,87</av:Size>
           <av:PointCollection x:Key="FalseConnector">335,350 420,350</av:PointCollection>
-          <av:PointCollection x:Key="TrueConnector">265,350 110,350 110,414.5</av:PointCollection>
+          <av:PointCollection x:Key="TrueConnector">265,350 110,350 110,384.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </FlowDecision>
@@ -1291,7 +1281,7 @@
       </sap:WorkflowViewStateService.ViewState>
       <Switch x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Según el navegador indicado en el Config se marca el tipo de Navegador (BrowserType) y el tipo de Aplicación para el Selector." DisplayName="Elegir Browser" Expression="[in_Navegador]" sap:VirtualizedContainerService.HintSize="200,138" sap2010:WorkflowViewState.IdRef="Switch`1_2">
         <Switch.Default>
-          <Sequence sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_29">
+          <Sequence sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_29">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1323,7 +1313,7 @@
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence x:Key="Firefox" sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_25">
+        <Sequence x:Key="Firefox" sap:VirtualizedContainerService.HintSize="304,246" sap2010:WorkflowViewState.IdRef="Sequence_25">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1347,7 +1337,7 @@
             </Assign.Value>
           </Assign>
         </Sequence>
-        <Sequence x:Key="Chrome" DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_26">
+        <Sequence x:Key="Chrome" DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="304,246" sap2010:WorkflowViewState.IdRef="Sequence_26">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1395,7 +1385,7 @@
             </Assign.Value>
           </Assign>
         </Sequence>
-        <Sequence x:Key="InternetExplorer" sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_28">
+        <Sequence x:Key="InternetExplorer" sap:VirtualizedContainerService.HintSize="304,246" sap2010:WorkflowViewState.IdRef="Sequence_28">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>

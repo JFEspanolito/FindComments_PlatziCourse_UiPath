@@ -13,13 +13,14 @@ Al finalizar la revisión de seguimiento (o si se omite) genera un reporte en Ex
 - [UiPath Studio](https://platform.uipath.com) 
 - [Cuenta en Platzi](https://platzi.com)
 - Url del Curso
-- [Firefox](https://www.mozilla.org/es-MX/firefox/download/thanks/)
+- [Firefox](https://www.mozilla.org/es-MX/firefox/download/thanks/) || [Edge](https://www.microsoft.com/es-es/edge) || [Chrome](https://www.google.com/chrome/)
 - [Balareva Excel Activities (Dependencia)](https://connect.uipath.com/marketplace/components/balareva-xl-activities)
 
 ![Requerimiento - Dependencias][1]
 
 Si deseas cambiar el navegador, es posible solo recuerda validar los selectores de interacción con el navegador.
-Si quieres cambiarlo y no sabes como hacerlo, puedes ver el [Curso de Automatización de Procesos RPA con UiPath](https://platzi.com/cursos/uipath/) 
+Solo necesita modificar el Config en la sección de Navegador Web y elegir uno de la lista.
+Si deseas aprender como optimizar el presente código, añadir funcoinalidades te recomiendo [el Curso de UiPath](https://platzi.com/cursos/uipath/) 
 
 ## Tutorial de uso
 Para ejecutar el robot, debemos ir al [UiPath Studio](https://platform.uipath.com) abrir el proyecto descargado de este repositorio, configurar lo siguiente:
@@ -91,7 +92,7 @@ El documento generado se guarda en la carpeta Archivos dentro de la carpeta del 
 - **Actualización 30/06/2020** :  Ahora el robot acepta múltiples urles de cursos separadas por ; como ejemplo:  " platzi.com/clases/uipath ; https://platzi.com/cursos/machine-learning/ " lo que permitirá que realice búsquedas de comentarios en ambos cursos (o más, ¡puedes poner los que quieras!)
 - **Actualización 30/06/2020** : Se añade sistema de delay dinámico controlado por variable "varTimeOutGeneral", el valor proporcionado será transformado en "milisegundos de espera."
 - **Actualización 15/07/2020** : Se modifica el sistema ahora en versión REF, lo que permite tener un control desde archivo CONFIG para hacerlo *desatendido* a menos que hagas un seguimiento manual. De esta manera la revisión se puede realizar sin estar en el equipo donde el robot se ejecuta.
-- **Actualización 07/08/2020** : Se añade soporte para múltiples navegadores web.
+- **Actualización 07/08/2020** : Se añade soporte para múltiples navegadores web, se corrigen bugs menores, se actualiza la descripción del config, mejoras de rendomiento (duración del proceso), se pule el sistema de Funcionalidad Moduladas basadas en el Config (corrección de bugs menores, control de errores).
 
 [//]: #
 [0]: <https://raw.githubusercontent.com/JFEspanolito/FindComments_PlatziCourse_UiPath/master/imgParaReadMe/img0.png> "Diagrama del Proyecto"
