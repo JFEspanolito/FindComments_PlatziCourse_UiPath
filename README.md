@@ -33,7 +33,7 @@ La variable donde modificamos la ruta del excel config está ubicada en:
 
 Main.xaml -> General Business Process -> Initialization -> Clic a First Run y en la sección de variables se mostrará la variable: 'rutaConfig'
 
-![Config_1.1][https://user-images.githubusercontent.com/6903502/90331016-24386780-df77-11ea-8d81-7738041c000c.png]
+![Config_1.1](https://user-images.githubusercontent.com/6903502/90331016-24386780-df77-11ea-8d81-7738041c000c.png)
 
 Posteriormente dar clic en **Run** o **Debug** ubicado en la parte superior del Studio.
 
