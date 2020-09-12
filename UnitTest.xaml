@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="UnitTest" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1073,830" sap2010:WorkflowViewState.IdRef="UnitTest_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="UnitTest" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1134,830" sap2010:WorkflowViewState.IdRef="UnitTest_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="22">
+    <scg:List x:TypeArguments="x:String" Capacity="44">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -23,10 +23,14 @@
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Windows.Markup</x:String>
       <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="23">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="46">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -50,13 +54,50 @@
       <AssemblyReference>UiPath.CV</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="UnitTest" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="UnitTest" sap:VirtualizedContainerService.HintSize="518,528" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="476,436" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Firefox" DisplayName="Attach Browser 'Qui nespa Page'" sap:VirtualizedContainerService.HintSize="434,344" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="027f7869c0bd889703fcdba822f9c0d0" Selector="&lt;html app='firefox.exe' title='¿Quiénes participan en un proyecto RPA? en Curso de Automatización de Procesos RPA con UiPath' /&gt;">
+        <ui:BrowserScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Structured Data 'DIV  cards-container'" ExtractMetadata="&lt;extract&gt;&lt;row exact=&amp;apos;1&amp;apos;&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;CardsContainer&amp;apos; idx=&amp;apos;1&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;CardList&amp;apos; idx=&amp;apos;1&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;InfinityScrollLayout&amp;apos; idx=&amp;apos;1&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;Card&amp;apos;/&gt;&lt;/row&gt;&lt;column exact=&amp;apos;1&amp;apos; name=&amp;apos;Nombre&amp;apos; attr=&amp;apos;text&amp;apos;&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;CardsContainer&amp;apos; idx=&amp;apos;1&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;CardList&amp;apos; idx=&amp;apos;1&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;InfinityScrollLayout&amp;apos; idx=&amp;apos;1&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;Card&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;Card-top&amp;apos; idx=&amp;apos;1&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;Card-top-left&amp;apos; idx=&amp;apos;1&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;Card-top-name&amp;apos; idx=&amp;apos;1&amp;apos;/&gt;&lt;/column&gt;&lt;column exact=&amp;apos;1&amp;apos; name=&amp;apos;Comentario&amp;apos; attr=&amp;apos;text&amp;apos;&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;CardsContainer&amp;apos; idx=&amp;apos;1&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;CardList&amp;apos; idx=&amp;apos;1&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;InfinityScrollLayout&amp;apos; idx=&amp;apos;1&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;Card&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;Card-middle&amp;apos; idx=&amp;apos;1&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;Card-content&amp;apos; idx=&amp;apos;1&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;p&amp;apos; idx=&amp;apos;1&amp;apos;/&gt;&lt;/column&gt;&lt;column exact='1' name='URL' attr='href'&gt;&lt;webctrl tag='div' idx='1'/&gt;&lt;webctrl tag='div' idx='2'/&gt;&lt;webctrl tag='div' idx='1'/&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='div' idx='1'/&gt;&lt;webctrl tag='div' idx='2'/&gt;&lt;webctrl tag='a' idx='1'/&gt;&lt;webctrl tag='span' idx='1'/&gt;&lt;/column&gt;&lt;column exact=&amp;apos;0&amp;apos; name=&amp;apos;Corazon&amp;apos; attr=&amp;apos;text&amp;apos;&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;CardsContainer&amp;apos; idx=&amp;apos;1&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;CardList&amp;apos; idx=&amp;apos;1&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;InfinityScrollLayout&amp;apos; idx=&amp;apos;1&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos; class=&amp;apos;Card&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;div&amp;apos;/&gt;&lt;webctrl tag=&amp;apos;span&amp;apos; class=&amp;apos;Star-number&amp;apos; idx=&amp;apos;1&amp;apos;/&gt;&lt;/column&gt;&lt;column exact='1' name='CorazonDado' attr='class'&gt;&lt;webctrl tag='div' css-selector='body&amp;gt;section&amp;gt;div&amp;gt;div' idx='1'/&gt;&lt;webctrl tag='div' css-selector='body&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div' idx='2'/&gt;&lt;webctrl tag='div' css-selector='body&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='1'/&gt;&lt;webctrl tag='div' css-selector='body&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div'/&gt;&lt;webctrl tag='div' css-selector='body&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='3'/&gt;&lt;webctrl tag='div' css-selector='body&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='1'/&gt;&lt;webctrl tag='div' css-selector='body&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='2'/&gt;&lt;webctrl tag='div' css-selector='body&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='1'/&gt;&lt;webctrl tag='span' css-selector='body&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ExtractData_2" MaxNumberOfResults="0" SimulateClick="True">
+                <ui:ExtractData.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3e82546b-9536-47cf-8450-340f172085ff" InformativeScreenshot="f3f6f921f77ccdc482acc902fe82dea9" Selector="&lt;webctrl id='cards-container' tag='DIV' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </ui:ExtractData.Target>
+              </ui:ExtractData>
+            </Sequence>
+          </ActivityAction>
+        </ui:BrowserScope.Body>
+      </ui:BrowserScope>
+    </Sequence>
   </Sequence>
 </Activity>
