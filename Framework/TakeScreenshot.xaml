@@ -12,7 +12,7 @@
   <this:TomarScreenShot.SelectorFoto>
     <InArgument x:TypeArguments="x:String" />
   </this:TomarScreenShot.SelectorFoto>
-  <sap:VirtualizedContainerService.HintSize>1173,955</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1265,1055</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -83,7 +83,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:PathExists>
-    <ui:Delete ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[varRutaImagen+&quot;/&quot;+varNombre.Replace(&quot;/&quot;,&quot;&quot;)+&quot;.jpg&quot;]" />
+    <ui:Delete ContinueOnError="True" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[varRutaImagen+&quot;/&quot;+varNombre.Replace(&quot;/&quot;,&quot;&quot;)+&quot;.jpg&quot;]" />
     <If Condition="[rutaExiste]" sap:VirtualizedContainerService.HintSize="484,227" sap2010:WorkflowViewState.IdRef="If_35">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
