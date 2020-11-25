@@ -122,7 +122,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:NavigateTo>
-                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="1784,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
+                  <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="1784,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
                   <ui:UiElementExists DisplayName="¿Existe Video?" Exists="[hayVideo]" sap:VirtualizedContainerService.HintSize="1784,68" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
                     <ui:UiElementExists.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e73f09a6-270f-4105-ad7b-2485575f02a4" Selector="&lt;webctrl tag='VIDEO' /&gt;" TimeoutMS="[varTimeOutGeneral]">
