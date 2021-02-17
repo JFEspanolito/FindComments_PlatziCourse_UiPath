@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,943</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1037,943</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -80,10 +80,10 @@
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        <av:Point x:Key="ShapeLocation">70,22.5</av:Point>
+        <av:Point x:Key="ShapeLocation">70,0</av:Point>
         <x:Double x:Key="StateContainerWidth">669</x:Double>
         <x:Double x:Key="StateContainerHeight">600</x:Double>
-        <av:PointCollection x:Key="ConnectorLocation">130,60 160,60 160,37.1666666666667 223,37.1666666666667</av:PointCollection>
+        <av:PointCollection x:Key="ConnectorLocation">130,37.5 160,37.5 160,37.1666666666667 223,37.1666666666667</av:PointCollection>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
@@ -345,7 +345,7 @@
                     <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="SystemException IsNot Nothing" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_2" />
                   </Transition.Condition>
                   <Transition.To>
-                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="820,2158" sap2010:WorkflowViewState.IdRef="State_2">
+                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="254,61" sap2010:WorkflowViewState.IdRef="State_2">
                       <State.Entry>
                         <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="774,1771" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                           <sap:WorkflowViewStateService.ViewState>
@@ -666,11 +666,7 @@
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="Config" />
       <Variable x:TypeArguments="x:Int32" sap2010:Annotation.AnnotationText="Used to control the number of attempts of retrying the transaction processing in case of system exceptions." Default="0" Name="RetryNumber" />
       <Variable x:TypeArguments="x:Boolean" Name="SoloArchivo" />
-      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Coloca la ruta donde guardas el archivo de Config del robot." Name="rutaConfig">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">E:\Archivos\OneDrive\Programación\GitHub\UitPath\FindComments_PlatziCourse_UiPath\Data\config.xlsx</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Coloca la ruta donde guardas el archivo de Config del robot." Default="E:\Archivos\OneDrive\Programación\GitHub\UitPath\FindComments_PlatziCourse_UiPath\Data\config.xlsx" Name="rutaConfig" />
     </StateMachine.Variables>
   </StateMachine>
 </Activity>

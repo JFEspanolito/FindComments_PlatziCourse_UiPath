@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1215,1004</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1030,1004</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="46">
@@ -742,14 +742,14 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <bes:FormatCells ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" CellRange="[{&quot;A:K&quot;}]" ContinueOnError="False" Delay="0" DisplayName="Format Cells - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" Horizontal="Left" sap2010:WorkflowViewState.IdRef="FormatCells_1" Indent="0" MergeCells="Select" OrientationDeg="0" SheetName="Nuevos" ShrinkFit="Select" TextDirection="Select" Verticle="Select" WrapText="False">
+                      <bes:FormatCells ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" CellRange="[{&quot;A:K&quot;}]" ContinueOnError="False" Delay="0" DisplayName="Format Cells - &quot;Nuevos&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" Horizontal="Left" sap2010:WorkflowViewState.IdRef="FormatCells_1" Indent="0" MergeCells="Select" OrientationDeg="0" SheetName="Nuevos" ShrinkFit="Select" TextDirection="Select" TextOrientation="Select" Verticle="Select" WrapText="False">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </bes:FormatCells>
-                      <bes:FormatCells ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" CellRange="[{&quot;A:K&quot;}]" ContinueOnError="False" Delay="0" DisplayName="Format Cells - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" Horizontal="Select" sap2010:WorkflowViewState.IdRef="FormatCells_2" Indent="0" MergeCells="Select" OrientationDeg="0" SheetName="Seguimiento" ShrinkFit="Select" TextDirection="Select" Verticle="Select" WrapText="False">
+                      <bes:FormatCells ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" CellRange="[{&quot;A:K&quot;}]" ContinueOnError="False" Delay="0" DisplayName="Format Cells - &quot;Seguimiento&quot;" FilePath="[varPathArchivo]" sap:VirtualizedContainerService.HintSize="445,70" Horizontal="Select" sap2010:WorkflowViewState.IdRef="FormatCells_2" Indent="0" MergeCells="Select" OrientationDeg="0" SheetName="Seguimiento" ShrinkFit="Select" TextDirection="Select" TextOrientation="Select" Verticle="Select" WrapText="False">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -944,7 +944,7 @@
           <av:PointCollection x:Key="ConnectorLocation">520,383 520,413 327.5,413 327.5,506.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Obtener datos de sitio web" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_12">
+      <Sequence DisplayName="Obtener datos de sitio web" sap:VirtualizedContainerService.HintSize="703,2489" sap2010:WorkflowViewState.IdRef="Sequence_12">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd:DataTable" Name="dtClasesEncontradas" />
           <Variable x:TypeArguments="ui:Browser" Name="uiBrowser" />
@@ -955,13 +955,13 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="[myBrowserType]" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="661,51" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[uiBrowser]" Url="[in_TransactionItem]">
+        <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="[myBrowserType]" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="661,656" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[uiBrowser]" Url="[in_TransactionItem]">
           <ui:OpenBrowser.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Hacer en el navegador" sap:VirtualizedContainerService.HintSize="480,1422" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <Sequence DisplayName="Hacer en el navegador" sap:VirtualizedContainerService.HintSize="380,555" sap2010:WorkflowViewState.IdRef="Sequence_9">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1078,9 +1078,9 @@
                     </Catch>
                   </TryCatch.Catches>
                 </TryCatch>
-                <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[dtClasesEncontradas]" DisplayName="Extract Structured Data Clases" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Clase' attr='text' name2='URLClase' attr2='href'&gt;&lt;webctrl tag='section' class='TimelineLeft u-scroll' idx='1'/&gt;&lt;webctrl tag='div' class='TabsContent' idx='1'/&gt;&lt;webctrl tag='div' class='TabsContent-elements' idx='1'/&gt;&lt;webctrl tag='div' class='Material' idx='1'/&gt;&lt;webctrl tag='div' class='Material-concept'/&gt;&lt;webctrl tag='div' class='MaterialItem-content'/&gt;&lt;webctrl tag='a' class='MaterialItem-anchor' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="338,106" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="0" SimulateClick="True">
+                <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[dtClasesEncontradas]" DisplayName="Extract Structured Data Clases" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Clase' attr='text' name2='URLClase' attr2='href'&gt;&lt;webctrl tag='section' class='TimelineLeft u-scroll' idx='1'/&gt;&lt;webctrl tag='div' class='TabsContent' idx='1'/&gt;&lt;webctrl tag='div' class='TabsContent-elements' idx='1'/&gt;&lt;webctrl tag='div' class='Material' idx='1'/&gt;&lt;webctrl tag='div' class='Material-concept'/&gt;&lt;webctrl tag='div' class='MaterialItem-content'/&gt;&lt;webctrl tag='a' class='MaterialItem-anchor' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="338,68" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="0" SimulateClick="True">
                   <ui:ExtractData.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4f67889b-92b6-4015-af7e-512bf84fda63" InformativeScreenshot="81c9fe58fd1ea39dc313e0ac70690ef6" Selector="&lt;webctrl css-selector='body&amp;gt;section&amp;gt;section&amp;gt;div&amp;gt;div' parentid='timeline-v2' tag='DIV' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4f67889b-92b6-4015-af7e-512bf84fda63" Selector="&lt;webctrl css-selector='body&amp;gt;section&amp;gt;section&amp;gt;div&amp;gt;div' parentid='timeline-v2' tag='DIV' /&gt;" WaitForReady="COMPLETE">
                       <ui:Target.TimeoutMS>
                         <InArgument x:TypeArguments="x:Int32" />
                       </ui:Target.TimeoutMS>
@@ -1098,8 +1098,8 @@
           </ui:OpenBrowser.Body>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:OpenBrowser>
@@ -1285,7 +1285,7 @@
           <av:PointCollection x:Key="ConnectorLocation">300,259 300,306.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Switch x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Según el navegador indicado en el Config se marca el tipo de Navegador (BrowserType) y el tipo de Aplicación para el Selector." DisplayName="Elegir Browser" Expression="[in_Navegador]" sap:VirtualizedContainerService.HintSize="497,1728" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+      <Switch x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Según el navegador indicado en el Config se marca el tipo de Navegador (BrowserType) y el tipo de Aplicación para el Selector." DisplayName="Elegir Browser" Expression="[in_Navegador]" sap:VirtualizedContainerService.HintSize="200,138" sap2010:WorkflowViewState.IdRef="Switch`1_2">
         <Switch.Default>
           <Sequence sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_29">
             <sap:WorkflowViewStateService.ViewState>
