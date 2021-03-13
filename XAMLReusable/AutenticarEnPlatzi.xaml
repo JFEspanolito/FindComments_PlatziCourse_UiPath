@@ -12,7 +12,7 @@
   <this:AutenticarEnPlatzi.varTimeOutGeneral>
     <InArgument x:TypeArguments="x:Int32" />
   </this:AutenticarEnPlatzi.varTimeOutGeneral>
-  <sap:VirtualizedContainerService.HintSize>1038,1151</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1030,1175</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="17">
@@ -55,12 +55,11 @@
       <AssemblyReference>UiPath.CV</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <ui:InterruptibleDoWhile DisplayName="Autenticar" sap:VirtualizedContainerService.HintSize="599,1046" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
+  <ui:InterruptibleDoWhile DisplayName="Autenticar" sap:VirtualizedContainerService.HintSize="599,970" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
     <ui:InterruptibleDoWhile.Body>
-      <Sequence DisplayName="Autenticar" sap:VirtualizedContainerService.HintSize="563,881" sap2010:WorkflowViewState.IdRef="Sequence_28">
+      <Sequence DisplayName="Autenticar" sap:VirtualizedContainerService.HintSize="563,805" sap2010:WorkflowViewState.IdRef="Sequence_28">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="mySelector" />
         </Sequence.Variables>
@@ -78,9 +77,9 @@
             <InArgument x:TypeArguments="x:String">["&lt;html "+myBrowserApp+" url='*platzi.com/c*' /&gt;&lt;webctrl aaname='Iniciar sesión' tag='SPAN' /&gt;"]</InArgument>
           </Assign.Value>
         </Assign>
-        <ui:UiElementExists DisplayName="Element Exists Pantalla de Login" Exists="[requireLogin]" sap:VirtualizedContainerService.HintSize="521,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+        <ui:UiElementExists DisplayName="Element Exists Pantalla de Login" Exists="[requireLogin]" sap:VirtualizedContainerService.HintSize="521,68" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
           <ui:UiElementExists.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9f91ebc5-d3a1-4a82-bc9b-a300bab6eb75" InformativeScreenshot="626f8600796cc8b9b27874770b953a7a" Selector="[mySelector]" TimeoutMS="[varTimeOutGeneral]">
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9f91ebc5-d3a1-4a82-bc9b-a300bab6eb75" Selector="[mySelector]" TimeoutMS="[varTimeOutGeneral]">
               <ui:Target.WaitForReady>
                 <InArgument x:TypeArguments="ui:WaitForReady" />
               </ui:Target.WaitForReady>
@@ -93,7 +92,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:UiElementExists>
-        <If Condition="[requireLogin]" DisplayName="Si requiere Login" sap:VirtualizedContainerService.HintSize="521,543" sap2010:WorkflowViewState.IdRef="If_16">
+        <If Condition="[requireLogin]" DisplayName="Si requiere Login" sap:VirtualizedContainerService.HintSize="521,505" sap2010:WorkflowViewState.IdRef="If_16">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -101,14 +100,14 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <If.Then>
-            <Sequence DisplayName="Solicitar Login" sap:VirtualizedContainerService.HintSize="376,396" sap2010:WorkflowViewState.IdRef="Sequence_27">
+            <Sequence DisplayName="Solicitar Login" sap:VirtualizedContainerService.HintSize="376,358" sap2010:WorkflowViewState.IdRef="Sequence_27">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Iniciar sesión" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Iniciar sesión" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                 <ui:Click.CursorPosition>
                   <ui:CursorPosition Position="Center">
                     <ui:CursorPosition.OffsetX>
@@ -120,7 +119,7 @@
                   </ui:CursorPosition>
                 </ui:Click.CursorPosition>
                 <ui:Click.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="32b7dad6-b465-45cf-8033-180fa70e2258" InformativeScreenshot="453eb4206fd5dcd9c02d9a2306caa7cc" Selector="[mySelector]" TimeoutMS="[varTimeOutGeneral]">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="32b7dad6-b465-45cf-8033-180fa70e2258" Selector="[mySelector]" TimeoutMS="[varTimeOutGeneral]">
                     <ui:Target.WaitForReady>
                       <InArgument x:TypeArguments="ui:WaitForReady" />
                     </ui:Target.WaitForReady>
